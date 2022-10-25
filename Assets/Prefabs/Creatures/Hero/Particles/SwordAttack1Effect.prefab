@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7622618958088744021}
   - component: {fileID: 341466554169028141}
   - component: {fileID: 7393526055710120953}
-  - component: {fileID: 3686708601046399658}
+  - component: {fileID: 1591996937752002008}
   m_Layer: 0
   m_Name: SwordAttack1Effect
   m_TagString: Untagged
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -438528425
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 8f3e0fa3f9415414aa0ea70ae5058b52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -107,7 +107,7 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3686708601046399658}
+        - m_Target: {fileID: 1591996937752002008}
           m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:
@@ -118,7 +118,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &3686708601046399658
+--- !u!114 &1591996937752002008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1373932038192390715}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 123fafd0e0670494d942080faf5f1140, type: 3}
+  m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _ObjectToDestroy: {fileID: 1373932038192390715}

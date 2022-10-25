@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 665274836871780113}
   - component: {fileID: 665274836871780114}
   - component: {fileID: 665274836871780115}
-  - component: {fileID: 665274836871780116}
   - component: {fileID: 4623715234775830215}
   - component: {fileID: 6809154221727600136}
   - component: {fileID: 3687185638992727843}
   - component: {fileID: 5922377199546035863}
+  - component: {fileID: 2532631600690270381}
   m_Layer: 0
   m_Name: StuckedSword
   m_TagString: Untagged
@@ -112,19 +112,6 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
---- !u!114 &665274836871780116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665274836871780117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 123fafd0e0670494d942080faf5f1140, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ObjectToDestroy: {fileID: 665274836871780117}
 --- !u!50 &4623715234775830215
 Rigidbody2D:
   serializedVersion: 4
@@ -192,7 +179,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 665274836871780116}
+      - m_Target: {fileID: 2532631600690270381}
         m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
@@ -215,3 +202,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff22c3d8df550a41aef6b2fa32312ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2532631600690270381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665274836871780117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ObjectToDestroy: {fileID: 665274836871780117}

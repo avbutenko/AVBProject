@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 421421221819062018}
   - component: {fileID: 4673470797488285081}
   - component: {fileID: 6779829748085259532}
-  - component: {fileID: 129320032534475169}
+  - component: {fileID: 1585272952461278673}
   m_Layer: 0
   m_Name: Jump
   m_TagString: Untagged
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -414179419
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 981180fb0d690d94a83c192a0e8daf44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -110,7 +110,7 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 129320032534475169}
+        - m_Target: {fileID: 1585272952461278673}
           m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:
@@ -121,7 +121,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &129320032534475169
+--- !u!114 &1585272952461278673
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2776103059302950170}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 123fafd0e0670494d942080faf5f1140, type: 3}
+  m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _ObjectToDestroy: {fileID: 2776103059302950170}

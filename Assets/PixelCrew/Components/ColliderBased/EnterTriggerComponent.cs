@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace AVBProject.Components
+namespace Assets.PixelCrew.Components.ColliderBased
 {
 
     public class EnterTriggerComponent : MonoBehaviour

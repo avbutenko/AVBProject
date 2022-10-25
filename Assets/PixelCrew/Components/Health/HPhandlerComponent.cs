@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace AVBProject.Components
+namespace Assets.PixelCrew.Components.Health
 {
     public class HPhandlerComponent : MonoBehaviour
     {

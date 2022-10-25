@@ -11,13 +11,13 @@ GameObject:
   - component: {fileID: 665274836871780113}
   - component: {fileID: 665274836871780114}
   - component: {fileID: 665274836871780115}
-  - component: {fileID: 665274836871780116}
   - component: {fileID: 4623715234775830215}
   - component: {fileID: 6809154221727600136}
   - component: {fileID: 5393407358259697730}
   - component: {fileID: 923552965880074603}
   - component: {fileID: 2863613503757781338}
   - component: {fileID: 3687185638992727843}
+  - component: {fileID: 5550469984975873443}
   m_Layer: 0
   m_Name: SwordProjectile
   m_TagString: Untagged
@@ -115,19 +115,6 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
---- !u!114 &665274836871780116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 665274836871780117}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 123fafd0e0670494d942080faf5f1140, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ObjectToDestroy: {fileID: 665274836871780117}
 --- !u!50 &4623715234775830215
 Rigidbody2D:
   serializedVersion: 4
@@ -208,7 +195,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 665274836871780116}
+      - m_Target: {fileID: 5550469984975873443}
         m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
@@ -251,7 +238,7 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7315467467334751357}
+      - m_Target: {fileID: 1295408206984422931}
         m_MethodName: Spawn
         m_Mode: 1
         m_Arguments:
@@ -262,7 +249,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 665274836871780116}
+      - m_Target: {fileID: 5550469984975873443}
         m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
@@ -273,6 +260,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5550469984975873443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 665274836871780117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ObjectToDestroy: {fileID: 665274836871780117}
 --- !u!1 &7738522382859215365
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,7 +282,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5771156536860695605}
-  - component: {fileID: 7315467467334751357}
+  - component: {fileID: 1295408206984422931}
   m_Layer: 0
   m_Name: StackedSwordSpawner
   m_TagString: Untagged
@@ -304,7 +304,7 @@ Transform:
   m_Father: {fileID: 665274836871780113}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7315467467334751357
+--- !u!114 &1295408206984422931
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,9 +313,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 7738522382859215365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e20616e03d70f4fa0f09c2ec143e97, type: 3}
+  m_Script: {fileID: 11500000, guid: 930bd58b31e73a14baf13b0e65845424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 5771156536860695605}
   _prefab: {fileID: 665274836871780117, guid: d01337298f39a194a9fd6eed27769440, type: 3}
-  _invertXScale: 0

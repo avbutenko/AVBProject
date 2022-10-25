@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 8472111295423678112}
   - component: {fileID: 6679952258035606893}
   - component: {fileID: 4697720411302078367}
-  - component: {fileID: -8206789361347175232}
   - component: {fileID: 294422524281840575}
   - component: {fileID: 2727395000502000826}
+  - component: {fileID: 1570303335679790431}
   m_Layer: 0
   m_Name: PotionMedium
   m_TagString: Untagged
@@ -144,19 +144,6 @@ MonoBehaviour:
           m_StringArgument: destroy
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-8206789361347175232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2509536132114621343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 123fafd0e0670494d942080faf5f1140, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _ObjectToDestroy: {fileID: 2509536132114621343}
 --- !u!114 &294422524281840575
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -196,7 +183,7 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: -8206789361347175232}
+        - m_Target: {fileID: 1570303335679790431}
           m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:
@@ -220,3 +207,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deltaValue: 5
+--- !u!114 &1570303335679790431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2509536132114621343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ObjectToDestroy: {fileID: 2509536132114621343}

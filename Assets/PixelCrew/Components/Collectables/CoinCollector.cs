@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using AVBProject.Creatures;
-using Assets.PixelCrew.Components.Creatures;
+using Assets.PixelCrew.Components.Creatures.Hero;
 
 namespace Assets.PixelCrew.Components.Collectables
 {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4235617380456483096}
   - component: {fileID: 4235617380456483097}
   - component: {fileID: 4235617380456483098}
-  - component: {fileID: 3084365270747592158}
+  - component: {fileID: 6794590972872461013}
   m_Layer: 0
   m_Name: FootSteps
   m_TagString: Untagged
@@ -70,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -414179419
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 5adb7ecf9e2ec794baabc14b50f25a8a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -109,7 +109,7 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3084365270747592158}
+        - m_Target: {fileID: 6794590972872461013}
           m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:
@@ -120,7 +120,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &3084365270747592158
+--- !u!114 &6794590972872461013
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4235617380456483095}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 123fafd0e0670494d942080faf5f1140, type: 3}
+  m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _ObjectToDestroy: {fileID: 4235617380456483095}

@@ -1,13 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
-using AVBProject;
 using System;
 using UnityEngine.Events;
 using System.Linq;
+using Assets.PixelCrew.Utils;
 
-namespace AVBProject.Components
+namespace Assets.PixelCrew.Components.ColliderBased
 {
     public class CheckCircleOverlap : MonoBehaviour
     {

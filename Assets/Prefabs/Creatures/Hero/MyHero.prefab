@@ -290,7 +290,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8775261397004018316}
-  - component: {fileID: 3096858482334824424}
+  - component: {fileID: 6035998911375076668}
   m_Layer: 0
   m_Name: ThrowSwordSpawnPosition
   m_TagString: Untagged
@@ -312,7 +312,7 @@ Transform:
   m_Father: {fileID: 4464192119751422747}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3096858482334824424
+--- !u!114 &6035998911375076668
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 891859718134754019}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e20616e03d70f4fa0f09c2ec143e97, type: 3}
+  m_Script: {fileID: 11500000, guid: 930bd58b31e73a14baf13b0e65845424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 8775261397004018316}
@@ -335,7 +335,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3751540186306881177}
-  - component: {fileID: 7811074923133081053}
+  - component: {fileID: 8118152506724469733}
   m_Layer: 14
   m_Name: SwordAttack1SpawnPosition
   m_TagString: Untagged
@@ -357,7 +357,7 @@ Transform:
   m_Father: {fileID: 4464192119751422747}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7811074923133081053
+--- !u!114 &8118152506724469733
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -366,7 +366,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3427475140933815605}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e20616e03d70f4fa0f09c2ec143e97, type: 3}
+  m_Script: {fileID: 11500000, guid: 930bd58b31e73a14baf13b0e65845424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 3751540186306881177}
@@ -387,9 +387,9 @@ GameObject:
   - component: {fileID: 4464192119751422748}
   - component: {fileID: 4464192119751422749}
   - component: {fileID: 4464192119751422738}
-  - component: {fileID: 101290619}
   - component: {fileID: 4135515644894797487}
   - component: {fileID: 2423554441825358588}
+  - component: {fileID: 4175079402371514828}
   m_Layer: 14
   m_Name: MyHero
   m_TagString: Player
@@ -492,7 +492,7 @@ MonoBehaviour:
     m_Bits: 1024
   _groundCheck: {fileID: 925326871}
   _attackRange: {fileID: 1227277446}
-  _particles: {fileID: 101290619}
+  _particles: {fileID: 4175079402371514828}
   _interActionCheck: {fileID: 1120133931}
   _wallCheck: {fileID: 17756002}
   _slamDownVelocity: 15
@@ -711,29 +711,6 @@ MonoBehaviour:
   m_DefaultActionMap: Hero
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &101290619
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4464192119751422725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2eef317d5e47844897679737fa7e76e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _spawners:
-  - Id: Run
-    Component: {fileID: 4464192121007300109}
-  - Id: Jump
-    Component: {fileID: 4464192120616346894}
-  - Id: SlamDown
-    Component: {fileID: 4464192121094237135}
-  - Id: Attack1
-    Component: {fileID: 7811074923133081053}
-  - Id: Throw
-    Component: {fileID: 3096858482334824424}
 --- !u!114 &4135515644894797487
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -759,6 +736,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hero: {fileID: 4464192119751422745}
+--- !u!114 &4175079402371514828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4464192119751422725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56d12269ef90ae4894dc383e9dada2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _spawners:
+  - Id: Run
+    Component: {fileID: 359688382830508628}
+  - Id: Jump
+    Component: {fileID: 905071976779003312}
+  - Id: SlamDown
+    Component: {fileID: 6758536441951607957}
+  - Id: Attack1
+    Component: {fileID: 8118152506724469733}
+  - Id: Throw
+    Component: {fileID: 6035998911375076668}
 --- !u!1 &4464192120616346888
 GameObject:
   m_ObjectHideFlags: 0
@@ -768,7 +768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4464192120616346889}
-  - component: {fileID: 4464192120616346894}
+  - component: {fileID: 905071976779003312}
   m_Layer: 14
   m_Name: JumpSpawnPosition
   m_TagString: Untagged
@@ -790,7 +790,7 @@ Transform:
   m_Father: {fileID: 4464192119751422747}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4464192120616346894
+--- !u!114 &905071976779003312
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -799,7 +799,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4464192120616346888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e20616e03d70f4fa0f09c2ec143e97, type: 3}
+  m_Script: {fileID: 11500000, guid: 930bd58b31e73a14baf13b0e65845424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 4464192120616346889}
@@ -5625,7 +5625,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4464192121007300108}
-  - component: {fileID: 4464192121007300109}
+  - component: {fileID: 359688382830508628}
   m_Layer: 14
   m_Name: FootStepSpawnPosition
   m_TagString: Untagged
@@ -5647,7 +5647,7 @@ Transform:
   m_Father: {fileID: 4464192119751422747}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4464192121007300109
+--- !u!114 &359688382830508628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5656,7 +5656,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4464192121007300111}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e20616e03d70f4fa0f09c2ec143e97, type: 3}
+  m_Script: {fileID: 11500000, guid: 930bd58b31e73a14baf13b0e65845424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 4464192121007300108}
@@ -5670,7 +5670,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4464192121094237134}
-  - component: {fileID: 4464192121094237135}
+  - component: {fileID: 6758536441951607957}
   m_Layer: 14
   m_Name: SlamDownSpawnPosition
   m_TagString: Untagged
@@ -5692,7 +5692,7 @@ Transform:
   m_Father: {fileID: 4464192119751422747}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4464192121094237135
+--- !u!114 &6758536441951607957
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5701,7 +5701,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4464192121094237129}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0e20616e03d70f4fa0f09c2ec143e97, type: 3}
+  m_Script: {fileID: 11500000, guid: 930bd58b31e73a14baf13b0e65845424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 4464192121094237134}

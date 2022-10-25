@@ -4814,6 +4814,7 @@ MonoBehaviour:
     Coins: 0
     Hp: 10
     IsArmed: 0
+    Swords: 0
 --- !u!4 &1160774316
 Transform:
   m_ObjectHideFlags: 0
