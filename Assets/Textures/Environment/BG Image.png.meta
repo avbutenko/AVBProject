@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: f461b60f8ff88cc439f28e0c2cd4114c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6835599021437128910
+    second: BG Image_0
+  - first:
+      213: 6251070240227281547
+    second: BG Image_1
+  - first:
+      213: -5163946413645474555
+    second: BG Image_2
+  - first:
+      213: -1472056933151490482
+    second: BG Image_3
+  - first:
+      213: 4334985466765979292
+    second: BG Image_4
+  - first:
+      213: -2575873700149663346
+    second: BG Image_5
+  - first:
+      213: 8646357134903814788
+    second: BG Image_6
+  - first:
+      213: 5637230884992027162
+    second: BG Image_7
+  - first:
+      213: 4768698365840678205
+    second: BG Image_8
+  - first:
+      213: 5165483821290902528
+    second: BG Image_9
+  - first:
+      213: 3058555617899382646
+    second: BG Image_10
+  - first:
+      213: 813956772678174894
+    second: BG Image_11
+  - first:
+      213: -7030622795391715824
+    second: BG Image_12
+  - first:
+      213: -3513487449788742696
+    second: BG Image_13
+  - first:
+      213: -4553509668335329076
+    second: BG Image_14
+  - first:
+      213: 794532925736410605
+    second: BG Image_15
+  - first:
+      213: -910584977355178958
+    second: BG Image_16
+  - first:
+      213: 6288667165233140095
+    second: BG Image_17
+  - first:
+      213: 3553859435748813648
+    second: BG Image_18
+  - first:
+      213: -4405038650297362596
+    second: BG Image_19
+  - first:
+      213: -8948035172102977428
+    second: BG Image_20
+  - first:
+      213: 4730040196184545894
+    second: BG Image_21
+  - first:
+      213: 6366693349633288490
+    second: BG Image_22
+  - first:
+      213: -900656402165918387
+    second: BG Image_23
+  - first:
+      213: 7174579682641010113
+    second: BG Image_24
+  - first:
+      213: 3329389110028123205
+    second: BG Image_25
+  - first:
+      213: -3118990999418316361
+    second: BG Image_26
+  - first:
+      213: 6886149471860220245
+    second: BG Image_27
+  - first:
+      213: -5919072877096376854
+    second: BG Image_28
+  - first:
+      213: -8490900387453446359
+    second: BG Image_29
+  - first:
+      213: -8658313268878784036
+    second: BG Image_30
+  - first:
+      213: -1219570208763321455
+    second: BG Image_31
+  - first:
+      213: 1498750261049494883
+    second: BG Image_32
+  - first:
+      213: -953241076478258455
+    second: BG Image_33
+  - first:
+      213: -3748440446881717578
+    second: BG Image_34
+  - first:
+      213: 3894003913127796606
+    second: BG Image_35
+  - first:
+      213: 6273853860397158988
+    second: BG Image_36
+  - first:
+      213: 4698020826709320796
+    second: BG Image_37
+  - first:
+      213: -3587224286702412019
+    second: BG Image_38
+  - first:
+      213: -5226484726011583375
+    second: BG Image_39
+  - first:
+      213: -7632439467697094206
+    second: BG Image_40
+  - first:
+      213: -8630940099440360022
+    second: BG Image_41
+  - first:
+      213: 3013822539174249732
+    second: BG Image_42
+  - first:
+      213: 2614480542553487466
+    second: BG Image_43
+  - first:
+      213: -4076940897487515497
+    second: BG Image_44
+  - first:
+      213: -7311499226236342751
+    second: BG Image_45
+  - first:
+      213: -5757902842280046585
+    second: BG Image_46
+  - first:
+      213: 6731734421546205173
+    second: BG Image_47
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BG Image_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 384
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f6b3418e21321a0800000000000000
+      internalID: -6835599021437128910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
