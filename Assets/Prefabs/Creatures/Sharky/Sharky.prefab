@@ -347,7 +347,7 @@ GameObject:
   - component: {fileID: 891428642}
   - component: {fileID: 7390956630918215792}
   - component: {fileID: 5604253130843091401}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Sharky
   m_TagString: Enemy
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
@@ -414,8 +414,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -438528425
-  m_SortingLayer: 5
+  m_SortingLayerID: -265227197
+  m_SortingLayer: 7
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 998ec84e248322044ad84b66c095c2ce, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8126113284638737802}
   - component: {fileID: 8126113284638737804}
   - component: {fileID: 8072369537691021070}
-  m_Layer: 11
+  m_Layer: 19
   m_Name: GoldenCoin
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -27,7 +27,7 @@ TagManager:
   - 
   - Checkers
   - Trash
-  - 
+  - Colleactables
   - 
   - 
   - 
@@ -61,4 +61,7 @@ TagManager:
     locked: 0
   - name: Walls
     uniqueID: 256623783
+    locked: 0
+  - name: Creatures
+    uniqueID: 4029740099
     locked: 0

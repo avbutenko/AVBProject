@@ -17,6 +17,8 @@ namespace Assets.PixelCrew.Utils
         }
 
         public bool IsReady => _timesUp <= Time.time;
+
+        public bool Isready { get; internal set; }
     }
 }
 

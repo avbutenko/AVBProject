@@ -251,7 +251,7 @@ MonoBehaviour:
   _radius: 0.3
   _mask:
     serializedVersion: 2
-    m_Bits: 278327
+    m_Bits: 33792
   _tags:
   - Enemy
   _onOverlap:
@@ -496,7 +496,6 @@ MonoBehaviour:
   _interActionCheck: {fileID: 1120133931}
   _wallCheck: {fileID: 17756002}
   _slamDownVelocity: 15
-  _interactionRadius: 1
   _throwCoolDown:
     _value: 1
   _armed: {fileID: 9100000, guid: 466cc22b5e10d54409aafe1c58622af3, type: 2}
