@@ -50,18 +50,21 @@ TagManager:
   - name: Tilemap
     uniqueID: 2066746859
     locked: 0
+  - name: Walls
+    uniqueID: 256623783
+    locked: 0
   - name: Enviroment
     uniqueID: 3880787877
     locked: 0
   - name: Props
     uniqueID: 3692131249
     locked: 0
-  - name: Hero
-    uniqueID: 3856438871
-    locked: 0
-  - name: Walls
-    uniqueID: 256623783
+  - name: Trash
+    uniqueID: 1989975739
     locked: 0
   - name: Creatures
     uniqueID: 4029740099
+    locked: 0
+  - name: Hero
+    uniqueID: 3856438871
     locked: 0

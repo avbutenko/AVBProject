@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: _CrownTotem3
+  m_Controller: {fileID: 9100000, guid: acbc712c95ec0be408f5a15f7a07b5a8, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 5393db6bca0f0e9468411078de9b0363, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 54bad79f807eb814dba06c9bdd293853, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: dbcbce63959485c4d85c4a76097b52a7, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 6dcda226e09c1064e8227d5abd45245e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: cd3357997b999e54e871f30bd86b314e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3625ee029d98771478ad4567c8df865d, type: 2}

@@ -33,7 +33,7 @@ namespace Assets.PixelCrew.Components.Creatures.Mobs
         {
             if (_vision.IsTouchingLayer)
             {
-                if (_meleeCanAttack.IsTouchingLayer)
+                if (_meleeCanAttack != null && _meleeCanAttack.IsTouchingLayer)
                 {
                     if (_meleeCoolDown.IsReady)
                     {
