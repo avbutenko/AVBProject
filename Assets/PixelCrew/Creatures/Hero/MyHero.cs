@@ -2,7 +2,7 @@
 using UnityEngine;
 using Assets.PixelCrew.Utils;
 using UnityEditor.Animations;
-using AVBProject.Model;
+using Assets.PixelCrew.Model;
 using Assets.PixelCrew.Components.ColliderBased;
 using Assets.PixelCrew.Components.Health;
 
@@ -36,6 +36,9 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
 
+        private int CoinCount => _session.Data.Inventory.Count("Coin");
+        private int SwordCount => _session.Data.Inventory.Count("Sword");
+
         protected override void Awake()
         {
             base.Awake();
@@ -46,10 +49,30 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         {
             _session = FindObjectOfType<GameSession>();
             var health = GetComponent<HealthComponent>();
+            _session.Data.Inventory.OnChanged += OnInventoryChanged; /*subscribe*/
+            _session.Data.Inventory.OnChanged += AnotherHandler;
+
+
             health.SetHealth(_session.Data.Hp);
             UpdateHeroWeapon();
         }
 
+        private void OnDestroy()
+        {
+            _session.Data.Inventory.OnChanged -= OnInventoryChanged; /*Unsubscribe*/
+            _session.Data.Inventory.OnChanged -= AnotherHandler;
+        }
+
+        private void OnInventoryChanged(string id, int value)
+        {
+            if (id == "Sword")
+                UpdateHeroWeapon();
+        }
+
+        private void AnotherHandler(string id, int value)
+        {
+            Debug.Log($"Inventory changed: {id} : {value}");
+        }
         public void OnHealthChanged(int currentHealth)
         {
             _session.Data.Hp = currentHealth;
@@ -102,16 +125,16 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             return base.CalculateJumpVelocity(yVelocity);
         }
 
-        public void CollectCoin(int value)
+        public void AddInInventory(string id, int value)
         {
-            _session.Data.Coins += value;
-            Debug.Log($"{value} coins added. Total :{_session.Data.Coins}");
+            _session.Data.Inventory.Add(id, value);
         }
 
         public override void TakeDamage()
         {
             base.TakeDamage();
-            if (_session.Data.Coins > 0)
+
+            if (CoinCount > 0)
             {
                 SpawnCoins();
             }
@@ -119,8 +142,9 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         private void SpawnCoins()
         {
-            var numCoinsToDispose = Math.Min(_session.Data.Coins, 5);
-            _session.Data.Coins -= numCoinsToDispose;
+            var numCoinsToDispose = Math.Min(CoinCount, 5);
+            _session.Data.Inventory.Remove("Coin", numCoinsToDispose);
+
 
             var burst = _hitParticles.emission.GetBurst(0);
             burst.count = numCoinsToDispose;
@@ -149,30 +173,23 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         public override void Attack()
         {
-            if (!_session.Data.IsArmed) return;
+            if (SwordCount <= 0) return;
             base.Attack();
-        }
-
-        public void ArmHero()
-        {
-            _session.Data.IsArmed = true;
-            _session.Data.Swords += 1;
-            UpdateHeroWeapon();
         }
 
         private void UpdateHeroWeapon()
         {
-            Animator.runtimeAnimatorController = _session.Data.IsArmed ? _armed : _unarmed;
+            Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _unarmed;
         }
 
         public void OnPerformThrow()
         {
             _particles.Spawn("Throw");
-            _session.Data.Swords -= 1;
+            _session.Data.Inventory.Remove("Sword", 1);
         }
         public void Throw()
         {
-            if (_throwCoolDown.IsReady && _session.Data.Swords > 1)
+            if (_throwCoolDown.IsReady && SwordCount > 1)
             {
                 Animator.SetTrigger(ThrowKey);
                 _throwCoolDown.Reset();

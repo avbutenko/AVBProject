@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 1892470595243893144}
   - component: {fileID: 1892470595243893146}
   - component: {fileID: 1892470595243893151}
-  - component: {fileID: 1136865509912741563}
   - component: {fileID: 5638527420859163598}
   - component: {fileID: 2592229829444218595}
   - component: {fileID: 7981687242133883779}
+  - component: {fileID: 2193997463620429312}
   m_Layer: 19
   m_Name: SilverCoin
   m_TagString: Untagged
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -602836047
-  m_SortingLayer: 4
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -2322180950842035098, guid: 67cd519d8699ec741ae43b27f5034dd7,
     type: 3}
@@ -124,8 +124,8 @@ MonoBehaviour:
   _action:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1136865509912741563}
-        m_MethodName: Collect
+      - m_Target: {fileID: 2193997463620429312}
+        m_MethodName: Add
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -193,19 +193,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1136865509912741563
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1892470595243893125}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 534d10a083f42de4ebf236ca3ff3458f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _amount: 1
 --- !u!114 &5638527420859163598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,3 +242,17 @@ MonoBehaviour:
   _frequency: 6
   _amplitude: 0.1
   _randomize: 1
+--- !u!114 &2193997463620429312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1892470595243893125}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b406d44ff031d6b4a9d577372b059c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: Coin
+  _value: 1

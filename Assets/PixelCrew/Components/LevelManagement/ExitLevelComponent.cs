@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using AVBProject.Model;
+using Assets.PixelCrew.Model;
 
 namespace Assets.PixelCrew.Components.LevelManagement
 {
