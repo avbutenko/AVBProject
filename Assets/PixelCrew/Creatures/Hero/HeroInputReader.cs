@@ -51,5 +51,13 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
                 _hero.Throw();
             }
         }
+
+        public void OnUse(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.Use();
+            }
+        }
     }
 }

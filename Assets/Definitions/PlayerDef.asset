@@ -9,15 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5e1bcf8f63aca1943b86e604a1bea5fb, type: 3}
-  m_Name: InventoryItems
+  m_Script: {fileID: 11500000, guid: 9e86c68d8f3c20340964a9bcd40b5788, type: 3}
+  m_Name: PlayerDef
   m_EditorClassIdentifier: 
-  _items:
-  - _id: Coin
-    _isStackable: 1
-  - _id: Sword
-    _isStackable: 1
-  - _id: Key
-    _isStackable: 0
-  - _id: Potion
-    _isStackable: 0
+  _inventorySize: 3

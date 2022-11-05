@@ -31,6 +31,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private bool _isOnWall;
 
         private GameSession _session;
+        private HealthComponent _health;
         private float _defaultGravityScale;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
@@ -38,6 +39,8 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         private int CoinCount => _session.Data.Inventory.Count("Coin");
         private int SwordCount => _session.Data.Inventory.Count("Sword");
+
+        private int PotionCount => _session.Data.Inventory.Count("Potion");
 
         protected override void Awake()
         {
@@ -48,12 +51,12 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private void Start()
         {
             _session = FindObjectOfType<GameSession>();
-            var health = GetComponent<HealthComponent>();
+            _health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChanged += OnInventoryChanged; /*subscribe*/
             _session.Data.Inventory.OnChanged += AnotherHandler;
 
 
-            health.SetHealth(_session.Data.Hp);
+            _health.SetHealth(_session.Data.Hp);
             UpdateHeroWeapon();
         }
 
@@ -195,6 +198,15 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
                 _throwCoolDown.Reset();
             }
 
+        }
+
+        public void Use()
+        {
+            if (PotionCount > 0)
+            {
+                _health.ModifyHealth(5);
+                _session.Data.Inventory.Remove("Potion", 1);
+            }
         }
 
     }
