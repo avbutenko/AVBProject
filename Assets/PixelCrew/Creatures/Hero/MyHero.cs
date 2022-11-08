@@ -5,11 +5,12 @@ using UnityEditor.Animations;
 using Assets.PixelCrew.Model;
 using Assets.PixelCrew.Components.ColliderBased;
 using Assets.PixelCrew.Components.Health;
+using Assets.PixelCrew.Model.Data;
 
 namespace Assets.PixelCrew.Components.Creatures.Hero
 {
 
-    public class MyHero : Creature
+    public class MyHero : Creature, ICanAddInInventory
     {
 
         [SerializeField] private CheckCircleOverlap _interActionCheck;
