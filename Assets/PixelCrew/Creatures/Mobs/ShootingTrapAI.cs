@@ -18,6 +18,7 @@ namespace Assets.PixelCrew.Components.Creatures.Mobs
         [Header("Range")]
         [SerializeField] private CoolDown _rangeCoolDown;
         [SerializeField] private SpawnComponent _rangeAtttack;
+        [SerializeField] private SpawnComponent _rangeParticles;
 
         private static readonly int Melee = Animator.StringToHash("melee");
         private static readonly int Range = Animator.StringToHash("range");
@@ -68,6 +69,7 @@ namespace Assets.PixelCrew.Components.Creatures.Mobs
         public void OnRangeAttack()
         {
             _rangeAtttack.Spawn();
+            _rangeParticles?.Spawn();
         }
 
     }
