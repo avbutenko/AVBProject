@@ -6,15 +6,25 @@ using System;
 using Assets.PixelCrew.Components.ColliderBased;
 using Assets.PixelCrew.Components.GoBased;
 using Assets.PixelCrew.Components.Creatures.Mobs.Patrolling;
+using Assets.PixelCrew.Utils;
 
 namespace Assets.PixelCrew.Components.Creatures
 {
     public class MobAI : MonoBehaviour
     {
+        [Space]
+        [Header("Checkers")]
         [SerializeField] private LayerCheck _vision;
         [SerializeField] private LayerCheck _canAttack;
 
+        [Space]
+        [Header("Projectiles")]
+        [SerializeField] private int _projectileNum = 0;
+
+        [Space]
+        [Header("Cool Downs")]
         [SerializeField] private float _alarmDelay = 0.5f;
+        [SerializeField] private float _rangeAttackCoolDown = 1f;
         [SerializeField] private float _attackCoolDown = 1f;
         [SerializeField] private float _missCoolDown = 0.5f;
 
@@ -29,7 +39,6 @@ namespace Assets.PixelCrew.Components.Creatures
         private Patrol _patrol;
 
         private bool _isDead;
-
 
         private void Awake()
         {
@@ -55,8 +64,11 @@ namespace Assets.PixelCrew.Components.Creatures
         {
             LookAtTarget();
             _particles.Spawn("Exclamation");
+
             yield return new WaitForSeconds(_alarmDelay);
+
             StartState(GoToTarget());
+
         }
 
         private void LookAtTarget()
@@ -75,8 +87,13 @@ namespace Assets.PixelCrew.Components.Creatures
                 {
                     StartState(Attack());
                 }
+                else if (!_canAttack.IsTouchingLayer && _projectileNum > 0)
+                {
+                    StartState(RangeAttack());
+                }
                 else
                 {
+
                     SetDirectionToTarget();
                 }
 
@@ -99,6 +116,16 @@ namespace Assets.PixelCrew.Components.Creatures
             }
 
             StartState(GoToTarget());
+        }
+
+        private IEnumerator RangeAttack()
+        {
+            _creature.RangeAttack();
+            _projectileNum -= 1;
+            yield return new WaitForSeconds(_rangeAttackCoolDown);
+
+            StartState(GoToTarget());
+
         }
 
         private void SetDirectionToTarget()

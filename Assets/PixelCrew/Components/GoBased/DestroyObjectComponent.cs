@@ -11,5 +11,6 @@ namespace Assets.PixelCrew.Components.GoBased
         {
             Destroy(_ObjectToDestroy);
         }
+
     }
 }

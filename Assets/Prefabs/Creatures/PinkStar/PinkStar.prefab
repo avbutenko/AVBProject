@@ -166,7 +166,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _layer:
     serializedVersion: 2
-    m_Bits: 9217
+    m_Bits: 41985
   _isTouchingLayer: 0
   _target: {fileID: 1863112206311265339}
 --- !u!1 &2931625239215300243
@@ -848,7 +848,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vision: {fileID: 4921721592182744358}
   _canAttack: {fileID: 4921721591518136566}
+  _projectileNum: 0
   _alarmDelay: 0.5
+  _rangeAttackCoolDown: 1
   _attackCoolDown: 1
   _missCoolDown: 0.5
 --- !u!114 &2512028187366105182

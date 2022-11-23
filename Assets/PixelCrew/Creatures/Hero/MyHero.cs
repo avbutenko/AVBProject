@@ -39,6 +39,8 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
 
         private int CoinCount => _session.Data.Inventory.Count("Coin");
+
+
         private int SwordCount => _session.Data.Inventory.Count("Sword");
 
         private int PotionCount => _session.Data.Inventory.Count("Potion");
@@ -54,7 +56,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             _session = FindObjectOfType<GameSession>();
             _health = GetComponent<HealthComponent>();
             _session.Data.Inventory.OnChanged += OnInventoryChanged; /*subscribe*/
-            _session.Data.Inventory.OnChanged += AnotherHandler;
+            _session.Data.Inventory.OnChanged += InventoryLogHandler;
 
 
             _health.SetHealth(_session.Data.Hp);
@@ -64,7 +66,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private void OnDestroy()
         {
             _session.Data.Inventory.OnChanged -= OnInventoryChanged; /*Unsubscribe*/
-            _session.Data.Inventory.OnChanged -= AnotherHandler;
+            _session.Data.Inventory.OnChanged -= InventoryLogHandler;
         }
 
         private void OnInventoryChanged(string id, int value)
@@ -73,7 +75,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
                 UpdateHeroWeapon();
         }
 
-        private void AnotherHandler(string id, int value)
+        private void InventoryLogHandler(string id, int value)
         {
             Debug.Log($"Inventory changed: {id} : {value}");
         }

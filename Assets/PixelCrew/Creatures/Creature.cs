@@ -34,6 +34,7 @@ namespace Assets.PixelCrew.Components.Creatures
         private static readonly int VerticalVelocity = Animator.StringToHash("vertical_velocity");
         private static readonly int Hit = Animator.StringToHash("hit");
         private static readonly int AttackKey = Animator.StringToHash("attack");
+        private static readonly int RangeAttackKey = Animator.StringToHash("throw");
 
         protected virtual void Awake()
         {
@@ -131,6 +132,12 @@ namespace Assets.PixelCrew.Components.Creatures
         public virtual void Attack()
         {
             Animator.SetTrigger(AttackKey);
+            Sounds.Play("Melee");
+        }
+
+        public virtual void RangeAttack()
+        {
+            Animator.SetTrigger(RangeAttackKey);
             Sounds.Play("Melee");
         }
 
