@@ -14,6 +14,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level3.unity
     guid: 6f96eaf6226bca340b5b2ca8aefcb00a
+  - enabled: 1
+    path: Assets/Scenes/PauseMenu.unity
+    guid: 8f36627076e4623418d7f4a7a3dd576b
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: f3d2850834301ea49aa407ad327377eb
+  - enabled: 1
+    path: Assets/Scenes/SettingsMenu.unity
+    guid: 1f15dcfff3681e841a47d8dfa5a2d4cc
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 3a3397457edee0747aa3f7cdf74f6768,
       type: 2}

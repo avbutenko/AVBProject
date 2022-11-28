@@ -1,15 +1,19 @@
 ﻿using Assets.PixelCrew.Model.Data;
+using Assets.PixelCrew.UI;
+using Assets.PixelCrew.Utils;
 using UnityEngine;
 namespace Assets.PixelCrew.Model
 {
     public class GameSession : MonoBehaviour
     {
         [SerializeField] private PlayerData _data;
+
         public PlayerData Data => _data;
         private PlayerData _save;
 
         private void Awake()
         {
+
             if (IsSessionExist())
             {
                 DestroyImmediate(gameObject);
@@ -43,6 +47,12 @@ namespace Assets.PixelCrew.Model
         public void LoadLastSave()
         {
             _data = _save.Clone();
+        }
+
+        public void Pause()
+        {
+
+            WindowUtils.CreateWindow("UI/PauseWindow");
         }
     }
 }

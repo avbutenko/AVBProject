@@ -1,9 +1,8 @@
-﻿using Assets.PixelCrew.UI.Widjets;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Assets.PixelCrew.UI.SettingsWindow
+namespace Assets.PixelCrew.UI
 {
     public class SettingsWindow : AnimatedWindow
     {

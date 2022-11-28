@@ -1,26 +1,22 @@
-﻿using Assets.PixelCrew.UI.Widjets;
+﻿using Assets.PixelCrew.Utils;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Assets.PixelCrew.UI.MainMenuWindow
+namespace Assets.PixelCrew.UI
 {
     public class MainMenuWindow : AnimatedWindow
     {
 
-        private Action _closeAction;
+        protected Action _closeAction;
         public void OnShowSettings()
         {
-            var window = Resources.Load<GameObject>("UI/SettingsWindow");
-            var canvas = FindObjectOfType<Canvas>();
-            Instantiate(window, canvas.transform);
+            WindowUtils.CreateWindow("UI/SettingsWindow");
         }
 
         public void OnStartGame()
         {
-            _closeAction = () => { SceneManager.LoadScene("Level1"); };
+            _closeAction = () => { SceneManager.LoadScene("Level2"); };
             Close();
         }
 

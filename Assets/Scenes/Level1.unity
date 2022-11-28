@@ -3290,7 +3290,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -414179419
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -4811,10 +4811,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    Coins: 0
+    _inventory:
+      _inventory: []
     Hp: 10
-    IsArmed: 0
-    Swords: 0
+  _pauseWindow: {fileID: 0}
 --- !u!4 &1160774316
 Transform:
   m_ObjectHideFlags: 0
@@ -5815,18 +5815,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5443927792092457878}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1579974592 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8126113284638737802, guid: c831a98787e4f4e40a919867f08072f4,
-    type: 3}
-  m_PrefabInstance: {fileID: 416655574}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 534d10a083f42de4ebf236ca3ff3458f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1586551765
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11702,7 +11690,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -414179419
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -12490,7 +12478,7 @@ PrefabInstance:
     - target: {fileID: 1328754729953819557, guid: 057bbe03c273634409a7352f12292ddf,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.88666344
+      value: -0.5420618
       objectReference: {fileID: 0}
     - target: {fileID: 1328754729953819557, guid: 057bbe03c273634409a7352f12292ddf,
         type: 3}
@@ -12541,7 +12529,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _cheats.Array.data[0].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1579974592}
+      objectReference: {fileID: 0}
     - target: {fileID: 1328754729953819558, guid: 057bbe03c273634409a7352f12292ddf,
         type: 3}
       propertyPath: _cheats.Array.data[1].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Target

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEditor.UI;
 using UnityEngine;
-namespace Assets.PixelCrew.UI.Editor
+namespace Assets.PixelCrew.UI
 {
 
     [CustomEditor(typeof(CustomButton), true)]

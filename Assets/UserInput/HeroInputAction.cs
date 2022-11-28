@@ -65,6 +65,14 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Pause"",
+                    ""type"": ""Button"",
+                    ""id"": ""cdf1ec24-13b5-4a3d-805e-d36ab88fc140"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -232,6 +240,17 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
                     ""action"": ""Use"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c9f2bfca-2890-4f05-9b8e-5d60029b9b22"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pause"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -246,6 +265,7 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
         m_Hero_Attack = m_Hero.FindAction("Attack", throwIfNotFound: true);
         m_Hero_Throw = m_Hero.FindAction("Throw", throwIfNotFound: true);
         m_Hero_Use = m_Hero.FindAction("Use", throwIfNotFound: true);
+        m_Hero_Pause = m_Hero.FindAction("Pause", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -301,6 +321,7 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
     private readonly InputAction m_Hero_Attack;
     private readonly InputAction m_Hero_Throw;
     private readonly InputAction m_Hero_Use;
+    private readonly InputAction m_Hero_Pause;
     public struct HeroActions
     {
         private @HeroInputAction m_Wrapper;
@@ -311,6 +332,7 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
         public InputAction @Attack => m_Wrapper.m_Hero_Attack;
         public InputAction @Throw => m_Wrapper.m_Hero_Throw;
         public InputAction @Use => m_Wrapper.m_Hero_Use;
+        public InputAction @Pause => m_Wrapper.m_Hero_Pause;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -338,6 +360,9 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
                 @Use.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnUse;
                 @Use.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnUse;
                 @Use.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnUse;
+                @Pause.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnPause;
+                @Pause.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnPause;
+                @Pause.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnPause;
             }
             m_Wrapper.m_HeroActionsCallbackInterface = instance;
             if (instance != null)
@@ -360,6 +385,9 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
                 @Use.started += instance.OnUse;
                 @Use.performed += instance.OnUse;
                 @Use.canceled += instance.OnUse;
+                @Pause.started += instance.OnPause;
+                @Pause.performed += instance.OnPause;
+                @Pause.canceled += instance.OnPause;
             }
         }
     }
@@ -372,5 +400,6 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnThrow(InputAction.CallbackContext context);
         void OnUse(InputAction.CallbackContext context);
+        void OnPause(InputAction.CallbackContext context);
     }
 }
