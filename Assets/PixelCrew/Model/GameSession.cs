@@ -48,11 +48,5 @@ namespace Assets.PixelCrew.Model
         {
             _data = _save.Clone();
         }
-
-        public void Pause()
-        {
-
-            WindowUtils.CreateWindow("UI/PauseWindow");
-        }
     }
 }

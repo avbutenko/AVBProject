@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using AVBProject.Creatures;
 using Assets.PixelCrew.Components.Creatures;
 using Assets.PixelCrew.Model;
+using Assets.PixelCrew.Utils;
 
 namespace Assets.PixelCrew.Components.Creatures.Hero
 {
@@ -67,7 +68,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         {
             if (context.performed)
             {
-                _session.Pause();
+                WindowUtils.CreateWindow("UI/PauseWindow");
             }
         }
     }
