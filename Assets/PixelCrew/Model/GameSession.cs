@@ -1,7 +1,10 @@
 ﻿using Assets.PixelCrew.Model.Data;
 using Assets.PixelCrew.UI;
 using Assets.PixelCrew.Utils;
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 namespace Assets.PixelCrew.Model
 {
     public class GameSession : MonoBehaviour
@@ -13,6 +16,7 @@ namespace Assets.PixelCrew.Model
 
         private void Awake()
         {
+            LoadHud();
 
             if (IsSessionExist())
             {
@@ -23,6 +27,11 @@ namespace Assets.PixelCrew.Model
                 Save();
                 DontDestroyOnLoad(this);
             }
+        }
+
+        private void LoadHud()
+        {
+            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
         }
 
         private bool IsSessionExist()

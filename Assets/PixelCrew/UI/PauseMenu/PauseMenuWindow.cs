@@ -17,8 +17,9 @@ namespace Assets.PixelCrew.UI
         private void Awake()
         {
             _playerInput = FindObjectOfType<PlayerInput>();
-            _playerInput.enabled = false;
-            AudioListener.pause = true;
+            if (_playerInput != null)
+                _playerInput.enabled = false;
+            /*AudioListener.pause = true;*/
         }
 
         protected override void Start()
@@ -43,7 +44,7 @@ namespace Assets.PixelCrew.UI
         private void OnDestroy()
         {
             Time.timeScale = _defaultTimeScale;
-            AudioListener.pause = false;
+            /*AudioListener.pause = false;*/
             if (_playerInput != null)
             {
                 _playerInput.enabled = true;
