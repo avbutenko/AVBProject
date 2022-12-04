@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 906798094780503555}
   - component: {fileID: 8121815117364776964}
   - component: {fileID: 6924429354087882118}
+  - component: {fileID: 5724675864999318772}
   m_Layer: 15
   m_Name: CannonBall
   m_TagString: Untagged
@@ -362,3 +363,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5724675864999318772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644755170588439970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55385f5924952640b2c24cc796f6347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 1

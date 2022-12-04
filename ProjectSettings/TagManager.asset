@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Interactable
   - SfxAudioSource
+  - HudCanvas
   layers:
   - Default
   - TransparentFX
@@ -68,4 +69,7 @@ TagManager:
     locked: 0
   - name: Hero
     uniqueID: 3856438871
+    locked: 0
+  - name: UI
+    uniqueID: 1047718923
     locked: 0

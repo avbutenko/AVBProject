@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Assets.PixelCrew.UI.Widjets;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,10 +10,20 @@ namespace Assets.PixelCrew.Components.Health
     public class HealthComponent : MonoBehaviour
     {
         [SerializeField] private int _health;
+
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHeal;
-        [SerializeField] private UnityEvent _onDie;
-        [SerializeField] private HealthChangeEvent _onChange;
+        [SerializeField] public UnityEvent _onDie;
+        [SerializeField] public HealthChangeEvent _onChange;
+
+        public int Health => _health;
+
+        private int _initialHealth;
+
+        private void Awake()
+        {
+            _initialHealth = _health;
+        }
 
         public void ModifyHealth(int HealthDelta)
         {

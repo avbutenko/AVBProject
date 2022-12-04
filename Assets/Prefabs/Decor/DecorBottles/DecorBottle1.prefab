@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7096410716193235245}
   - component: {fileID: 2192706297524492228}
   - component: {fileID: 4958254377509240304}
+  - component: {fileID: 5527258365558856574}
   m_Layer: 10
   m_Name: DecorBottle1
   m_TagString: Untagged
@@ -266,3 +267,16 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5527258365558856574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7096410716193235249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c55385f5924952640b2c24cc796f6347, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 1
