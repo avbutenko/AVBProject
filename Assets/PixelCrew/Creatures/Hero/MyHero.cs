@@ -6,6 +6,8 @@ using Assets.PixelCrew.Model;
 using Assets.PixelCrew.Components.ColliderBased;
 using Assets.PixelCrew.Components.Health;
 using Assets.PixelCrew.Model.Data;
+using Assets.PixelCrew.Components.GoBased;
+using Assets.PixelCrew.Model.Definitions;
 
 namespace Assets.PixelCrew.Components.Creatures.Hero
 {
@@ -28,9 +30,12 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         [Header("Particles")]
         [SerializeField] private ParticleSystem _hitParticles;
 
+        [Space]
+        [Header("Throw")]
+        [SerializeField] private SpawnComponent _throwSpawner;
+
         private bool _allowDoubleJump;
         private bool _isOnWall;
-
         private GameSession _session;
         private HealthComponent _health;
         private float _defaultGravityScale;
@@ -38,12 +43,23 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
 
+        private const string SwordId = "Sword";
         private int CoinCount => _session.Data.Inventory.Count("Coin");
-
-
-        private int SwordCount => _session.Data.Inventory.Count("Sword");
+        private int SwordCount => _session.Data.Inventory.Count(SwordId);
 
         private int PotionCount => _session.Data.Inventory.Count("Potion");
+
+        private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+        private bool CanThrow
+        {
+            get
+            {
+                if (SelectedItemId == SwordId) return SwordCount > 1;
+
+                var def = DefsFacade.I.Items.Get(SelectedItemId);
+                return def.HasTag(ItemTag.Throwable);
+            }
+        }
 
         protected override void Awake()
         {
@@ -71,7 +87,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         private void OnInventoryChanged(string id, int value)
         {
-            if (id == "Sword")
+            if (id == SwordId)
                 UpdateHeroWeapon();
         }
 
@@ -191,12 +207,17 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         public void OnPerformThrow()
         {
             Sounds.Play("Range");
-            _particles.Spawn("Throw");
-            _session.Data.Inventory.Remove("Sword", 1);
+
+            var throwableId = _session.QuickInventory.SelectedItem.Id;
+            var throwableDef = DefsFacade.I.Throwable.Get(throwableId);
+            _throwSpawner.SetPrefab(throwableDef.Projectile);
+            _throwSpawner.Spawn();
+
+            _session.Data.Inventory.Remove(throwableId, 1);
         }
         public void Throw()
         {
-            if (_throwCoolDown.IsReady && SwordCount > 1)
+            if (_throwCoolDown.IsReady && CanThrow)
             {
                 Animator.SetTrigger(ThrowKey);
                 _throwCoolDown.Reset();
@@ -204,13 +225,18 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         }
 
-        public void Use()
+        /*        public void Use()
+                {
+                    if (PotionCount > 0)
+                    {
+                        _health.ModifyHealth(5);
+                        _session.Data.Inventory.Remove("Potion", 1);
+                    }
+                }*/
+
+        public void NextItem()
         {
-            if (PotionCount > 0)
-            {
-                _health.ModifyHealth(5);
-                _session.Data.Inventory.Remove("Potion", 1);
-            }
+            _session.QuickInventory.SetNextItem();
         }
 
     }

@@ -4,22 +4,18 @@ using System.Collections.Generic;
 using UnityEngine;
 namespace Assets.PixelCrew.Model.Data.Properties
 {
-    [Serializable]
-    public abstract class PersistentProperty<TPropertyType>
+    public abstract class PersistentProperty<TPropertyType> : ObservableProperty<TPropertyType>
     {
-        [SerializeField] protected TPropertyType _value;
         protected TPropertyType _stored;
-        private TPropertyType _defaultValue;
 
-        public delegate void OnPropertyChanged(TPropertyType newValue, TPropertyType oldValue);
-        public event OnPropertyChanged OnChanged;
+        private TPropertyType _defaultValue;
 
         public PersistentProperty(TPropertyType defaultValue)
         {
             _defaultValue = defaultValue;
         }
 
-        public TPropertyType value
+        public override TPropertyType Value
         {
             get => _stored;
             set
@@ -31,7 +27,7 @@ namespace Assets.PixelCrew.Model.Data.Properties
                 Write(value);
                 _stored = _value = value;
 
-                OnChanged?.Invoke(value, oldValue);
+                InvokeChangedEvent(value, oldValue);
             }
         }
 
@@ -39,13 +35,14 @@ namespace Assets.PixelCrew.Model.Data.Properties
         {
             _stored = _value = Read(_defaultValue);
         }
+
         protected abstract void Write(TPropertyType value);
         protected abstract TPropertyType Read(TPropertyType defaultValue);
 
         public void Validate()
         {
             if (!_stored.Equals(_value))
-                value = _value;
+                Value = _value;
         }
     }
 }

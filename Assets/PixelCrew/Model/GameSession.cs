@@ -1,6 +1,7 @@
 ﻿using Assets.PixelCrew.Model.Data;
 using Assets.PixelCrew.UI;
 using Assets.PixelCrew.Utils;
+using Assets.PixelCrew.Utils.Disposables;
 using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,6 +14,8 @@ namespace Assets.PixelCrew.Model
 
         public PlayerData Data => _data;
         private PlayerData _save;
+        private readonly CompositeDisposable _trash = new CompositeDisposable();
+        public QuickInventoryModel QuickInventory { get; private set; }
 
         private void Awake()
         {
@@ -20,13 +23,21 @@ namespace Assets.PixelCrew.Model
 
             if (IsSessionExist())
             {
-                DestroyImmediate(gameObject);
+                /*DestroyImmediate(gameObject);*/
+                Destroy(gameObject);
             }
             else
             {
                 Save();
+                InitModels();
                 DontDestroyOnLoad(this);
             }
+        }
+
+        private void InitModels()
+        {
+            QuickInventory = new QuickInventoryModel(_data);
+            _trash.Retain(QuickInventory);
         }
 
         private void LoadHud()
@@ -40,9 +51,7 @@ namespace Assets.PixelCrew.Model
             foreach (var gameSession in sessions)
             {
                 if (gameSession != this)
-                {
                     return true;
-                }
             }
 
             return false;
@@ -56,6 +65,13 @@ namespace Assets.PixelCrew.Model
         public void LoadLastSave()
         {
             _data = _save.Clone();
+            _trash.Dispose();
+            InitModels();
+        }
+
+        private void OnDestroy()
+        {
+            _trash.Dispose();
         }
     }
 }

@@ -14238,7 +14238,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     _inventory:
-      _inventory: []
+      _inventory:
+      - Id: PearlProjectile
+        Value: 30
     Hp:
       _value: 10
 --- !u!4 &1631341034

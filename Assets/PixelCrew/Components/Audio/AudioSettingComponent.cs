@@ -19,7 +19,7 @@ namespace Assets.PixelCrew.Components.Audio
             _source = GetComponent<AudioSource>();
             _model = FindProperty();
             _model.OnChanged += OnSoundSettingChanged;
-            OnSoundSettingChanged(_model.value, _model.value);
+            OnSoundSettingChanged(_model.Value, _model.Value);
         }
 
         private void OnSoundSettingChanged(float newValue, float oldValue)

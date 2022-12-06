@@ -11,10 +11,6 @@ namespace Assets.PixelCrew.Model.Data.Properties
         {
             Init();
         }
-        protected override float Read(float defaultValue)
-        {
-            return PlayerPrefs.GetFloat(Key, defaultValue);
-        }
 
         protected override void Write(float value)
         {
@@ -22,5 +18,9 @@ namespace Assets.PixelCrew.Model.Data.Properties
             PlayerPrefs.Save();
         }
 
+        protected override float Read(float defaultValue)
+        {
+            return PlayerPrefs.GetFloat(Key, defaultValue);
+        }
     }
 }
