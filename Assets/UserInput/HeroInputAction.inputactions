@@ -38,7 +38,7 @@
                     "interactions": ""
                 },
                 {
-                    "name": "Throw",
+                    "name": "Use",
                     "type": "Button",
                     "id": "f8683b36-5866-438f-a107-3532f5078984",
                     "expectedControlType": "Button",
@@ -213,7 +213,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "Throw",
+                    "action": "Use",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

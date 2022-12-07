@@ -768,7 +768,7 @@ MonoBehaviour:
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2423554441825358588}
-        m_MethodName: OnThrow
+        m_MethodName: OnUse
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -884,7 +884,7 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: 437b88a7a0253304e877ea9e90e6a87f, type: 3}
   - _id: Hurt
     _clip: {fileID: 8300000, guid: 50d10c533667fee42b4bdd0f53250edd, type: 3}
-  - _id: Heal
+  - _id: Potion
     _clip: {fileID: 8300000, guid: e94f7d437b6ffa94babf56fac06dc7cd, type: 3}
   - _id: Death
     _clip: {fileID: 8300000, guid: 243e97e5b357aee49b391dfb58a0c8be, type: 3}

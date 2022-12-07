@@ -8,6 +8,7 @@ using Assets.PixelCrew.Components.Health;
 using Assets.PixelCrew.Model.Data;
 using Assets.PixelCrew.Components.GoBased;
 using Assets.PixelCrew.Model.Definitions;
+using Assets.PixelCrew.Model.Definitions.Repositories.Items;
 
 namespace Assets.PixelCrew.Components.Creatures.Hero
 {
@@ -39,6 +40,8 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private GameSession _session;
         private HealthComponent _health;
         private float _defaultGravityScale;
+        private readonly CoolDown _speedUpCoolDown = new CoolDown();
+        private float _additionalSpeed;
 
         private static readonly int ThrowKey = Animator.StringToHash("throw");
         private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
@@ -46,8 +49,6 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private const string SwordId = "Sword";
         private int CoinCount => _session.Data.Inventory.Count("Coin");
         private int SwordCount => _session.Data.Inventory.Count(SwordId);
-
-        private int PotionCount => _session.Data.Inventory.Count("Potion");
 
         private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
         private bool CanThrow
@@ -225,18 +226,54 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         }
 
-        /*        public void Use()
-                {
-                    if (PotionCount > 0)
-                    {
-                        _health.ModifyHealth(5);
-                        _session.Data.Inventory.Remove("Potion", 1);
-                    }
-                }*/
-
         public void NextItem()
         {
             _session.QuickInventory.SetNextItem();
+        }
+
+        public void UseInventory()
+        {
+            if (IsSelectedItem(ItemTag.Throwable))
+            {
+                Throw();
+            }
+            else if (IsSelectedItem(ItemTag.Potion))
+            {
+                UsePotion();
+            }
+        }
+
+        private void UsePotion()
+        {
+            var potion = DefsFacade.I.Potions.Get(SelectedItemId);
+
+            switch (potion.Effect)
+            {
+                case Effect.AddHp:
+                    _session.Data.Hp.Value += (int)potion.Value;
+                    break;
+                case Effect.SpeedUp:
+                    _speedUpCoolDown.Value = _speedUpCoolDown.TimeLeft + potion.Time;
+                    _additionalSpeed = Mathf.Max(potion.Value, _additionalSpeed);
+                    _speedUpCoolDown.Reset();
+                    break;
+            }
+
+            Sounds.Play("Potion");
+            _session.Data.Inventory.Remove(potion.Id, 1);
+        }
+
+        private bool IsSelectedItem(ItemTag tag)
+        {
+            return _session.QuickInventory.SelectedDef.HasTag(tag);
+        }
+
+        protected override float CalculateSpeed()
+        {
+            if (_speedUpCoolDown.IsReady)
+                _additionalSpeed = 0f;
+
+            return base.CalculateSpeed() + _additionalSpeed;
         }
 
     }

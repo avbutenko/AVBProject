@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 1162293491651727785}
   - component: {fileID: 3218219784946243977}
   m_Layer: 19
-  m_Name: PotionMedium
+  m_Name: SpeedUpPotion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: -602836047
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3714227102187029162, guid: 1c8044b26f4e8874a8ce0060dc40de6a,
+  m_Sprite: {fileID: 1185527514606905908, guid: 1c8044b26f4e8874a8ce0060dc40de6a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -184,13 +184,13 @@ MonoBehaviour:
   _clips:
   - _name: idle
     _sprites:
-    - {fileID: 3714227102187029162, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
-    - {fileID: -6202940564662568092, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
-    - {fileID: -8747976068718324687, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
-    - {fileID: 7142050841817600938, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
-    - {fileID: -860807820763296739, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
-    - {fileID: -5249288142952506341, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
-    - {fileID: 1089735312403315716, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
+    - {fileID: 1185527514606905908, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
+    - {fileID: -1061600653231999548, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
+    - {fileID: -3065595510956808684, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
+    - {fileID: 6997616985800771554, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
+    - {fileID: 8618505411793156745, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
+    - {fileID: -1972361127685065434, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
+    - {fileID: -5226445311955339714, guid: 1c8044b26f4e8874a8ce0060dc40de6a, type: 3}
     _loop: 1
     _allowNextClip: 0
     _onComplete:
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b406d44ff031d6b4a9d577372b059c8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _id: Potion
+  _id: SpeedUpPotion
   _value: 1
 --- !u!82 &1162293491651727785
 AudioSource:

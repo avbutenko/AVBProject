@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 335855894156135955}
   - component: {fileID: 6340056538362063894}
   - component: {fileID: 906798094780503555}
-  m_Layer: 15
+  m_Layer: 0
   m_Name: PearlHeroProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

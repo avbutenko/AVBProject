@@ -48,14 +48,6 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             }
         }
 
-        public void OnThrow(InputAction.CallbackContext context)
-        {
-            if (context.performed)
-            {
-                _hero.Throw();
-            }
-        }
-
         public void OnNextItem(InputAction.CallbackContext context)
         {
             if (context.performed)
@@ -69,6 +61,14 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             if (context.performed)
             {
                 WindowUtils.CreateWindow("UI/PauseWindow");
+            }
+        }
+
+        public void OnUse(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+            {
+                _hero.UseInventory();
             }
         }
     }
