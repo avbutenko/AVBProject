@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1043172385804988370}
   - component: {fileID: 4251025991023309178}
   - component: {fileID: 3953089887870342499}
+  - component: {fileID: 5568613762156971173}
   m_Layer: 12
   m_Name: WoodenDoor(Exit)
   m_TagString: Interactable
@@ -201,8 +202,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _required:
-  - Id: Coin
-    Value: 2
   - Id: Key
     Value: 1
   _removeAfterUse: 1
@@ -244,7 +243,18 @@ MonoBehaviour:
         m_CallState: 2
   _onFail:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5568613762156971173}
+        m_MethodName: Show
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!82 &4251025991023309178
 AudioSource:
   m_ObjectHideFlags: 0
@@ -355,3 +365,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 1
+--- !u!114 &5568613762156971173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8087178829856854530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3879cc3fd98320b4399ad44f87f92b0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _mode: 0
+  _bound:
+    _sentences:
+    - You need a key..
+    - Try to find it first..
+  _external: {fileID: 0}
