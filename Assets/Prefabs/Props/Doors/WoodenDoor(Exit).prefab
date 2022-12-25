@@ -380,6 +380,11 @@ MonoBehaviour:
   _mode: 0
   _bound:
     _sentences:
-    - You need a key..
-    - Try to find it first..
+    - _value: You need a key..
+      _icon: {fileID: 0}
+      _side: 0
+    - _value: Find one first..
+      _icon: {fileID: 0}
+      _side: 0
+    _type: 0
   _external: {fileID: 0}

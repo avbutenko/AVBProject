@@ -1,6 +1,7 @@
 ﻿using Assets.PixelCrew.Model;
 using Assets.PixelCrew.Model.Definitions;
 using Assets.PixelCrew.UI.Widjets;
+using Assets.PixelCrew.Utils;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -25,6 +26,11 @@ namespace Assets.PixelCrew.UI.Hud
             var maxHealth = DefsFacade.I.Player.MaxHealth;
             var value = (float)newValue / maxHealth;
             _healthBar.SetProgress(value);
+        }
+
+        public void OnSettings()
+        {
+            WindowUtils.CreateWindow("UI/PauseWindow");
         }
 
         private void OnDestroy()

@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c383003387740e84eb4765f2214e76a5, type: 3}
+  m_Name: CrabbyNPC_Request
+  m_EditorClassIdentifier: 
+  _data:
+    _sentences:
+    - _value: Hello there! Get me 10 coins..
+      _icon: {fileID: 21300000, guid: 45793854721a84eada5614a89b1b1e29, type: 3}
+      _side: 0
+    - _value: What for!?
+      _icon: {fileID: 21300000, guid: 3a60a2548828f4c78b82c10389a7fec5, type: 3}
+      _side: 1
+    - _value: And I will show you The Miracle!
+      _icon: {fileID: 21300000, guid: 45793854721a84eada5614a89b1b1e29, type: 3}
+      _side: 0
+    - _value: Hmm..Okay...I'll be back!
+      _icon: {fileID: 21300000, guid: 3a60a2548828f4c78b82c10389a7fec5, type: 3}
+      _side: 1
+    _type: 1
