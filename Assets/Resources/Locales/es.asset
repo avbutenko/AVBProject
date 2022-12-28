@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c0fc1107a17aaa459a2b68cf485cc5b, type: 3}
+  m_Name: es
+  m_EditorClassIdentifier: 
+  _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTQT-XxVw3iZ3mNVZ0pnZmVxLzeCcoydWfK5hjVqOoKibab_SlNL8Z2NZPoeYI80a8jM9jacCGwkXx5/pub?gid=993067969&single=true&output=tsv
+  _localeItems:
+  - Key: menu_title
+    Value: "men\xFA\r"
+  - Key: button_start
+    Value: "comienzo\r"
+  - Key: button_options
+    Value: "opciones\r"
+  - Key: button_exit
+    Value: "salida\r"
+  - Key: button_continue
+    Value: "seguir\r"
+  - Key: selected_language
+    Value: El idioma seleccionado es {0}
