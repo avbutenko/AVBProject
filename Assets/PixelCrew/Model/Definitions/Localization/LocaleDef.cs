@@ -39,7 +39,7 @@ namespace Assets.PixelCrew.Model.Definitions.Localization
             if (operation.isDone)
             {
                 var rows = _request.downloadHandler.text.Split('\n');
-
+                _localeItems.Clear();
                 foreach (var row in rows)
                 {
                     AddLocaleItem(row);

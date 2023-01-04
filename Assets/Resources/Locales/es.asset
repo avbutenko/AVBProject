@@ -25,4 +25,8 @@ MonoBehaviour:
   - Key: button_continue
     Value: "seguir\r"
   - Key: selected_language
-    Value: El idioma seleccionado es {0}
+    Value: "El idioma seleccionado es {0}\r"
+  - Key: button_back
+    Value: "espalda\r"
+  - Key: button_locales
+    Value: idioma

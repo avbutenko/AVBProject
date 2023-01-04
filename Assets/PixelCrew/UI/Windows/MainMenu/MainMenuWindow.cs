@@ -20,6 +20,11 @@ namespace Assets.PixelCrew.UI
             Close();
         }
 
+        public void OnLanguages()
+        {
+            WindowUtils.CreateWindow("UI/LocalizationWindow");
+        }
+
         public void OnExit()
         {
             _closeAction = () =>

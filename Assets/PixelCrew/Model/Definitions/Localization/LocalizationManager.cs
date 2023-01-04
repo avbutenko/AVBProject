@@ -12,6 +12,7 @@ namespace Assets.PixelCrew.Model.Definitions.Localization
         private StringPersistentProperty _localeKey = new StringPersistentProperty("en", "localization/current");
         private Dictionary<string, string> _localization;
         public event Action OnLocaleChanged;
+        public string LocaleKey => _localeKey.Value;
         static LocalizationManager()
         {
             I = new LocalizationManager();
@@ -21,17 +22,22 @@ namespace Assets.PixelCrew.Model.Definitions.Localization
         {
             LoadLocale(_localeKey.Value);
         }
-
         private void LoadLocale(string localeToLoad)
         {
             var def = Resources.Load<LocaleDef>($"Locales/{localeToLoad}");
             _localization = def.GetData();
+            _localeKey.Value = localeToLoad;
             OnLocaleChanged?.Invoke();
         }
 
         internal string Localize(string key)
         {
             return _localization.TryGetValue(key, out var value) ? value : $"%%%{key}%%%";
+        }
+
+        public void SetLocale(string localeKey)
+        {
+            LoadLocale(localeKey);
         }
     }
 }
