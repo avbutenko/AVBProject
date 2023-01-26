@@ -10861,6 +10861,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera
       objectReference: {fileID: 0}
+    - target: {fileID: 1328754729953819554, guid: 057bbe03c273634409a7352f12292ddf,
+        type: 3}
+      propertyPath: m_ForceIntoRT
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328754729953819554, guid: 057bbe03c273634409a7352f12292ddf,
+        type: 3}
+      propertyPath: orthographic size
+      value: 4.0752344
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328754729953819554, guid: 057bbe03c273634409a7352f12292ddf,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328754729953819554, guid: 057bbe03c273634409a7352f12292ddf,
+        type: 3}
+      propertyPath: m_NormalizedViewPortRect.width
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328754729953819556, guid: 057bbe03c273634409a7352f12292ddf,
+        type: 3}
+      propertyPath: m_StretchFill
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1328754729953819557, guid: 057bbe03c273634409a7352f12292ddf,
         type: 3}
       propertyPath: m_RootOrder

@@ -29,4 +29,8 @@ MonoBehaviour:
   - Key: button_back
     Value: "back\r"
   - Key: button_locales
-    Value: languages
+    Value: "languages\r"
+  - Key: languages_title
+    Value: "Languages\r"
+  - Key: languages_title_test
+    Value: Languages_test

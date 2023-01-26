@@ -29,4 +29,6 @@ MonoBehaviour:
   - Key: button_back
     Value: "espalda\r"
   - Key: button_locales
-    Value: idioma
+    Value: "idioma\r"
+  - Key: languages_title
+    Value: Idioma

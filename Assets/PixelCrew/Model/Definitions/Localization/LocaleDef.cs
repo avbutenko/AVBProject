@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -25,7 +26,7 @@ namespace Assets.PixelCrew.Model.Definitions.Localization
 
             return dictionary;
         }
-
+#if UNITY_EDITOR
         [ContextMenu("Update Locale")]
         public void UpdateLocale()
         {
@@ -34,16 +35,33 @@ namespace Assets.PixelCrew.Model.Definitions.Localization
             _request.SendWebRequest().completed += OnDataLoaded;
         }
 
+        [ContextMenu("Update Locale from File")]
+        public void UpdateLocaleFromFile()
+        {
+            var path = UnityEditor.EditorUtility.OpenFilePanel("Choose locale file", "", "tsv");
+            if (path.Length != 0)
+            {
+                var data = File.ReadAllText(path);
+                ParseData(data);
+            }
+        }
+#endif
         private void OnDataLoaded(AsyncOperation operation)
         {
             if (operation.isDone)
             {
-                var rows = _request.downloadHandler.text.Split('\n');
-                _localeItems.Clear();
-                foreach (var row in rows)
-                {
-                    AddLocaleItem(row);
-                }
+                var data = _request.downloadHandler.text;
+                ParseData(data);
+            }
+        }
+
+        private void ParseData(string data)
+        {
+            var rows = data.Split('\n');
+            _localeItems.Clear();
+            foreach (var row in rows)
+            {
+                AddLocaleItem(row);
             }
         }
 
