@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 1386936713226171614}
   - component: {fileID: 1386936713226171609}
   - component: {fileID: 1386936713226171608}
+  - component: {fileID: 2718456185140607620}
+  - component: {fileID: 2718456185140607619}
   m_Layer: 12
   m_Name: WoodenDoor(Enter)
   m_TagString: Untagged
@@ -69,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -414179419
-  m_SortingLayer: 2
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 4db22ab03b16ccc4eb90d117f837c4fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -108,3 +110,37 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &2718456185140607620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386936713226171611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930bd58b31e73a14baf13b0e65845424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1386936713226171614}
+  _prefab: {fileID: 4464192119751422725, guid: 09582a9a72e482c4e9ea6d664ea35d22, type: 3}
+--- !u!114 &2718456185140607619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386936713226171611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0a604c836d4be4184b67b76047484b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: level3-checkpoint0
+  _setChecked:
+    m_PersistentCalls:
+      m_Calls: []
+  _setUnChecked:
+    m_PersistentCalls:
+      m_Calls: []
+  _heroSpawner: {fileID: 2718456185140607620}
