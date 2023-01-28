@@ -2,6 +2,7 @@ using System;
 using UnityEngine;
 using Cinemachine;
 using Assets.PixelCrew.Components.Creatures.Hero;
+using System.Collections;
 
 namespace Assets.PixelCrew.Components.LevelManagement
 {
@@ -12,7 +13,7 @@ namespace Assets.PixelCrew.Components.LevelManagement
         private void Start()
         {
             var vCamera = GetComponent<CinemachineVirtualCamera>();
-            vCamera.Follow = GetComponent<MyHero>().transform;
+            vCamera.Follow = FindObjectOfType<MyHero>().transform;
         }
     }
 }

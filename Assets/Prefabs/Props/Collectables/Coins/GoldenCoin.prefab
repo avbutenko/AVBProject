@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 8916643197507096236}
   - component: {fileID: 1132916110376951380}
   - component: {fileID: 5233950396979311301}
+  - component: {fileID: 3320554760749073677}
   m_Layer: 19
   m_Name: GoldenCoin
   m_TagString: Untagged
@@ -227,7 +228,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ObjectToDestroy: {fileID: 8126113284638737803}
+  _objectToDestroy: {fileID: 0}
+  _state: {fileID: 3320554760749073677}
 --- !u!114 &8916643197507096236
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,3 +354,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 1
+--- !u!114 &3320554760749073677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8126113284638737803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab052996b87c57b49bd18eb127b4b0ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 

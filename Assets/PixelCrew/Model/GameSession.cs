@@ -116,5 +116,17 @@ namespace Assets.PixelCrew.Model
         {
             _trash.Dispose();
         }
+
+        private readonly List<string> _removedItems = new List<string>();
+        public bool RestoreState(string Id)
+        {
+            return _removedItems.Contains(Id);
+        }
+
+        public void StoreState(string Id)
+        {
+            if (!_removedItems.Contains(Id))
+                _removedItems.Add(Id);
+        }
     }
 }
