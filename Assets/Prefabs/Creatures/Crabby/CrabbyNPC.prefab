@@ -113,7 +113,7 @@ MonoBehaviour:
     - {fileID: 2872548415173671015, guid: ae3472df92adaf241b548f80ee41c1e4, type: 3}
     - {fileID: -1115416016094526910, guid: ae3472df92adaf241b548f80ee41c1e4, type: 3}
     - {fileID: -7135193317014744112, guid: ae3472df92adaf241b548f80ee41c1e4, type: 3}
-    _loop: 0
+    _loop: 1
     _allowNextClip: 0
     _onComplete:
       m_PersistentCalls:
@@ -248,4 +248,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ObjectToDestroy: {fileID: 1671344748074041292}
+  _objectToDestroy: {fileID: 0}
+  _state: {fileID: 0}
