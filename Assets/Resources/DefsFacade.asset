@@ -16,3 +16,4 @@ MonoBehaviour:
   _throwableItems: {fileID: 11400000, guid: 71b19cbee12e47443bd534f12d2e726c, type: 2}
   _potions: {fileID: 11400000, guid: 3e0bfd55e644b4045bee8a6ecae9aacf, type: 2}
   _player: {fileID: 11400000, guid: e64b677da55b0874c9d1e04c0ec0a9fb, type: 2}
+  _perks: {fileID: 11400000, guid: 4233277a2854f8548b75e9fd72bd7a2c, type: 2}

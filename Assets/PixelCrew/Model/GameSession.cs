@@ -19,6 +19,7 @@ namespace Assets.PixelCrew.Model
         private PlayerData _save;
         private readonly CompositeDisposable _trash = new CompositeDisposable();
         public QuickInventoryModel QuickInventory { get; private set; }
+        public PerksModel Perks { get; private set; }
 
         private readonly List<string> _checkPoints = new List<string>();
         private void Awake()
@@ -67,6 +68,9 @@ namespace Assets.PixelCrew.Model
         {
             QuickInventory = new QuickInventoryModel(_data);
             _trash.Retain(QuickInventory);
+
+            Perks = new PerksModel(_data);
+            _trash.Retain(Perks);
         }
 
         private void LoadHud()

@@ -1,4 +1,5 @@
 ﻿using Assets.PixelCrew.Model.Definitions.Repositories.Items;
+using Assets.PixelCrew.Model.Definitions.Repository;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -12,11 +13,13 @@ namespace Assets.PixelCrew.Model.Definitions
         [SerializeField] private ThrowableRepository _throwableItems;
         [SerializeField] private PotionRepository _potions;
         [SerializeField] private PlayerDef _player;
+        [SerializeField] private PerkRepository _perks;
 
         public ItemsRepository Items => _items;
         public ThrowableRepository Throwable => _throwableItems;
         public PotionRepository Potions => _potions;
         public PlayerDef Player => _player;
+        public PerkRepository Perks => _perks;
 
         private static DefsFacade _instance;
         public static DefsFacade I => _instance == null ? LoadDefs() : _instance;

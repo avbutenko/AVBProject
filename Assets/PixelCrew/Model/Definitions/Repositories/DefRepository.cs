@@ -20,6 +20,8 @@ namespace Assets.PixelCrew.Model.Definitions.Repository
 
             return default;
         }
+
+        public TDefType[] All => new List<TDefType>(_collection).ToArray();
     }
 }
 
