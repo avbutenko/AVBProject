@@ -22,7 +22,7 @@ namespace Assets.PixelCrew.Utils
             _timesUp = Time.time + _value;
         }
 
-        public float TimeLeft => Mathf.Max(_timesUp - Time.deltaTime, 0);
+        public float TimeLeft => Mathf.Max(_timesUp - Time.time, 0);
 
         public bool IsReady => _timesUp <= Time.time;
     }

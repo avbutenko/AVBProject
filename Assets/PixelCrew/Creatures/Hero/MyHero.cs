@@ -4,6 +4,7 @@ using UnityEngine;
 using Assets.PixelCrew.Utils;
 using UnityEditor.Animations;
 using Assets.PixelCrew.Model;
+using Assets.PixelCrew.Components;
 using Assets.PixelCrew.Components.ColliderBased;
 using Assets.PixelCrew.Components.Health;
 using Assets.PixelCrew.Model.Data;
@@ -42,6 +43,10 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         [SerializeField] private CoolDown _superThrowCoolDown;
         [SerializeField] private int _superThrowParticles;
         [SerializeField] private float _superThrowDelay;
+
+        [Space]
+        [Header("Shield")]
+        [SerializeField] private ShieldComponent _shield;
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
@@ -149,6 +154,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         {
             if (!IsGrounded && _allowDoubleJump && _session.Perks.IsDoubleJumpSupported && !_isOnWall)
             {
+                _session.Perks.CoolDown.Reset();
                 _allowDoubleJump = false;
                 DoJumpVfx();
                 return _jumpSpeed;
@@ -321,6 +327,16 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
             Sounds.Play("Potion");
             _session.Data.Inventory.Remove(potion.Id, 1);
+        }
+
+        public void UsePerk()
+        {
+            if (_session.Perks.IsShieldSupported)
+            {
+                _shield.Use();
+                _session.Perks.CoolDown.Reset();
+            }
+
         }
 
         private bool IsSelectedItem(ItemTag tag)

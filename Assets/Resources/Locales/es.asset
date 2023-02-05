@@ -37,4 +37,6 @@ MonoBehaviour:
   - Key: button_use
     Value: "usar\r"
   - Key: price_label
-    Value: precio
+    Value: "precio\r"
+  - Key: shield_info
+    Value: "Usa Shield para autoprotecci\xF3n"

@@ -60,7 +60,7 @@ namespace Assets.PixelCrew.UI
         private void OnUse()
         {
             var selected = _session.Perks.InterfaceSelection.Value;
-            _session.Perks.UsePerk(selected);
+            _session.Perks.SelectPerk(selected);
         }
 
         private void OnDestroy()

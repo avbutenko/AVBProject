@@ -15,8 +15,14 @@ namespace Assets.PixelCrew.Components.Health
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public UnityEvent _onDie;
         [SerializeField] public HealthChangeEvent _onChange;
+        [SerializeField] private bool _immune;
 
         public int Health => _health;
+        public bool Immune
+        {
+            get => _immune;
+            set => _immune = value;
+        }
 
         private int _initialHealth;
 
@@ -27,6 +33,7 @@ namespace Assets.PixelCrew.Components.Health
 
         public void ModifyHealth(int HealthDelta)
         {
+            if (HealthDelta < 0 && _immune) return;
             if (_health <= 0) return;
 
             _health += HealthDelta;

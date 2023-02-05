@@ -73,6 +73,14 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""UsePerk"",
+                    ""type"": ""Button"",
+                    ""id"": ""a713d72c-5b35-4343-9cd8-f6388ae3ee09"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -251,6 +259,17 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
                     ""action"": ""Pause"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1b8f25a2-bbf3-472a-85da-f8a220116693"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""UsePerk"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -266,6 +285,7 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
         m_Hero_Use = m_Hero.FindAction("Use", throwIfNotFound: true);
         m_Hero_NextItem = m_Hero.FindAction("NextItem", throwIfNotFound: true);
         m_Hero_Pause = m_Hero.FindAction("Pause", throwIfNotFound: true);
+        m_Hero_UsePerk = m_Hero.FindAction("UsePerk", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -322,6 +342,7 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
     private readonly InputAction m_Hero_Use;
     private readonly InputAction m_Hero_NextItem;
     private readonly InputAction m_Hero_Pause;
+    private readonly InputAction m_Hero_UsePerk;
     public struct HeroActions
     {
         private @HeroInputAction m_Wrapper;
@@ -333,6 +354,7 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
         public InputAction @Use => m_Wrapper.m_Hero_Use;
         public InputAction @NextItem => m_Wrapper.m_Hero_NextItem;
         public InputAction @Pause => m_Wrapper.m_Hero_Pause;
+        public InputAction @UsePerk => m_Wrapper.m_Hero_UsePerk;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -363,6 +385,9 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
                 @Pause.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnPause;
                 @Pause.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnPause;
                 @Pause.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnPause;
+                @UsePerk.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnUsePerk;
+                @UsePerk.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnUsePerk;
+                @UsePerk.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnUsePerk;
             }
             m_Wrapper.m_HeroActionsCallbackInterface = instance;
             if (instance != null)
@@ -388,6 +413,9 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
                 @Pause.started += instance.OnPause;
                 @Pause.performed += instance.OnPause;
                 @Pause.canceled += instance.OnPause;
+                @UsePerk.started += instance.OnUsePerk;
+                @UsePerk.performed += instance.OnUsePerk;
+                @UsePerk.canceled += instance.OnUsePerk;
             }
         }
     }
@@ -401,5 +429,6 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
         void OnUse(InputAction.CallbackContext context);
         void OnNextItem(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
+        void OnUsePerk(InputAction.CallbackContext context);
     }
 }

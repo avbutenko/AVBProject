@@ -4,6 +4,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 namespace Assets.PixelCrew.UI.Hud.Dialogs
 {
@@ -28,6 +29,7 @@ namespace Assets.PixelCrew.UI.Hud.Dialogs
         private int _currentSentence;
         private AudioSource _sfxSource;
         private Coroutine _typingRoutine;
+        private UnityEvent _onComplete;
 
         protected Sentence CurrentSentence => _data.Sentences[_currentSentence];
 
@@ -35,8 +37,9 @@ namespace Assets.PixelCrew.UI.Hud.Dialogs
         {
             _sfxSource = AudioUtils.FindSfxSource();
         }
-        public void ShowDialog(DialogData data)
+        public void ShowDialog(DialogData data, UnityEvent onComplete)
         {
+            _onComplete = onComplete;
             _data = data;
             _currentSentence = 0;
             CurrentContent.Text.text = string.Empty;
@@ -80,6 +83,7 @@ namespace Assets.PixelCrew.UI.Hud.Dialogs
             if (isDialogCompleted)
             {
                 HideDialogBox();
+                _onComplete?.Invoke();
             }
             else
             {

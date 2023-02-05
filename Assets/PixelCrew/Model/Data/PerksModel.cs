@@ -21,7 +21,7 @@ namespace Assets.PixelCrew.Model.Data
         public event Action OnChanged;
         public readonly CoolDown CoolDown = new CoolDown();
 
-        public bool IsDoubleJumpSupported => _data.Perks.Used.Value == "double-jump";
+        public bool IsDoubleJumpSupported => _data.Perks.Used.Value == "double-jump" && CoolDown.IsReady;
         public bool IsSuperThrowSupported => _data.Perks.Used.Value == "super-throw" && CoolDown.IsReady;
         public bool IsShieldSupported => _data.Perks.Used.Value == "shield" && CoolDown.IsReady;
         public PerksModel(PlayerData data)
@@ -50,11 +50,6 @@ namespace Assets.PixelCrew.Model.Data
                 OnChanged?.Invoke();
             }
 
-        }
-
-        public void UsePerk(string id)
-        {
-            _data.Perks.Used.Value = id;
         }
 
         public void SelectPerk(string selected)
