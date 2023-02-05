@@ -537,12 +537,16 @@ MonoBehaviour:
   _interActionCheck: {fileID: 1120133931}
   _wallCheck: {fileID: 17756002}
   _slamDownVelocity: 15
-  _throwCoolDown:
-    _value: 1
   _armed: {fileID: 9100000, guid: 466cc22b5e10d54409aafe1c58622af3, type: 2}
   _unarmed: {fileID: 9100000, guid: 9acbd35f25f2dd144935879cd1117b9e, type: 2}
   _hitParticles: {fileID: 4464192120935636948}
   _throwSpawner: {fileID: 6035998911375076668}
+  _throwCoolDown:
+    _value: 1
+  _superThrowCoolDown:
+    _value: 1
+  _superThrowParticles: 3
+  _superThrowDelay: 0.2
 --- !u!50 &4464192119751422751
 Rigidbody2D:
   serializedVersion: 4

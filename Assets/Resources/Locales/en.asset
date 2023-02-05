@@ -32,5 +32,9 @@ MonoBehaviour:
     Value: "languages\r"
   - Key: languages_title
     Value: "Languages\r"
-  - Key: languages_title_test
-    Value: Languages_test
+  - Key: button_buy
+    Value: "buy\r"
+  - Key: button_use
+    Value: "use\r"
+  - Key: price_label
+    Value: price

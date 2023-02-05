@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using Assets.PixelCrew.Utils;
 using UnityEditor.Animations;
@@ -20,7 +21,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         [SerializeField] private LayerCheck _wallCheck;
 
         [SerializeField] private float _slamDownVelocity;
-        [SerializeField] private CoolDown _throwCoolDown;
+
 
         [Space]
         [Header("Animator Settings")]
@@ -34,9 +35,17 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         [Space]
         [Header("Throw")]
         [SerializeField] private SpawnComponent _throwSpawner;
+        [SerializeField] private CoolDown _throwCoolDown;
+
+        [Space]
+        [Header("Super throw")]
+        [SerializeField] private CoolDown _superThrowCoolDown;
+        [SerializeField] private int _superThrowParticles;
+        [SerializeField] private float _superThrowDelay;
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
+        private bool _superThrow;
         private GameSession _session;
         private HealthComponent _health;
         private float _defaultGravityScale;
@@ -205,7 +214,39 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _unarmed;
         }
 
-        public void OnPerformThrow()
+        public void NextItem()
+        {
+            _session.QuickInventory.SetNextItem();
+        }
+        public void OnDoThrow()
+        {
+            if (_superThrow && _session.Perks.IsSuperThrowSupported)
+            {
+                var throwableCount = _session.Data.Inventory.Count(SelectedItemId);
+                var possibleCount = SelectedItemId == SwordId ? throwableCount - 1 : throwableCount;
+
+                var numThrows = Mathf.Min(_superThrowParticles, possibleCount);
+                _session.Perks.CoolDown.Reset();
+                StartCoroutine(DoSuperThrow(numThrows));
+            }
+            else
+            {
+                ThrowAndRemoveFromInventory();
+            }
+
+            _superThrow = false;
+        }
+
+        private IEnumerator DoSuperThrow(int numThrows)
+        {
+            for (int i = 0; i < numThrows; i++)
+            {
+                ThrowAndRemoveFromInventory();
+                yield return new WaitForSeconds(_superThrowDelay);
+            }
+        }
+
+        private void ThrowAndRemoveFromInventory()
         {
             Sounds.Play("Range");
 
@@ -213,29 +254,48 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             var throwableDef = DefsFacade.I.Throwable.Get(throwableId);
             _throwSpawner.SetPrefab(throwableDef.Projectile);
             _throwSpawner.Spawn();
+            //var instance = _throwSpawner.SpawnInstance();
+            //ApplyRangeDamageStat(instance);
 
             _session.Data.Inventory.Remove(throwableId, 1);
         }
-        public void Throw()
+
+        /*         private void ApplyRangeDamageStat(GameObject projectile)
+                {
+                    var hpModify = projectile.GetComponent<ModifyHealthComponent>();
+                    var damageValue = (int)_session.StatsModel.GetValue(StatId.RangeDamage);
+                    damageValue = ModifyDamageByCrit(damageValue);
+                    hpModify.SetDelta(-damageValue);
+                } */
+
+        /*         private int ModifyDamageByCrit(int damage)
+                {
+                    var critChange = _session.StatsModel.GetValue(StatId.CriticalDamage);
+                    if (Random.value * 100 <= critChange)
+                    {
+                        return damage * 2;
+                    }
+
+                    return damage;
+                } */
+        private void PerformThrowing()
         {
-            if (_throwCoolDown.IsReady && CanThrow)
-            {
-                Animator.SetTrigger(ThrowKey);
-                _throwCoolDown.Reset();
-            }
+            if (!_throwCoolDown.IsReady || !CanThrow) return;
 
+            if (_superThrowCoolDown.IsReady) _superThrow = true;
+
+            Animator.SetTrigger(ThrowKey);
+            _throwCoolDown.Reset();
         }
-
-        public void NextItem()
+        public void StartThrowing()
         {
-            _session.QuickInventory.SetNextItem();
+            _superThrowCoolDown.Reset();
         }
-
         public void UseInventory()
         {
             if (IsSelectedItem(ItemTag.Throwable))
             {
-                Throw();
+                PerformThrowing();
             }
             else if (IsSelectedItem(ItemTag.Potion))
             {

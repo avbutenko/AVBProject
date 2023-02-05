@@ -66,7 +66,12 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         public void OnUse(InputAction.CallbackContext context)
         {
-            if (context.performed)
+            if (context.started)
+            {
+                _hero.StartThrowing();
+            }
+
+            if (context.canceled)
             {
                 _hero.UseInventory();
             }

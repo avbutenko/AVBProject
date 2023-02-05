@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.PixelCrew.Utils;
 using Assets.PixelCrew.Utils.Disposables;
 using System;
 using Assets.PixelCrew.Model.Definitions;
@@ -18,8 +19,11 @@ namespace Assets.PixelCrew.Model.Data
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         public event Action OnChanged;
+        public readonly CoolDown CoolDown = new CoolDown();
 
         public bool IsDoubleJumpSupported => _data.Perks.Used.Value == "double-jump";
+        public bool IsSuperThrowSupported => _data.Perks.Used.Value == "super-throw" && CoolDown.IsReady;
+        public bool IsShieldSupported => _data.Perks.Used.Value == "shield" && CoolDown.IsReady;
         public PerksModel(PlayerData data)
         {
             _data = data;
@@ -51,6 +55,13 @@ namespace Assets.PixelCrew.Model.Data
         public void UsePerk(string id)
         {
             _data.Perks.Used.Value = id;
+        }
+
+        public void SelectPerk(string selected)
+        {
+            var perkDef = DefsFacade.I.Perks.Get(selected);
+            CoolDown.Value = perkDef.CoolDown;
+            _data.Perks.Used.Value = selected;
         }
         public bool IsUsed(string perkId)
         {
