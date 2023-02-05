@@ -296,8 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ObjectToDestroy: {fileID: 4969746220183640211}
-  _timer: 0.3
+  _objectToDestroy: {fileID: 4969746220183640211}
+  _state: {fileID: 0}
 --- !u!114 &2992847443993449049
 MonoBehaviour:
   m_ObjectHideFlags: 0

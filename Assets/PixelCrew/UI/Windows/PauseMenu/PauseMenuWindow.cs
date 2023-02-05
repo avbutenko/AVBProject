@@ -33,6 +33,7 @@ namespace Assets.PixelCrew.UI
         {
             // WindowUtils.CreateWindow("UI/SettingsWindow");
             WindowUtils.CreateWindow("UI/ManagePerksWindow");
+            Close();
         }
 
         public void OnExit()

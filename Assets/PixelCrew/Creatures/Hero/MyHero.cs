@@ -138,7 +138,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         protected override float CalculateJumpVelocity(float yVelocity)
         {
-            if (!IsGrounded && _allowDoubleJump && !_isOnWall)
+            if (!IsGrounded && _allowDoubleJump && _session.Perks.IsDoubleJumpSupported && !_isOnWall)
             {
                 _allowDoubleJump = false;
                 DoJumpVfx();

@@ -244,7 +244,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ObjectToDestroy: {fileID: 7336585157956317769}
+  _objectToDestroy: {fileID: 7336585157956317769}
+  _state: {fileID: 0}
 --- !u!82 &6945503391593371265
 AudioSource:
   m_ObjectHideFlags: 0

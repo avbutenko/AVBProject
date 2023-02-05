@@ -204,4 +204,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ObjectToDestroy: {fileID: 644755170588439970}
+  _objectToDestroy: {fileID: 644755170588439970}
+  _state: {fileID: 0}

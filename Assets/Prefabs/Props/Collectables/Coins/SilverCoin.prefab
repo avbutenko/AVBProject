@@ -229,7 +229,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _ObjectToDestroy: {fileID: 1892470595243893125}
+  _objectToDestroy: {fileID: 1892470595243893125}
+  _state: {fileID: 0}
 --- !u!50 &2592229829444218595
 Rigidbody2D:
   serializedVersion: 4
