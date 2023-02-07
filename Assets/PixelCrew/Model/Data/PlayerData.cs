@@ -11,6 +11,7 @@ namespace Assets.PixelCrew.Model.Data
         [SerializeField] private InventoryData _inventory;
         public IntProperty Hp = new IntProperty();
         public PerksData Perks = new PerksData();
+        public LevelData Levels = new LevelData();
 
         public InventoryData Inventory => _inventory;
 

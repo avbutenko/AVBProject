@@ -15,28 +15,36 @@ MonoBehaviour:
   _url: https://docs.google.com/spreadsheets/d/e/2PACX-1vTQT-XxVw3iZ3mNVZ0pnZmVxLzeCcoydWfK5hjVqOoKibab_SlNL8Z2NZPoeYI80a8jM9jacCGwkXx5/pub?gid=0&single=true&output=tsv
   _localeItems:
   - Key: menu_title
-    Value: "menu\r"
+    Value: "Menu\r"
   - Key: button_start
-    Value: "start\r"
+    Value: "Start\r"
   - Key: button_options
-    Value: "options\r"
+    Value: "Options\r"
   - Key: button_exit
-    Value: "exit\r"
+    Value: "Exit\r"
   - Key: button_continue
-    Value: "continue\r"
+    Value: "Continue\r"
   - Key: selected_language
     Value: "Selected language is {0}\r"
   - Key: button_back
-    Value: "back\r"
+    Value: "Back\r"
   - Key: button_locales
-    Value: "languages\r"
+    Value: "Languages\r"
   - Key: languages_title
     Value: "Languages\r"
   - Key: button_buy
-    Value: "buy\r"
+    Value: "Buy\r"
   - Key: button_use
-    Value: "use\r"
+    Value: "Use\r"
   - Key: price_label
-    Value: "price\r"
+    Value: "Price\r"
   - Key: shield_info
-    Value: Use Shield for self protection
+    Value: "Use Shield for self protection\r"
+  - Key: button_upgrade
+    Value: "Upgrade\r"
+  - Key: Health
+    Value: "Health\r"
+  - Key: Speed
+    Value: "Speed\r"
+  - Key: Range Damage
+    Value: Range Damage

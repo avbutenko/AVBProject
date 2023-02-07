@@ -11,6 +11,7 @@ using Assets.PixelCrew.Model.Data;
 using Assets.PixelCrew.Components.GoBased;
 using Assets.PixelCrew.Model.Definitions;
 using Assets.PixelCrew.Model.Definitions.Repositories.Items;
+using Assets.PixelCrew.Model.Definitions.Player;
 
 namespace Assets.PixelCrew.Components.Creatures.Hero
 {
@@ -89,9 +90,23 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             _session.Data.Inventory.OnChanged += OnInventoryChanged; /*subscribe*/
             _session.Data.Inventory.OnChanged += InventoryLogHandler;
 
+            _session.StatsModel.OnUpgraded += OnHeroUpgraded;
 
             _health.SetHealth(_session.Data.Hp.Value);
             UpdateHeroWeapon();
+        }
+
+        private void OnHeroUpgraded(StatId statId)
+        {
+            switch (statId)
+            {
+                case StatId.Hp:
+                    var health = (int)_session.StatsModel.GetValue(statId);
+                    _session.Data.Hp.Value = health;
+                    _health.SetHealth(health);
+                    break;
+
+            }
         }
 
         private void OnDestroy()
@@ -349,7 +364,8 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             if (_speedUpCoolDown.IsReady)
                 _additionalSpeed = 0f;
 
-            return base.CalculateSpeed() + _additionalSpeed;
+            var defaultSpeed = _session.StatsModel.GetValue(StatId.Speed);
+            return defaultSpeed + _additionalSpeed;
         }
 
     }

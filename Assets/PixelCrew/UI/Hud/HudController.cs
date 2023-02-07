@@ -7,6 +7,7 @@ using System;
 using System.Collections;
 using UnityEngine;
 using Assets.PixelCrew.Utils.Disposables;
+using Assets.PixelCrew.Model.Definitions.Player;
 
 namespace Assets.PixelCrew.UI.Hud
 {
@@ -42,7 +43,7 @@ namespace Assets.PixelCrew.UI.Hud
 
         private void OnHealthChanged(int newValue, int oldValue)
         {
-            var maxHealth = DefsFacade.I.Player.MaxHealth;
+            var maxHealth = _session.StatsModel.GetValue(StatId.Hp);
             var value = (float)newValue / maxHealth;
             _healthBar.SetProgress(value);
         }
@@ -57,6 +58,10 @@ namespace Assets.PixelCrew.UI.Hud
             _trash.Dispose();
         }
 
+        public void OnDebug()
+        {
+            WindowUtils.CreateWindow("UI/PlayerStatsWindow");
+        }
 
     }
 }

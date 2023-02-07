@@ -39,4 +39,12 @@ MonoBehaviour:
   - Key: price_label
     Value: "precio\r"
   - Key: shield_info
-    Value: "Usa Shield para autoprotecci\xF3n"
+    Value: "Usa Shield para autoprotecci\xF3n\r"
+  - Key: button_upgrade
+    Value: "Mejora\r"
+  - Key: Health
+    Value: "Salud\r"
+  - Key: Speed
+    Value: "Velocidad\r"
+  - Key: Range Damage
+    Value: "Da\xF1o de alcance"

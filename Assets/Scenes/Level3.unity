@@ -14025,13 +14025,15 @@ MonoBehaviour:
       - Id: Sword
         Value: 20
       - Id: Coin
-        Value: 500
+        Value: 1000
     Hp:
-      _value: 10
+      _value: 1
     Perks:
       _used:
         _value: 
       _unlocked: []
+    Levels:
+      _progress: []
   _defaultCheckPoint: level3-checkpoint0
 --- !u!4 &1631341034
 Transform:

@@ -518,6 +518,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1832806776}
     m_Modifications:
+    - target: {fileID: 3306859497072304770, guid: e2010a937a049304cb90114009f5646c,
+        type: 3}
+      propertyPath: _followTarget
+      value: 
+      objectReference: {fileID: 774287833}
     - target: {fileID: 5459030439875013555, guid: e2010a937a049304cb90114009f5646c,
         type: 3}
       propertyPath: _followTarget
@@ -5153,6 +5158,10 @@ MonoBehaviour:
       _inventory: []
     Hp:
       _value: 10
+    Perks:
+      _used:
+        _value: 
+      _unlocked: []
   _defaultCheckPoint: level1-checkpoint0
 --- !u!4 &1160774316
 Transform:
@@ -5916,6 +5925,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1832806776}
     m_Modifications:
+    - target: {fileID: 3808133112049310337, guid: cd90dbcbeb3958745be4f77d4988712c,
+        type: 3}
+      propertyPath: _followTarget
+      value: 
+      objectReference: {fileID: 774287833}
     - target: {fileID: 4862619008357408643, guid: cd90dbcbeb3958745be4f77d4988712c,
         type: 3}
       propertyPath: _camera
@@ -6213,6 +6227,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1832806776}
     m_Modifications:
+    - target: {fileID: 3988188127899869987, guid: a49838af988f1dc46a241e651ad7b373,
+        type: 3}
+      propertyPath: _followTarget
+      value: 
+      objectReference: {fileID: 774287833}
     - target: {fileID: 5842326091456489040, guid: a49838af988f1dc46a241e651ad7b373,
         type: 3}
       propertyPath: m_Name

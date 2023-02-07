@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4862619008357408652}
   - component: {fileID: 4862619008357408643}
+  - component: {fileID: 3808133112049310337}
   m_Layer: 0
   m_Name: Clouds1
   m_TagString: Untagged
@@ -46,6 +47,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _camera: {fileID: 0}
   _container: {fileID: 4862619010077620063}
+--- !u!114 &3808133112049310337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4862619008357408653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d987297ad63ea743b039abd08244222, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _effectValue: 0.4
+  _followTarget: {fileID: 0}
 --- !u!1 &4862619009718535061
 GameObject:
   m_ObjectHideFlags: 0
@@ -136,7 +151,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4862619010077620063}
-  - component: {fileID: 4862619010077620062}
   m_Layer: 0
   m_Name: container
   m_TagString: Untagged
@@ -159,17 +173,3 @@ Transform:
   m_Father: {fileID: 4862619008357408652}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4862619010077620062
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4862619010077620056}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d987297ad63ea743b039abd08244222, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _effectValue: 0.4
-  _followTarget: {fileID: 0}

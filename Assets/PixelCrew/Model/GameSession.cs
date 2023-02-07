@@ -8,6 +8,7 @@ using UnityEngine.SceneManagement;
 using System.Collections.Generic;
 using Assets.PixelCrew.Components.LevelManagement;
 using System.Linq;
+using Assets.PixelCrew.Model.Definitions.Player;
 
 namespace Assets.PixelCrew.Model
 {
@@ -20,6 +21,7 @@ namespace Assets.PixelCrew.Model
         private readonly CompositeDisposable _trash = new CompositeDisposable();
         public QuickInventoryModel QuickInventory { get; private set; }
         public PerksModel Perks { get; private set; }
+        public StatsModel StatsModel { get; private set; }
 
         private readonly List<string> _checkPoints = new List<string>();
         private void Awake()
@@ -71,6 +73,11 @@ namespace Assets.PixelCrew.Model
 
             Perks = new PerksModel(_data);
             _trash.Retain(Perks);
+
+            StatsModel = new StatsModel(_data);
+            _trash.Retain(StatsModel);
+
+            _data.Hp.Value = (int)StatsModel.GetValue(StatId.Hp);
         }
 
         private void LoadHud()
