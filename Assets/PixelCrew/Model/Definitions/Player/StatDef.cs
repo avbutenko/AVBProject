@@ -33,6 +33,7 @@ namespace Assets.PixelCrew.Model.Definitions.Player
     {
         Hp,
         Speed,
-        RangeDamage
+        RangeDamage,
+        CriticalDamage
     }
 }

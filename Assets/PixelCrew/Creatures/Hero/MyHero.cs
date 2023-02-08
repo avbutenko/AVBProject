@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 using Assets.PixelCrew.Utils;
 using UnityEditor.Animations;
@@ -195,7 +194,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         private void SpawnCoins()
         {
-            var numCoinsToDispose = Math.Min(CoinCount, 5);
+            var numCoinsToDispose = Mathf.Min(CoinCount, 5);
             _session.Data.Inventory.Remove("Coin", numCoinsToDispose);
 
 
@@ -227,6 +226,10 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         public override void Attack()
         {
             if (SwordCount <= 0) return;
+            var hpModify = GetComponentInChildren<HPhandlerComponent>(); //to get damage delta value from AttackRange subobject
+            var damageValue = hpModify.GetOriginalDeltaValue();
+            damageValue = ModifyDamageByCrit(damageValue);
+            hpModify.SetDelta(damageValue);
             base.Attack();
         }
 
@@ -274,31 +277,31 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             var throwableId = _session.QuickInventory.SelectedItem.Id;
             var throwableDef = DefsFacade.I.Throwable.Get(throwableId);
             _throwSpawner.SetPrefab(throwableDef.Projectile);
-            _throwSpawner.Spawn();
-            //var instance = _throwSpawner.SpawnInstance();
-            //ApplyRangeDamageStat(instance);
+
+            var instance = _throwSpawner.SpawnInstance();
+            ApplyRangeDamageStat(instance);
 
             _session.Data.Inventory.Remove(throwableId, 1);
         }
 
-        /*         private void ApplyRangeDamageStat(GameObject projectile)
-                {
-                    var hpModify = projectile.GetComponent<ModifyHealthComponent>();
-                    var damageValue = (int)_session.StatsModel.GetValue(StatId.RangeDamage);
-                    damageValue = ModifyDamageByCrit(damageValue);
-                    hpModify.SetDelta(-damageValue);
-                } */
+        private void ApplyRangeDamageStat(GameObject projectile)
+        {
+            var hpModify = projectile.GetComponent<HPhandlerComponent>();
+            var damageValue = (int)_session.StatsModel.GetValue(StatId.RangeDamage);
+            damageValue = ModifyDamageByCrit(damageValue);
+            hpModify.SetDelta(-damageValue);
+        }
 
-        /*         private int ModifyDamageByCrit(int damage)
-                {
-                    var critChange = _session.StatsModel.GetValue(StatId.CriticalDamage);
-                    if (Random.value * 100 <= critChange)
-                    {
-                        return damage * 2;
-                    }
+        private int ModifyDamageByCrit(int damage)
+        {
+            var critChange = _session.StatsModel.GetValue(StatId.CriticalDamage);
+            if (Random.value * 100 <= critChange)
+            {
+                return damage * 2;
+            }
 
-                    return damage;
-                } */
+            return damage;
+        }
         private void PerformThrowing()
         {
             if (!_throwCoolDown.IsReady || !CanThrow) return;

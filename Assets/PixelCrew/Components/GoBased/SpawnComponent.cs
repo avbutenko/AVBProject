@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Assets.PixelCrew.Utils;
 
 namespace Assets.PixelCrew.Components.GoBased
 {
@@ -13,11 +14,18 @@ namespace Assets.PixelCrew.Components.GoBased
         [ContextMenu("Spawn")]
         public void Spawn()
         {
-            var instantiate = Instantiate(_prefab, _target.position, Quaternion.identity);
+            SpawnInstance();
+        }
+
+        public GameObject SpawnInstance()
+        {
+            var instance = SpawnUtils.Spawn(_prefab, _target.position);
 
             var scale = _target.lossyScale;
-            instantiate.transform.localScale = scale;
-            instantiate.SetActive(true);
+            instance.transform.localScale = scale;
+            instance.SetActive(true);
+
+            return instance;
         }
 
         public void SetPrefab(GameObject prefab)
