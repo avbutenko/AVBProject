@@ -53,7 +53,7 @@ namespace Assets.PixelCrew.Components.Creatures
             IsGrounded = _groundCheck.IsTouchingLayer;
         }
 
-        private void FixedUpdate()
+        protected virtual void FixedUpdate()
         {
             var xVelocity = Direction.x * CalculateSpeed();
             var yVelocity = CalculateYVelocity();

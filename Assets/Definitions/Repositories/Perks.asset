@@ -15,14 +15,14 @@ MonoBehaviour:
   _collection:
   - _id: double-jump
     _icon: {fileID: 21300000, guid: 11a09f76659a4d5459c5218fb6cd090f, type: 3}
-    _info: This is DoubleJump!
+    _info: double_jump_info
     _price:
       _itemId: Coin
       _count: 10
     _coolDown: 5
   - _id: super-throw
     _icon: {fileID: 21300000, guid: 524d89a1e851bfc4793f06e12d99f0a8, type: 3}
-    _info: This is Super Throw!
+    _info: super_throw_info
     _price:
       _itemId: Coin
       _count: 20
@@ -30,6 +30,13 @@ MonoBehaviour:
   - _id: shield
     _icon: {fileID: 21300000, guid: 553d94752aa1bf54abac580182430a50, type: 3}
     _info: shield_info
+    _price:
+      _itemId: Coin
+      _count: 20
+    _coolDown: 5
+  - _id: dash
+    _icon: {fileID: 21300000, guid: 71864c98ae9f718499e07add8f123b02, type: 3}
+    _info: dash_info
     _price:
       _itemId: Coin
       _count: 20

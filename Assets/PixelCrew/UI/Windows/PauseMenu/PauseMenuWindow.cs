@@ -31,10 +31,10 @@ namespace Assets.PixelCrew.UI
 
         public void OnShowSettings()
         {
-            WindowUtils.CreateWindow("UI/SettingsWindow");
-            //WindowUtils.CreateWindow("UI/ManagePerksWindow");
+            //WindowUtils.CreateWindow("UI/SettingsWindow");
+            WindowUtils.CreateWindow("UI/ManagePerksWindow");
             //WindowUtils.CreateWindow("UI/PlayerStatsWindow");
-            //Close();
+            Close();
         }
 
         public void OnShowPerksWindow()

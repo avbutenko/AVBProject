@@ -48,8 +48,16 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         [Header("Shield")]
         [SerializeField] private ShieldComponent _shield;
 
+        [Space]
+        [Header("Dash")]
+        [SerializeField] private TrailRenderer _trailRenderer;
+        [SerializeField] private float _dashPower = 24f;
+        [SerializeField] private float _dashTime = 0.2f;
+
+
         private bool _allowDoubleJump;
         private bool _isOnWall;
+        private bool _isDashing;
         private bool _superThrow;
         private GameSession _session;
         private HealthComponent _health;
@@ -131,6 +139,8 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         protected override void Update()
         {
+            if (_isDashing) return;
+
             base.Update();
 
             var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;
@@ -146,6 +156,12 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             }
 
             Animator.SetBool(IsOnWall, _isOnWall);
+        }
+
+        protected override void FixedUpdate()
+        {
+            if (_isDashing) return;
+            base.FixedUpdate();
         }
 
         protected override float CalculateYVelocity()
@@ -354,7 +370,24 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
                 _shield.Use();
                 _session.Perks.CoolDown.Reset();
             }
+            else if (_session.Perks.IsDashSupported)
+            {
+                StartCoroutine(Dash());
+                _session.Perks.CoolDown.Reset();
+            }
+        }
 
+        private IEnumerator Dash()
+        {
+            _isDashing = true;
+            Rigidbody.gravityScale = 0;
+            Rigidbody.velocity = new Vector2(Direction.x * _dashPower, 0f);
+            _trailRenderer.emitting = true;
+            yield return new WaitForSeconds(_dashTime);
+
+            _trailRenderer.emitting = false;
+            Rigidbody.gravityScale = _defaultGravityScale;
+            _isDashing = false;
         }
 
         private bool IsSelectedItem(ItemTag tag)

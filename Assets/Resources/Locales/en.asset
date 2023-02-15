@@ -49,4 +49,10 @@ MonoBehaviour:
   - Key: Range Damage
     Value: "Range Damage\r"
   - Key: Critical Damage
-    Value: Critical Damage
+    Value: "Critical Damage\r"
+  - Key: double_jump_info
+    Value: "This is Double Jump!\r"
+  - Key: super_throw_info
+    Value: "This is Super Throw!\r"
+  - Key: dash_info
+    Value: This is Dash!
