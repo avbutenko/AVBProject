@@ -16,7 +16,7 @@ MonoBehaviour:
   - _id: Coin
     _icon: {fileID: -2322180950842035098, guid: 67cd519d8699ec741ae43b27f5034dd7,
       type: 3}
-    _tags: 0000000001000000
+    _tags: 00000000
   - _id: Sword
     _icon: {fileID: 21300000, guid: adea4bf4d338e994c928e7de93e81dd0, type: 3}
     _tags: 000000000100000002000000
