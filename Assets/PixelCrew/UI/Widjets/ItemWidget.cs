@@ -12,7 +12,7 @@ namespace Assets.PixelCrew.UI
         [SerializeField] private Image _icon;
         [SerializeField] private Text _value;
 
-        public void SetData(ItemWithCount price)
+        public virtual void SetData(ItemWithCount price)
         {
             var def = DefsFacade.I.Items.Get(price.ItemId);
             _icon.sprite = def.Icon;

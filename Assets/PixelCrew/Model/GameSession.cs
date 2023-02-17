@@ -22,6 +22,7 @@ namespace Assets.PixelCrew.Model
         public QuickInventoryModel QuickInventory { get; private set; }
         public PerksModel Perks { get; private set; }
         public StatsModel StatsModel { get; private set; }
+        public ShopModel ShopModel { get; private set; }
 
         private readonly List<string> _checkPoints = new List<string>();
         private void Awake()
@@ -78,6 +79,9 @@ namespace Assets.PixelCrew.Model
             _trash.Retain(StatsModel);
 
             _data.Hp.Value = (int)StatsModel.GetValue(StatId.Hp);
+
+            ShopModel = new ShopModel(_data);
+            _trash.Retain(ShopModel);
         }
 
         private void LoadHud()

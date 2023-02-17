@@ -13,6 +13,22 @@ namespace Assets.PixelCrew.Model.Definitions.Repositories.Items
 #if UNITY_EDITOR
         public ItemDef[] ItemsForEditor => _collection;
 #endif
+
+        public ItemDef[] GetAllByTags(params ItemTag[] tags)
+        {
+            var retValue = new List<ItemDef>();
+
+            foreach (var item in _collection)
+            {
+                var itemDef = DefsFacade.I.Items.Get(item.Id);
+                var isAllRequirementsMet = tags.All(x => itemDef.HasTag(x));
+
+                if (isAllRequirementsMet)
+                    retValue.Add(item);
+            }
+            return retValue.ToArray();
+        }
+
     }
 
     [Serializable]
@@ -34,5 +50,6 @@ namespace Assets.PixelCrew.Model.Definitions.Repositories.Items
         {
             return _tags?.Contains(tag) ?? false;
         }
+
     }
 }

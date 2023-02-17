@@ -55,4 +55,34 @@ MonoBehaviour:
   - Key: super_throw_info
     Value: "\xA1Esto es S\xFAper Lanzamiento!\r"
   - Key: dash_info
-    Value: "\xA1Este es Dash!"
+    Value: "\xA1Este es Dash!\r"
+  - Key: pirate_shop
+    Value: "La tienda\r"
+  - Key: coin_info
+    Value: "moneda unificada\r"
+  - Key: sword_info
+    Value: "Espada para estrellar a tus enemigos!\r"
+  - Key: key_info
+    Value: "Llave para abrir puertas secretas\r"
+  - Key: SmallHealthPotion_info
+    Value: "Para curarte un poco\r"
+  - Key: SpeedUpPotion_info
+    Value: "\xA1Para ganar s\xFAper velocidad!\r"
+  - Key: LargeHealthPotion_info
+    Value: "para curarte a ti mismo\r"
+  - Key: PearlProjectile_info
+    Value: "\xA1Para lanzarlo hacia tus enemigos!\r"
+  - Key: Coin
+    Value: "Moneda\r"
+  - Key: Sword
+    Value: "Espada\r"
+  - Key: Key
+    Value: "Llave\r"
+  - Key: SmallHealthPotion
+    Value: "Poci\xF3n de salud peque\xF1a\r"
+  - Key: SpeedUpPotion
+    Value: "Poci\xF3n de aceleraci\xF3n\r"
+  - Key: LargeHealthPotion
+    Value: "Poci\xF3n de salud grande\r"
+  - Key: PearlProjectile
+    Value: Proyectil perlado

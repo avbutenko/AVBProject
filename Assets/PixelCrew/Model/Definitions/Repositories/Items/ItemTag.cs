@@ -8,6 +8,7 @@ namespace Assets.PixelCrew.Model.Definitions.Repositories.Items
         Stackable,
         Usable,
         Throwable,
-        Potion
+        Potion,
+        Sellable
     }
 }

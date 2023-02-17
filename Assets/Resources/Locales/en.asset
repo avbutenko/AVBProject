@@ -55,4 +55,34 @@ MonoBehaviour:
   - Key: super_throw_info
     Value: "This is Super Throw!\r"
   - Key: dash_info
-    Value: This is Dash!
+    Value: "This is Dash!\r"
+  - Key: pirate_shop
+    Value: "Pirate Shop\r"
+  - Key: coin_info
+    Value: "Unified currency\r"
+  - Key: sword_info
+    Value: "Sword to crash your enemies!\r"
+  - Key: key_info
+    Value: "Key to open secret doors\r"
+  - Key: SmallHealthPotion_info
+    Value: "To heal yourself a bit\r"
+  - Key: SpeedUpPotion_info
+    Value: "To gain super speed!\r"
+  - Key: LargeHealthPotion_info
+    Value: "To heal yourself\r"
+  - Key: PearlProjectile_info
+    Value: "To throw it towards your enemies!\r"
+  - Key: Coin
+    Value: "Coin\r"
+  - Key: Sword
+    Value: "Sword\r"
+  - Key: Key
+    Value: "Key\r"
+  - Key: SmallHealthPotion
+    Value: "Small HP\r"
+  - Key: SpeedUpPotion
+    Value: "Speed Potion\r"
+  - Key: LargeHealthPotion
+    Value: "Big HP\r"
+  - Key: PearlProjectile
+    Value: Pearl
