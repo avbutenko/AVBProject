@@ -11,6 +11,8 @@ using Assets.PixelCrew.Model.Data.Properties;
 using Assets.PixelCrew.UI;
 using Assets.PixelCrew.Model;
 using Assets.PixelCrew.Model.Definitions.Player;
+using Assets.PixelCrew.Model.Definitions.Localization;
+using Assets.PixelCrew.Model.Definitions.Repository;
 
 
 namespace Assets.PixelCrew.UI
@@ -28,6 +30,7 @@ namespace Assets.PixelCrew.UI
         public ObservableProperty<string> InterfaceSelectedShopItem = new ObservableProperty<string>();
         private GameSession _session;
         private ItemDef[] _sellableItems;
+        private static readonly string CoinKey = "Coin";
         protected override void Start()
         {
             base.Start();
@@ -45,11 +48,17 @@ namespace Assets.PixelCrew.UI
         private void OnShopItemChanged()
         {
             _dataGroup.SetData(_sellableItems);
+            var def = DefsFacade.I.Items.Get(_session.ShopModel.InterfaceSelectedShopItem.Value);
+            _info.text = LocalizationManager.I.Localize(def.Info);
+
+            ItemWithCount walletInfo = new ItemWithCount();
+            walletInfo.SetValues(CoinKey, _session.Data.Inventory.Count(CoinKey));
+            _wallet.SetData(walletInfo);
         }
 
         private void OnBuy()
         {
-
+            _session.ShopModel.Buy(_session.ShopModel.InterfaceSelectedShopItem.Value);
         }
 
         private void OnDestroy()

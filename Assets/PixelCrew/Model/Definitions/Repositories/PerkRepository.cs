@@ -37,5 +37,11 @@ namespace Assets.PixelCrew.Model.Definitions.Repository
 
         public string ItemId => _itemId;
         public int Count => _count;
+
+        public void SetValues(string itemId, int count)
+        {
+            _itemId = itemId;
+            _count = count;
+        }
     }
 }

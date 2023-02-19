@@ -33,7 +33,15 @@ namespace Assets.PixelCrew.Model.Data
 
         public void Buy(string id)
         {
+            var def = DefsFacade.I.Items.Get(id);
+            var isEnoughResorces = _data.Inventory.IsEnough(def.Price);
 
+            if (isEnoughResorces)
+            {
+                _data.Inventory.Remove(def.Price.ItemId, def.Price.Count);
+                _data.Inventory.Add(id, 1);
+                OnChanged?.Invoke();
+            }
         }
 
         public void Dispose()

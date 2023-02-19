@@ -85,4 +85,22 @@ MonoBehaviour:
   - Key: LargeHealthPotion
     Value: "Poci\xF3n de salud grande\r"
   - Key: PearlProjectile
-    Value: Proyectil perlado
+    Value: "Proyectil perlado\r"
+  - Key: wallet_label
+    Value: "Billetera\r"
+  - Key: crabby-shop-sentence-0
+    Value: "Quieres ver mi tienda pirata?\r"
+  - Key: crabby-shop-sentence-1
+    Value: "Seguro!\r"
+  - Key: crabby-shop-sentence-2
+    Value: "Vamos!..\r"
+  - Key: pause-menu-title
+    Value: "Pausa\r"
+  - Key: study-menu-title
+    Value: "Estudiar\r"
+  - Key: skills
+    Value: "Habilidades\r"
+  - Key: perks
+    Value: "Beneficios\r"
+  - Key: shop
+    Value: Comercio

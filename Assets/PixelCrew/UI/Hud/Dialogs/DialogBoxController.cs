@@ -5,6 +5,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using Assets.PixelCrew.Model.Definitions.Localization;
 
 namespace Assets.PixelCrew.UI.Hud.Dialogs
 {
@@ -57,7 +58,9 @@ namespace Assets.PixelCrew.UI.Hud.Dialogs
             var sentence = CurrentSentence;
             CurrentContent.TrySetIcon(sentence.Icon);
 
-            foreach (var letter in sentence.Value)
+            var localizedSentence = sentence.Value.Localize();
+
+            foreach (var letter in localizedSentence)
             {
                 CurrentContent.Text.text += letter;
                 _sfxSource.PlayOneShot(_typing);
@@ -71,7 +74,8 @@ namespace Assets.PixelCrew.UI.Hud.Dialogs
         {
             if (_typingRoutine == null) return;
             StopTypeAnimation();
-            CurrentContent.Text.text = _data.Sentences[_currentSentence].Value;
+            var sentence = _data.Sentences[_currentSentence].Value;
+            CurrentContent.Text.text = sentence.Localize();
         }
 
         public void OnContinue()

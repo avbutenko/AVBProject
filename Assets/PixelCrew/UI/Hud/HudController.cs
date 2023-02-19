@@ -53,14 +53,24 @@ namespace Assets.PixelCrew.UI.Hud
             WindowUtils.CreateWindow("UI/PauseWindow");
         }
 
+        public void OnStudy()
+        {
+            WindowUtils.CreateWindow("UI/StudyWindow");
+        }
+
         private void OnDestroy()
         {
             _trash.Dispose();
         }
 
-        public void OnDebug()
+        public void OnStats()
         {
             WindowUtils.CreateWindow("UI/PlayerStatsWindow");
+        }
+
+        public void OnPerks()
+        {
+            WindowUtils.CreateWindow("UI/ManagePerksWindow");
         }
 
     }

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9001324222708095452}
   - component: {fileID: 9001324222708095450}
   - component: {fileID: 9001324222708095451}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 9001324224577355408}
   - component: {fileID: 9001324224577355409}
   - component: {fileID: 9001324224577355410}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
