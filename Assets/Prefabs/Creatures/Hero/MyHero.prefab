@@ -474,6 +474,7 @@ GameObject:
   - component: {fileID: 3277715616014503660}
   - component: {fileID: 3277715616014503635}
   - component: {fileID: 3277715616014503661}
+  - component: {fileID: 7023945514447301431}
   m_Layer: 0
   m_Name: Candle
   m_TagString: Untagged
@@ -573,6 +574,20 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
+--- !u!114 &7023945514447301431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3277715616014503634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 312e730ca16234b478a89c347588f9bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _consumePerSecond: 5
+  _light: {fileID: 3277715616974869887}
 --- !u!1 &3277715616974869885
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,10 +884,11 @@ MonoBehaviour:
     _value: 1
   _superThrowParticles: 3
   _superThrowDelay: 0.2
-  _shield: {fileID: 5234975797392453956}
   _trailRenderer: {fileID: 989577505413451453}
   _dashPower: 24
   _dashTime: 0.2
+  _shield: {fileID: 7906026874505588644}
+  _flashlight: {fileID: 7023945514447301431}
 --- !u!50 &4464192119751422751
 Rigidbody2D:
   serializedVersion: 4
@@ -1156,6 +1172,21 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a713d72c-5b35-4343-9cd8-f6388ae3ee09
     m_ActionName: Hero/UsePerk[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2423554441825358588}
+        m_MethodName: OnToogleFlashlight
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 685917e9-f63e-4a7d-9041-43994426a521
+    m_ActionName: Hero/ToogleFlashlight[/Keyboard/f]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Hero
@@ -6192,7 +6223,7 @@ GameObject:
   - component: {fileID: 1656607435346953349}
   - component: {fileID: 3857435013074826822}
   - component: {fileID: 6739032489844793668}
-  - component: {fileID: 5234975797392453956}
+  - component: {fileID: 7906026874505588644}
   m_Layer: 14
   m_Name: Shield
   m_TagString: Untagged
@@ -6290,7 +6321,7 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls: []
---- !u!114 &5234975797392453956
+--- !u!114 &7906026874505588644
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6299,9 +6330,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 9041088014403602532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecae3179a15d76b419539b7e0e045538, type: 3}
+  m_Script: {fileID: 11500000, guid: 5247759fcd5fa544bbc095133e91301f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _health: {fileID: 4464192119751422749}
   _coolDown:
-    _value: 3
+    _value: 5

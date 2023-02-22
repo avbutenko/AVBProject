@@ -14065,6 +14065,8 @@ MonoBehaviour:
         Value: 1000
     Hp:
       _value: 1
+    Fuel:
+      _value: 0
     Perks:
       _used:
         _value: 
@@ -32200,6 +32202,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1076148951}
     m_Modifications:
+    - target: {fileID: 5841549424979248661, guid: 582124698a437da4ab6af2a2a95ee259,
+        type: 3}
+      propertyPath: _sceneName
+      value: Level4
+      objectReference: {fileID: 0}
     - target: {fileID: 8087178829856854530, guid: 582124698a437da4ab6af2a2a95ee259,
         type: 3}
       propertyPath: m_Name

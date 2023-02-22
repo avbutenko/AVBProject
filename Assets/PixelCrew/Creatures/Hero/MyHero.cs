@@ -11,6 +11,7 @@ using Assets.PixelCrew.Components.GoBased;
 using Assets.PixelCrew.Model.Definitions;
 using Assets.PixelCrew.Model.Definitions.Repositories.Items;
 using Assets.PixelCrew.Model.Definitions.Player;
+using Assets.PixelCrew.Components.Creatures.Hero.Features;
 
 namespace Assets.PixelCrew.Components.Creatures.Hero
 {
@@ -45,15 +46,18 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         [SerializeField] private float _superThrowDelay;
 
         [Space]
-        [Header("Shield")]
-        [SerializeField] private ShieldComponent _shield;
-
-        [Space]
         [Header("Dash")]
         [SerializeField] private TrailRenderer _trailRenderer;
         [SerializeField] private float _dashPower = 24f;
         [SerializeField] private float _dashTime = 0.2f;
 
+        [Space]
+        [Header("Shield")]
+        [SerializeField] private HeroShield _shield;
+
+        [Space]
+        [Header("Flashlight")]
+        [SerializeField] private HeroFlashlight _flashlight;
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
@@ -402,6 +406,12 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
             var defaultSpeed = _session.StatsModel.GetValue(StatId.Speed);
             return defaultSpeed + _additionalSpeed;
+        }
+
+        public void ToogleFlashlight()
+        {
+            var isActive = _flashlight.gameObject.activeSelf;
+            _flashlight.gameObject.SetActive(!isActive);
         }
 
     }

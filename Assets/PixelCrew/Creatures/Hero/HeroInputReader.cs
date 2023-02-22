@@ -82,5 +82,11 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             if (context.performed)
                 _hero.UsePerk();
         }
+
+        public void OnToogleFlashlight(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                _hero.ToogleFlashlight();
+        }
     }
 }

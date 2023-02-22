@@ -81,6 +81,14 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""ToogleFlashlight"",
+                    ""type"": ""Button"",
+                    ""id"": ""685917e9-f63e-4a7d-9041-43994426a521"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -270,6 +278,17 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
                     ""action"": ""UsePerk"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c08295b1-acb5-4970-99fb-54266634a0d4"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ToogleFlashlight"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -286,6 +305,7 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
         m_Hero_NextItem = m_Hero.FindAction("NextItem", throwIfNotFound: true);
         m_Hero_Pause = m_Hero.FindAction("Pause", throwIfNotFound: true);
         m_Hero_UsePerk = m_Hero.FindAction("UsePerk", throwIfNotFound: true);
+        m_Hero_ToogleFlashlight = m_Hero.FindAction("ToogleFlashlight", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -343,6 +363,7 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
     private readonly InputAction m_Hero_NextItem;
     private readonly InputAction m_Hero_Pause;
     private readonly InputAction m_Hero_UsePerk;
+    private readonly InputAction m_Hero_ToogleFlashlight;
     public struct HeroActions
     {
         private @HeroInputAction m_Wrapper;
@@ -355,6 +376,7 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
         public InputAction @NextItem => m_Wrapper.m_Hero_NextItem;
         public InputAction @Pause => m_Wrapper.m_Hero_Pause;
         public InputAction @UsePerk => m_Wrapper.m_Hero_UsePerk;
+        public InputAction @ToogleFlashlight => m_Wrapper.m_Hero_ToogleFlashlight;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -388,6 +410,9 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
                 @UsePerk.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnUsePerk;
                 @UsePerk.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnUsePerk;
                 @UsePerk.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnUsePerk;
+                @ToogleFlashlight.started -= m_Wrapper.m_HeroActionsCallbackInterface.OnToogleFlashlight;
+                @ToogleFlashlight.performed -= m_Wrapper.m_HeroActionsCallbackInterface.OnToogleFlashlight;
+                @ToogleFlashlight.canceled -= m_Wrapper.m_HeroActionsCallbackInterface.OnToogleFlashlight;
             }
             m_Wrapper.m_HeroActionsCallbackInterface = instance;
             if (instance != null)
@@ -416,6 +441,9 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
                 @UsePerk.started += instance.OnUsePerk;
                 @UsePerk.performed += instance.OnUsePerk;
                 @UsePerk.canceled += instance.OnUsePerk;
+                @ToogleFlashlight.started += instance.OnToogleFlashlight;
+                @ToogleFlashlight.performed += instance.OnToogleFlashlight;
+                @ToogleFlashlight.canceled += instance.OnToogleFlashlight;
             }
         }
     }
@@ -430,5 +458,6 @@ public class @HeroInputAction : IInputActionCollection, IDisposable
         void OnNextItem(InputAction.CallbackContext context);
         void OnPause(InputAction.CallbackContext context);
         void OnUsePerk(InputAction.CallbackContext context);
+        void OnToogleFlashlight(InputAction.CallbackContext context);
     }
 }

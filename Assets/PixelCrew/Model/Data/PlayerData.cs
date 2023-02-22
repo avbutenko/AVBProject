@@ -10,6 +10,7 @@ namespace Assets.PixelCrew.Model.Data
     {
         [SerializeField] private InventoryData _inventory;
         public IntProperty Hp = new IntProperty();
+        public FloatProperty Fuel = new FloatProperty();
         public PerksData Perks = new PerksData();
         public LevelData Levels = new LevelData();
 
