@@ -5230,6 +5230,8 @@ MonoBehaviour:
       _inventory: []
     Hp:
       _value: 10
+    Fuel:
+      _value: 0
     Perks:
       _used:
         _value: 
@@ -13128,10 +13130,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 629677131, guid: 057bbe03c273634409a7352f12292ddf, type: 3}
-      propertyPath: _hero
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 1328754729953819552, guid: 057bbe03c273634409a7352f12292ddf,
         type: 3}
       propertyPath: m_Name
@@ -13192,16 +13190,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1328754729953819558, guid: 057bbe03c273634409a7352f12292ddf,
-        type: 3}
-      propertyPath: _cheats.Array.data[0].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1328754729953819558, guid: 057bbe03c273634409a7352f12292ddf,
-        type: 3}
-      propertyPath: _cheats.Array.data[1].Action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 820583917}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 057bbe03c273634409a7352f12292ddf, type: 3}
 --- !u!1001 &1764593431599396952

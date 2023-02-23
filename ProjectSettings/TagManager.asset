@@ -11,6 +11,8 @@ TagManager:
   - HudCanvas
   - SimpleDialog
   - PersonalizedDialog
+  - CutSceneCamera
+  - CutSceneAnimator
   layers:
   - Default
   - TransparentFX
