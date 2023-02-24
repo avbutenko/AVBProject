@@ -10,7 +10,6 @@ namespace Assets.PixelCrew.Components.Health
     public class HealthComponent : MonoBehaviour
     {
         [SerializeField] private int _health;
-
         [SerializeField] private UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public UnityEvent _onDie;
@@ -22,13 +21,6 @@ namespace Assets.PixelCrew.Components.Health
         {
             get => _immune;
             set => _immune = value;
-        }
-
-        private int _initialHealth;
-
-        private void Awake()
-        {
-            _initialHealth = _health;
         }
 
         public void ModifyHealth(int HealthDelta)
@@ -68,11 +60,16 @@ namespace Assets.PixelCrew.Components.Health
         {
             _health = hp;
         }
-    }
 
-    [Serializable]
-    public class HealthChangeEvent : UnityEvent<int>
-    {
+        private void OnDestroy()
+        {
+            _onDie.RemoveAllListeners();
+        }
 
+        [Serializable]
+        public class HealthChangeEvent : UnityEvent<int>
+        {
+
+        }
     }
 }

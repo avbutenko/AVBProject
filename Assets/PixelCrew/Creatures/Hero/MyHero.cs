@@ -358,6 +358,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             {
                 case Effect.AddHp:
                     _session.Data.Hp.Value += (int)potion.Value;
+                    _health.SetHealth(_session.Data.Hp.Value);
                     break;
                 case Effect.SpeedUp:
                     _speedUpCoolDown.Value = _speedUpCoolDown.TimeLeft + potion.Time;

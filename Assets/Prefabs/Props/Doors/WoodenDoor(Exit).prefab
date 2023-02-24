@@ -380,10 +380,10 @@ MonoBehaviour:
   _mode: 0
   _bound:
     _sentences:
-    - _value: You need a key..
+    - _value: exit-door-sentence-0
       _icon: {fileID: 0}
       _side: 0
-    - _value: Find one first..
+    - _value: exit-door-sentence-1
       _icon: {fileID: 0}
       _side: 0
     _type: 0

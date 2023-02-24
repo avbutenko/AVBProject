@@ -103,4 +103,14 @@ MonoBehaviour:
   - Key: perks
     Value: "Beneficios\r"
   - Key: shop
-    Value: Comercio
+    Value: "Comercio\r"
+  - Key: crabby-beware-sentence-0
+    Value: "Cuidado con la oscuridad..\r"
+  - Key: crabby-beware-sentence-1
+    Value: "Usa velas para recargar tu linterna...\r"
+  - Key: crabby-beware-sentence-2
+    Value: "Y echa un vistazo a mi Tienda Pirata!!\r"
+  - Key: exit-door-sentence-0
+    Value: "Necesitas una llave..\r"
+  - Key: exit-door-sentence-1
+    Value: encuentra uno primero..
