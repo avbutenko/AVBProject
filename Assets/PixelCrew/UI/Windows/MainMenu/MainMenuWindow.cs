@@ -1,7 +1,7 @@
-﻿using Assets.PixelCrew.Utils;
+﻿using Assets.PixelCrew.UI.LevelsLoader;
+using Assets.PixelCrew.Utils;
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Assets.PixelCrew.UI
 {
@@ -16,7 +16,11 @@ namespace Assets.PixelCrew.UI
 
         public void OnStartGame()
         {
-            _closeAction = () => { SceneManager.LoadScene("Level2"); };
+            _closeAction = () =>
+            {
+                var loader = FindObjectOfType<LevelLoader>();
+                loader.LoadLevel("Level2");
+            };
             Close();
         }
 

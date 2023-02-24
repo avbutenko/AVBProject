@@ -8,11 +8,11 @@ TagManager:
   - Enemy
   - Interactable
   - SfxAudioSource
-  - HudCanvas
   - SimpleDialog
   - PersonalizedDialog
   - CutSceneCamera
   - CutSceneAnimator
+  - MainUICanvas
   layers:
   - Default
   - TransparentFX

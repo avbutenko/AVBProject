@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 using Assets.PixelCrew.Model;
+using Assets.PixelCrew.UI.LevelsLoader;
 
 namespace Assets.PixelCrew.Components.LevelManagement
 {
@@ -13,7 +11,8 @@ namespace Assets.PixelCrew.Components.LevelManagement
         {
             var session = FindObjectOfType<GameSession>();
             session.Save();
-            SceneManager.LoadScene(_sceneName);
+            var loader = FindObjectOfType<LevelLoader>();
+            loader.LoadLevel(_sceneName);
         }
     }
 }
