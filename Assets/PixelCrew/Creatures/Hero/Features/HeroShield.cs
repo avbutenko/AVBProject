@@ -14,7 +14,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero.Features
 
         public void Use()
         {
-            _health.Immune = true;
+            _health.Immune.Retain(this);
             _coolDown.Reset();
             gameObject.SetActive(true);
         }
@@ -27,7 +27,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero.Features
 
         private void OnDisable()
         {
-            _health.Immune = false;
+            _health.Immune.Release(this);
         }
     }
 }

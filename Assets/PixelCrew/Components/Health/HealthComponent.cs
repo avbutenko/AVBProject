@@ -1,4 +1,5 @@
 ﻿using Assets.PixelCrew.UI.Widjets;
+using Assets.PixelCrew.Utils;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,22 +11,18 @@ namespace Assets.PixelCrew.Components.Health
     public class HealthComponent : MonoBehaviour
     {
         [SerializeField] private int _health;
-        [SerializeField] private UnityEvent _onDamage;
+        [SerializeField] public UnityEvent _onDamage;
         [SerializeField] private UnityEvent _onHeal;
         [SerializeField] public UnityEvent _onDie;
         [SerializeField] public HealthChangeEvent _onChange;
-        [SerializeField] private bool _immune;
+        private Lock _immune = new Lock();
 
         public int Health => _health;
-        public bool Immune
-        {
-            get => _immune;
-            set => _immune = value;
-        }
+        public Lock Immune => _immune;
 
         public void ModifyHealth(int HealthDelta)
         {
-            if (HealthDelta < 0 && _immune) return;
+            if (HealthDelta < 0 && _immune.IsLocked) return;
             if (_health <= 0) return;
 
             _health += HealthDelta;
