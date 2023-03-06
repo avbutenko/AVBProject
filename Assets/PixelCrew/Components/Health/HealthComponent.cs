@@ -56,7 +56,7 @@ namespace Assets.PixelCrew.Components.Health
         }
 #endif
 
-        internal void SetHealth(int hp)
+        public void SetHealth(int hp)
         {
             _health = hp;
         }

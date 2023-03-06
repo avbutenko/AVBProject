@@ -1,4 +1,5 @@
-﻿using Assets.PixelCrew.Model;
+﻿using Assets.PixelCrew.Components.GoBased;
+using Assets.PixelCrew.Model;
 using Assets.PixelCrew.Model.Data;
 using Assets.PixelCrew.Model.Definitions;
 using System.Collections;
@@ -7,6 +8,7 @@ using UnityEngine.Events;
 
 namespace Assets.PixelCrew.Components.Interactions
 {
+    [RequireComponent(typeof(SpawnComponent))]
     public class RequireItemComponent : MonoBehaviour
     {
 

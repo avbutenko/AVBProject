@@ -113,4 +113,12 @@ MonoBehaviour:
   - Key: exit-door-sentence-0
     Value: "You need a key..\r"
   - Key: exit-door-sentence-1
-    Value: Find one first..
+    Value: "Find one first..\r"
+  - Key: patric-sentence-0
+    Value: "I will kill you!\r"
+  - Key: patric-sentence-1
+    Value: "NO! I will kill you!\r"
+  - Key: patric-sentence-2
+    Value: "No!.....\r"
+  - Key: patric-sentence-3
+    Value: I told you...

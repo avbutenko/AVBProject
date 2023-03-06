@@ -167,10 +167,10 @@ MonoBehaviour:
   _mode: 0
   _bound:
     _sentences:
-    - _value: I will kill you!
+    - _value: patric-sentence-0
       _icon: {fileID: 21300000, guid: 0568e6e1ec0a440cc8ae7922825b9119, type: 3}
       _side: 1
-    - _value: NO! I will kill you!
+    - _value: patric-sentence-1
       _icon: {fileID: 21300000, guid: 3a60a2548828f4c78b82c10389a7fec5, type: 3}
       _side: 0
     _type: 1
@@ -317,6 +317,123 @@ Tilemap:
   m_GameObject: {fileID: 168148386}
   m_Enabled: 1
   m_Tiles:
+  - first: {x: -19, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -18, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -17, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -16, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -15, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -14, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -13, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -12, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -11, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -10, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -9, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -8, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
+  - first: {x: -7, y: -6, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      m_AllTileFlags: 1073741825
   - first: {x: -19, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -483,8 +600,8 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 13
+    m_Data: {fileID: 11400000, guid: 342c90a1ba5b2094ebb78415bde2edba, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: f00e6cd2d693d984ebd9662d8812c1e5, type: 2}
   - m_RefCount: 1
@@ -502,8 +619,9 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 13
+    m_Data: {fileID: -4879724870127323082, guid: 0a7b379c03a93754d9ca39b3ba1aff13,
+      type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1988050259394296625, guid: 0a7b379c03a93754d9ca39b3ba1aff13,
       type: 3}
@@ -526,7 +644,7 @@ Tilemap:
     m_Data: {fileID: 2910141453184498138, guid: 0a7b379c03a93754d9ca39b3ba1aff13,
       type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 18
+  - m_RefCount: 31
     m_Data:
       e00: 1
       e01: 0
@@ -545,7 +663,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 18
+  - m_RefCount: 31
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -846,6 +964,8 @@ GameObject:
   - component: {fileID: 456632283}
   - component: {fileID: 456632284}
   - component: {fileID: 456632285}
+  - component: {fileID: 456632287}
+  - component: {fileID: 456632286}
   m_Layer: 15
   m_Name: PatricTheBoss
   m_TagString: Enemy
@@ -1041,6 +1161,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 456632286}
+        m_MethodName: StopAllCoroutines
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onChange:
     m_PersistentCalls:
       m_Calls: []
@@ -1077,6 +1208,46 @@ MonoBehaviour:
   - {fileID: 138675413}
   - {fileID: 1690229134}
   _color: {r: 1.5856544, g: 0.3423572, b: 0.1441504, a: 1}
+--- !u!114 &456632286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456632276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f660ecb6cb5544c9368d9fde8b4373, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _waves:
+  - _bombNum: 5
+    _delay: 2
+  - _bombNum: 5
+    _delay: 3
+  - _bombNum: 10
+    _delay: 3
+  - _bombNum: 10
+    _delay: 1
+  _spawner: {fileID: 456632287}
+  _fromX: -14
+  _toX: -5
+  _fromY: 5
+  _toY: 6
+--- !u!114 &456632287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 456632276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 930bd58b31e73a14baf13b0e65845424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 1479025489}
+  _prefab: {fileID: 3221253941243501607, guid: 94ead927ea8fc6c458600b3476e08cd4, type: 3}
 --- !u!1001 &472668814
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1669,10 +1840,10 @@ MonoBehaviour:
   _mode: 0
   _bound:
     _sentences:
-    - _value: No!.....
+    - _value: patric-sentence-2
       _icon: {fileID: 21300000, guid: 0568e6e1ec0a440cc8ae7922825b9119, type: 3}
       _side: 1
-    - _value: I told you...
+    - _value: patric-sentence-3
       _icon: {fileID: 21300000, guid: 3a60a2548828f4c78b82c10389a7fec5, type: 3}
       _side: 0
     _type: 1
@@ -3681,7 +3852,7 @@ MonoBehaviour:
       - Id: Coin
         Value: 1000
     Hp:
-      _value: 1
+      _value: 100
     Fuel:
       _value: 100
     Perks:
@@ -3740,7 +3911,7 @@ MonoBehaviour:
   _tag: 
   _layer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 16384
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -10246,7 +10417,7 @@ PrefabInstance:
     - target: {fileID: 66084083390835150, guid: e7ad29ca1eb784546a215e068a1861ac,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 66084083390835154, guid: e7ad29ca1eb784546a215e068a1861ac,
         type: 3}

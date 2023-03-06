@@ -32,5 +32,10 @@ namespace Assets.PixelCrew.Components.GoBased
         {
             _prefab = prefab;
         }
+
+        public void SetTargetPosition(Vector3 position)
+        {
+            _target.position = position;
+        }
     }
 }
