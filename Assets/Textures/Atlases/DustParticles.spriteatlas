@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: DustParticles
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 3ae66082414d76546bad2fbe23b02988, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 02609dc0e0995014081e47ee354abd5f, type: 3}
+  - {fileID: 21300000, guid: 049c3f91b335f7b49a95c3ca592a2848, type: 3}
+  - {fileID: 21300000, guid: 5d3cd7f3949ea714aa52b6d79421b35d, type: 3}
+  - {fileID: 21300000, guid: e0893334a06deb94c9608ec6171ff418, type: 3}
+  - {fileID: 21300000, guid: 7ca3d2855a76fd14696d84e7ecaeda8d, type: 3}
+  - {fileID: 21300000, guid: 4a64fcc7aa3969b46b5f374591a65113, type: 3}
+  - {fileID: 21300000, guid: 22ddc8185161eac4ca85151fe871b052, type: 3}
+  - {fileID: 21300000, guid: ea170329cdd1ae34397411134458ffb4, type: 3}
+  - {fileID: 21300000, guid: 176955f9c09e3c34d8ad7a81edcd01f3, type: 3}
+  - {fileID: 21300000, guid: 95412dfad9c90af4598292235f0bc973, type: 3}
+  - {fileID: 21300000, guid: 24abbb6b5bce2214ea4f206631c3df92, type: 3}
+  - {fileID: 21300000, guid: 981180fb0d690d94a83c192a0e8daf44, type: 3}
+  - {fileID: 21300000, guid: ed0ba20d9b1d7954b94af6f974df419c, type: 3}
+  - {fileID: 21300000, guid: b3bbb32ebf470db4aa5336c25d12456a, type: 3}
+  - {fileID: 21300000, guid: 5adb7ecf9e2ec794baabc14b50f25a8a, type: 3}
+  - {fileID: 21300000, guid: 2011c4ff00d2e70499f1f4eeeb6e6d68, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Run 05
+  - Run 03
+  - Jump 05
+  - Fall 02
+  - Fall 01
+  - Run 02
+  - Fall 03
+  - Jump 04
+  - Run 04
+  - Fall 04
+  - Jump 03
+  - Jump 01
+  - Jump 06
+  - Fall 05
+  - Run 01
+  - Jump 02
+  m_Tag: DustParticles
+  m_IsVariant: 0

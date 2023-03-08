@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Cannon
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 3ae9110a181eccb4c8b7ce97cc11e943, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 62581850e69bd0f4f8b96d03913fbe83, type: 3}
+  - {fileID: 21300000, guid: 01cbe1b03ec733c4eaf7f839d3b2689e, type: 3}
+  - {fileID: 21300000, guid: 2cf07c01151ae6b43b635fa2023e45e7, type: 3}
+  - {fileID: 21300000, guid: 22486231aba117746b1e76b209cd2311, type: 3}
+  - {fileID: 21300000, guid: 06771751b1208f1499cce198536a279d, type: 3}
+  - {fileID: 21300000, guid: 56be68720d676924a92d685510326a62, type: 3}
+  - {fileID: 21300000, guid: b50bf2c24f034fc4c886e8e8d1b48b5d, type: 3}
+  - {fileID: 21300000, guid: 5150fad2468297041bc037fefa26f9c9, type: 3}
+  - {fileID: 21300000, guid: 15dd16a35409f1e4cbddcd28a271027c, type: 3}
+  - {fileID: 21300000, guid: f5d4c4b39ce235a4f91e519f8ca77b02, type: 3}
+  - {fileID: 21300000, guid: 6dc120f39a0cd514181a0bcfb065e423, type: 3}
+  - {fileID: 21300000, guid: 496ece345bd11d349800cf5bf58c341d, type: 3}
+  - {fileID: 21300000, guid: 9f7f67f45ac9d5b4ab90482b8c80c3ba, type: 3}
+  - {fileID: 21300000, guid: a675b245327d71c4bad94a2d26171dba, type: 3}
+  - {fileID: 21300000, guid: 7c8ffb653a08bd24ca40a51cc121e671, type: 3}
+  - {fileID: 21300000, guid: 00f269a54e54b254697a203010ded04f, type: 3}
+  - {fileID: 21300000, guid: 13888607790faeb4da7885f4ffd1a07d, type: 3}
+  - {fileID: 21300000, guid: ed4eae0773a186d43a49d604005d9b15, type: 3}
+  - {fileID: 21300000, guid: 35dc5de781e38e041b025e1fae385565, type: 3}
+  - {fileID: 21300000, guid: bed2348983ce1d845a67bd2e8a7f7d75, type: 3}
+  - {fileID: 21300000, guid: 82512599c7feecb4593d58b618dc2507, type: 3}
+  - {fileID: 21300000, guid: 818a31c9a471a1d4886c6b14e94da2c6, type: 3}
+  - {fileID: 21300000, guid: 7c4a4bda4ec9723439fcb632daf523f1, type: 3}
+  - {fileID: 21300000, guid: 5046b67b8c632934a93c8347bbc30822, type: 3}
+  - {fileID: 21300000, guid: d9cc769b01c360d45815623b82021a2f, type: 3}
+  - {fileID: 21300000, guid: 24bbdb3c3e0a5bc499f2649e260c28ef, type: 3}
+  - {fileID: 21300000, guid: b435ad1d0fb62dd4982cb72dc7c57dfb, type: 3}
+  - {fileID: 21300000, guid: c3fdebad09f1c6b4780aab9e4a017423, type: 3}
+  - {fileID: 21300000, guid: 679b3c1e2f9ca694e84e0816c2a56619, type: 3}
+  - {fileID: 21300000, guid: a47b093f402d0e4439b413822c9e9130, type: 3}
+  - {fileID: 21300000, guid: 7b27644f444f9f44aa9a7e9288b8ae54, type: 3}
+  - {fileID: 21300000, guid: aaa0fd5f91134434793aee36d1de8af7, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 2
+  - 4
+  - 6
+  - 4
+  - 5
+  - 7
+  - 3
+  - 5
+  - 1
+  - 1
+  - 5
+  - 1
+  - 3
+  - 2
+  - 3
+  - 1
+  - 4
+  - 4
+  - 4
+  - 3
+  - 1
+  - 1
+  - 2
+  - 1
+  - 3
+  - 1
+  - 2
+  - 6
+  - 2
+  - 3
+  - 2
+  - 6
+  m_Tag: Cannon
+  m_IsVariant: 0

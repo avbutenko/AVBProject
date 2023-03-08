@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Chains&Bottles
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: e2beb4c77772230469bdfd1926114d5f, type: 3}
+    - {fileID: 2800000, guid: 3374679dac68ac743a413430bdbd4b89, type: 3}
+    - {fileID: 2800000, guid: 16a1950516b733941b0b19dd1c8abd90, type: 3}
+    - {fileID: 2800000, guid: 3f9a1b74912a8af4d9e316e0c32d871d, type: 3}
+    - {fileID: 2800000, guid: 012ed53499c35bb41a5b907cd6c22589, type: 3}
+    bindAsDefault: 1
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5aec59901382dcc4e8c95021205bb4c1, type: 3}
+  - {fileID: 21300000, guid: a080c9711dd7e3643810915e5d62baa8, type: 3}
+  - {fileID: 21300000, guid: ccf91e028118d7f4ca51eaa7cfaca730, type: 3}
+  - {fileID: 21300000, guid: b4845512e95a7aa4fa3d79515299709d, type: 3}
+  - {fileID: 21300000, guid: 6cac6912f8268b146813c268771fff35, type: 3}
+  - {fileID: 21300000, guid: 52ab9d72b3bff68409652ba284c953d6, type: 3}
+  - {fileID: 21300000, guid: f4d36193708c262449f4b6fec6116d60, type: 3}
+  - {fileID: 21300000, guid: ded23293abeb8c0489f33b6eade9c481, type: 3}
+  - {fileID: 21300000, guid: 012ed53499c35bb41a5b907cd6c22589, type: 3}
+  - {fileID: 21300000, guid: 3f9a1b74912a8af4d9e316e0c32d871d, type: 3}
+  - {fileID: 21300000, guid: 16a1950516b733941b0b19dd1c8abd90, type: 3}
+  - {fileID: 21300000, guid: b768d307c454d314590b2126400a6db1, type: 3}
+  - {fileID: 21300000, guid: 6da24af79fadd9c4eb7c560aa4f7461e, type: 3}
+  - {fileID: 21300000, guid: 12507f5a7c515c24eaa73710794d1312, type: 3}
+  - {fileID: 21300000, guid: 11303a7a641d160408b61f1e787e6c8c, type: 3}
+  - {fileID: 21300000, guid: b9f75d2bd3293ac45bd3b871974cb191, type: 3}
+  - {fileID: 21300000, guid: 06fcb96d24a3e7040bda3be2fac60984, type: 3}
+  - {fileID: 21300000, guid: 3374679dac68ac743a413430bdbd4b89, type: 3}
+  - {fileID: 21300000, guid: db1f54cd92368ff49b3399fbb62875a1, type: 3}
+  - {fileID: 21300000, guid: f14b2d7f85a6c0141bf80fa93695c23b, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 07
+  - 05
+  - 05
+  - 08
+  - 04
+  - 02
+  - 01
+  - 01
+  - 06
+  - 05
+  - 04
+  - 06
+  - 03
+  - 03
+  - 08
+  - 06
+  - 02
+  - 03
+  - 07
+  - 04
+  m_Tag: Chains&Bottles
+  m_IsVariant: 0
