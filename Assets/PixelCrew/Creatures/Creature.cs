@@ -5,6 +5,7 @@ using AVBProject.Components;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Profiling;
 
 namespace Assets.PixelCrew.Components.Creatures
 {
@@ -110,7 +111,10 @@ namespace Assets.PixelCrew.Components.Creatures
 
         protected void DoJumpVfx()
         {
+            Profiler.BeginSample("JumpVFXSample");
             _particles.Spawn("Jump");
+            Profiler.EndSample();
+
             Sounds.Play("Jump");
         }
 
