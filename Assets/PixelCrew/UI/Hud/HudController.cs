@@ -21,7 +21,7 @@ namespace Assets.PixelCrew.UI.Hud
 
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _trash.Retain(_session.Data.Hp.SubscribeAndInvoke(OnHealthChanged));
             _trash.Retain(_session.Perks.Subscribe(OnPerkChanged));
 

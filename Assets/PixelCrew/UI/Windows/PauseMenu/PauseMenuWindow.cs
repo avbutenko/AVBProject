@@ -37,7 +37,7 @@ namespace Assets.PixelCrew.UI
         public void OnExit()
         {
             SceneManager.LoadScene("MainMenu");
-            var session = FindObjectOfType<GameSession>();
+            var session = GameSession.Instance;
             Destroy(session.gameObject);
         }
 

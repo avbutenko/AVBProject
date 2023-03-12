@@ -16,7 +16,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         private void Awake()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _InputAction = new HeroInputAction();
             _InputAction.Hero.Movement.performed += OnMovement;
             _InputAction.Hero.Movement.canceled += OnMovement;

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4450808679695810062}
   - component: {fileID: 335855894156135955}
   - component: {fileID: 6340056538362063894}
-  - component: {fileID: 906798094780503555}
+  - component: {fileID: 971284898321367742}
   m_Layer: 0
   m_Name: PearlHeroProjectile
   m_TagString: Untagged
@@ -150,10 +150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e566c1a24e400c848a6f2f640828c912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Enemy
+  _tag: 
   _layer:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 41984
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -168,8 +168,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 906798094780503555}
-        m_MethodName: DestroyObject
+      - m_Target: {fileID: 971284898321367742}
+        m_MethodName: Release
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deltaValue: -1
---- !u!114 &906798094780503555
+--- !u!114 &971284898321367742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,8 +201,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 644755170588439970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
+  m_Script: {fileID: 11500000, guid: 805ebba52a3bca841898fe6a633d6428, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 644755170588439970}
-  _state: {fileID: 0}
+  _onRestart:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7792828624250128623}
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 5842238721837152837}
+        m_MethodName: set_simulated
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2

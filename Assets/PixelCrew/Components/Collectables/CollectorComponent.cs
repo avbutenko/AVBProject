@@ -18,7 +18,7 @@ namespace Assets.PixelCrew.Components.Collectables
 
         public void DropInInventory()
         {
-            var session = FindObjectOfType<GameSession>();
+            var session = GameSession.Instance;
             foreach (var item in _items)
             {
                 session.Data.Inventory.Add(item.Id, item.Value);

@@ -14,7 +14,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero.Features
         private float _defaultIntensity;
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _defaultIntensity = _light.intensity;
         }
 

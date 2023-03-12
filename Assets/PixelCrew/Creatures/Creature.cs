@@ -111,9 +111,9 @@ namespace Assets.PixelCrew.Components.Creatures
 
         protected void DoJumpVfx()
         {
-            Profiler.BeginSample("JumpVFXSample");
+            //Profiler.BeginSample("JumpVFXSample"); ---> to see this part of coding in Analysis/Profiler Window
             _particles.Spawn("Jump");
-            Profiler.EndSample();
+            //Profiler.EndSample();
 
             Sounds.Play("Jump");
         }

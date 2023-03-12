@@ -11,7 +11,7 @@ namespace Assets.PixelCrew.Components.LevelManagement
     {
         public void Reload()
         {
-            var session = FindObjectOfType<GameSession>();
+            var session = GameSession.Instance;
             session.LoadLastSave();
 
             var scene = SceneManager.GetActiveScene();

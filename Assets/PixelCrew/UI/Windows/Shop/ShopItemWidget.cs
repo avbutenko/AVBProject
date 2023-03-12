@@ -22,7 +22,7 @@ public class ShopItemWidget : MonoBehaviour, IItemRenderer<ItemDef>
     private ItemDef _data;
     private void Start()
     {
-        _session = FindObjectOfType<GameSession>();
+        _session = GameSession.Instance;
         UpdateView();
     }
     public void SetData(ItemDef data, int index)

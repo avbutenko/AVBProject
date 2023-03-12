@@ -16,6 +16,8 @@ namespace Assets.PixelCrew.Model
     {
         [SerializeField] private PlayerData _data;
         [SerializeField] private string _defaultCheckPoint;
+
+        public static GameSession Instance { get; private set; }
         public PlayerData Data => _data;
         private PlayerData _save;
         private readonly CompositeDisposable _trash = new CompositeDisposable();
@@ -40,6 +42,7 @@ namespace Assets.PixelCrew.Model
                 Save();
                 InitModels();
                 DontDestroyOnLoad(this);
+                Instance = this;
                 StartSession(_defaultCheckPoint);
             }
         }
@@ -129,6 +132,8 @@ namespace Assets.PixelCrew.Model
 
         private void OnDestroy()
         {
+            if (Instance == this)
+                Instance = null;
             _trash.Dispose();
         }
 

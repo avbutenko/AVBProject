@@ -10,7 +10,7 @@ namespace Assets.PixelCrew.Components.Collectables
         private GameSession _session;
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
         }
 
         public void Refill()

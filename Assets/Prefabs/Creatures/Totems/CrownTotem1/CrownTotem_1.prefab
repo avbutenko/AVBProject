@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1796789985436796950}
   _prefab: {fileID: 644755170588439970, guid: 5e7769fcf2e19b245be136d32cee61c5, type: 3}
+  _usePool: 1
 --- !u!1 &1796789985635982597
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +310,6 @@ MonoBehaviour:
   _onChange:
     m_PersistentCalls:
       m_Calls: []
-  _immune: 0
 --- !u!114 &8166272606882044292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -338,6 +338,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1796789985635982594}
   _prefab: {fileID: 7464228255108381606, guid: 1712fee3e9203e044938b1bfe98a33e2, type: 3}
+  _usePool: 0
 --- !u!50 &6377462378089634678
 Rigidbody2D:
   serializedVersion: 4

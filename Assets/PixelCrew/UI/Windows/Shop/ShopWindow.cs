@@ -36,7 +36,7 @@ namespace Assets.PixelCrew.UI
             base.Start();
             _dataGroup = new DataGroup<ItemDef, ShopItemWidget>(_prefab, _shopContainer);
             _sellableItems = DefsFacade.I.Items.GetAllByTags(ItemTag.Sellable);
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             _session.ShopModel.InterfaceSelectedShopItem.Value = _sellableItems[0].Id;
 
             _trash.Retain(_session.ShopModel.Subscribe(OnShopItemChanged));

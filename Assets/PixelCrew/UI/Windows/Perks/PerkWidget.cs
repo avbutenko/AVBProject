@@ -20,7 +20,7 @@ namespace Assets.PixelCrew.UI
 
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
+            _session = GameSession.Instance;
             UpdateView();
         }
         public void SetData(PerkDef data, int index)

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4235617380456483096}
   - component: {fileID: 4235617380456483097}
   - component: {fileID: 4235617380456483098}
-  - component: {fileID: 6794590972872461013}
+  - component: {fileID: 528599265105691603}
   m_Layer: 0
   m_Name: FootSteps
   m_TagString: Untagged
@@ -109,7 +109,7 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6794590972872461013}
+        - m_Target: {fileID: 528599265105691603}
           m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:
@@ -120,7 +120,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &6794590972872461013
+--- !u!114 &528599265105691603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

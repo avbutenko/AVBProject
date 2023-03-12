@@ -230,6 +230,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1796789985436796950}
   _prefab: {fileID: 644755170588439970, guid: 6f6bb8f5e7905c842bc02dc008a2e84e, type: 3}
+  _usePool: 1
 --- !u!1 &1796789985635982597
 GameObject:
   m_ObjectHideFlags: 0
@@ -454,7 +455,6 @@ MonoBehaviour:
   _onChange:
     m_PersistentCalls:
       m_Calls: []
-  _immune: 0
 --- !u!114 &8166272606882044292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,6 +483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1796789985635982594}
   _prefab: {fileID: 7464228255108381606, guid: 5daea15f5f36cbf4b8e8034879e74549, type: 3}
+  _usePool: 0
 --- !u!1001 &4154571352508149471
 PrefabInstance:
   m_ObjectHideFlags: 0
