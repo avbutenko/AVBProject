@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4450808679695810062}
   - component: {fileID: 335855894156135955}
   - component: {fileID: 6340056538362063894}
-  - component: {fileID: 2950124396872088359}
+  - component: {fileID: 6527458652571011253}
   m_Layer: 15
   m_Name: PearlProjectile
   m_TagString: Untagged
@@ -168,8 +168,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2950124396872088359}
-        m_MethodName: Release
+      - m_Target: {fileID: 6527458652571011253}
+        m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -192,7 +192,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _deltaValue: -1
---- !u!114 &2950124396872088359
+--- !u!114 &6527458652571011253
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -201,9 +201,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 644755170588439970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 805ebba52a3bca841898fe6a633d6428, type: 3}
+  m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onRestart:
-    m_PersistentCalls:
-      m_Calls: []
+  _objectToDestroy: {fileID: 644755170588439970}
+  _state: {fileID: 0}

@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 923552965880074603}
   - component: {fileID: 2863613503757781338}
   - component: {fileID: 3687185638992727843}
-  - component: {fileID: 2196754407053989591}
+  - component: {fileID: 7317370959135660879}
   m_Layer: 0
   m_Name: SwordProjectile
   m_TagString: Untagged
@@ -196,7 +196,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 7317370959135660879}
         m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
@@ -250,8 +250,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2196754407053989591}
-        m_MethodName: Release
+      - m_Target: {fileID: 7317370959135660879}
+        m_MethodName: DestroyObject
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -261,7 +261,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2196754407053989591
+--- !u!114 &7317370959135660879
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -270,23 +270,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 665274836871780117}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 805ebba52a3bca841898fe6a633d6428, type: 3}
+  m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onRestart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 665274836871780115}
-        m_MethodName: SetClip
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: spinning
-          m_BoolArgument: 0
-        m_CallState: 2
+  _objectToDestroy: {fileID: 665274836871780117}
+  _state: {fileID: 0}
 --- !u!1 &7738522382859215365
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,4 +320,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 5771156536860695605}
   _prefab: {fileID: 665274836871780117, guid: d01337298f39a194a9fd6eed27769440, type: 3}
-  _usePool: 1
+  _usePool: 0

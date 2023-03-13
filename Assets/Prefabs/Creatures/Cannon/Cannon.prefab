@@ -176,7 +176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _target: {fileID: 1796789985436796950}
   _prefab: {fileID: 644755170588439970, guid: d6b6a06915c2ce14b95545967e9421e2, type: 3}
-  _usePool: 1
+  _usePool: 0
 --- !u!1 &1796789985635982597
 GameObject:
   m_ObjectHideFlags: 0

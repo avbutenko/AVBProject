@@ -11,10 +11,5 @@ namespace AVBProject.Creatures.Weapons
             var force = new Vector2(Direction * _speed, 0);
             Rigidbody.AddForce(force, ForceMode2D.Impulse);
         }
-
-        private void OnEnable()
-        {
-            Start();
-        }
     }
 }

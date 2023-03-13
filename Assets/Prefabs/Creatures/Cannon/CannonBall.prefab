@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8121815117364776964}
   - component: {fileID: 6924429354087882118}
   - component: {fileID: 5724675864999318772}
-  - component: {fileID: 6449062910272035395}
+  - component: {fileID: 3737366938467615233}
   m_Layer: 15
   m_Name: CannonBall
   m_TagString: Untagged
@@ -242,8 +242,8 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 6449062910272035395}
-          m_MethodName: Release
+        - m_Target: {fileID: 3737366938467615233}
+          m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -363,7 +363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 1
---- !u!114 &6449062910272035395
+--- !u!114 &3737366938467615233
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -372,20 +372,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 644755170588439970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 805ebba52a3bca841898fe6a633d6428, type: 3}
+  m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onRestart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 8121815117364776964}
-        m_MethodName: SetClip
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: idle
-          m_BoolArgument: 0
-        m_CallState: 2
+  _objectToDestroy: {fileID: 644755170588439970}
+  _state: {fileID: 0}

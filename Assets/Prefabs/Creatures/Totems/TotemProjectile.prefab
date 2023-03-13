@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 335855894156135955}
   - component: {fileID: 6340056538362063894}
   - component: {fileID: 6565945455192713694}
-  - component: {fileID: 3598614608442836757}
+  - component: {fileID: 6621139916083829573}
   m_Layer: 15
   m_Name: TotemProjectile
   m_TagString: Untagged
@@ -225,8 +225,8 @@ MonoBehaviour:
     _onComplete:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 3598614608442836757}
-          m_MethodName: Release
+        - m_Target: {fileID: 6621139916083829573}
+          m_MethodName: DestroyObject
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -236,7 +236,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &3598614608442836757
+--- !u!114 &6621139916083829573
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,20 +245,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 644755170588439970}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 805ebba52a3bca841898fe6a633d6428, type: 3}
+  m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _onRestart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 6565945455192713694}
-        m_MethodName: SetClip
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: idle
-          m_BoolArgument: 0
-        m_CallState: 2
+  _objectToDestroy: {fileID: 644755170588439970}
+  _state: {fileID: 0}
