@@ -18,3 +18,5 @@
 /Assets/Plugins/Editor/JetBrains*
 *.snap
 /MemoryCaptures/
+/Builds/
+

@@ -1,5 +1,4 @@
-﻿using UnityEditor;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 using UnityEngine.Events;
 using System.Linq;
@@ -16,13 +15,13 @@ namespace Assets.PixelCrew.Components.ColliderBased
         [SerializeField] private OnOverlapEvent _onOverlap;
 
         private readonly Collider2D[] _interactionResult = new Collider2D[10];
-
+#if UNITY_EDITOR
         private void OnDrawGizmosSelected()
         {
-            Handles.color = HandlesUtils.TransparentRed;
-            Handles.DrawSolidDisc(transform.position, Vector3.forward, _radius);
+            UnityEditor.Handles.color = HandlesUtils.TransparentRed;
+            UnityEditor.Handles.DrawSolidDisc(transform.position, Vector3.forward, _radius);
         }
-
+#endif
         public void Check()
         {
             var size = Physics2D.OverlapCircleNonAlloc(

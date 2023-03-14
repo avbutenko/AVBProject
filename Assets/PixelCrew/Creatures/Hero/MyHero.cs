@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
 using Assets.PixelCrew.Utils;
-using UnityEditor.Animations;
 using Assets.PixelCrew.Model;
 using Assets.PixelCrew.Components;
 using Assets.PixelCrew.Components.ColliderBased;
@@ -28,8 +27,8 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         [Space]
         [Header("Animator Settings")]
-        [SerializeField] private AnimatorController _armed;
-        [SerializeField] private AnimatorController _unarmed;
+        [SerializeField] private RuntimeAnimatorController _armed;
+        [SerializeField] private RuntimeAnimatorController _unarmed;
 
         [Space]
         [Header("Particles")]
