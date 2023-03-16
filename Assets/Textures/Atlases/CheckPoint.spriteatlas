@@ -40,10 +40,14 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 9ada9a821252bff46936ae686876f4e0, type: 3}
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: b0d09720a6ddffe4f97d277777a92a0e, type: 3}
@@ -85,5 +89,6 @@ SpriteAtlas:
   - 4
   - 4
   - 7
+  m_RenderDataMap: {}
   m_Tag: CheckPoint
   m_IsVariant: 0

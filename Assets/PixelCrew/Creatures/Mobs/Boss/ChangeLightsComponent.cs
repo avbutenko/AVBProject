@@ -1,12 +1,12 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 namespace Assets.PixelCrew.Creatures.Mobs.Boss
 {
     public class ChangeLightsComponent : MonoBehaviour
     {
-        [SerializeField] private Light2D[] _lights;
+        [SerializeField] private UnityEngine.Rendering.Universal.Light2D[] _lights;
         [ColorUsage(true, true)]
         [SerializeField] private Color _color;
 

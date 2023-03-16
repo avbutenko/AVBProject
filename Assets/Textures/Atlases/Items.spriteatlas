@@ -40,12 +40,16 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 08df96b602556c449a9e85bdab0b19b3, type: 3}
     - {fileID: 21300000, guid: c21d5a40596d52749897f92f366774a2, type: 3}
     - {fileID: 2800000, guid: 8d1c27c9cd95b4b46a5499f7bb4ca26c, type: 3}
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: c21d5a40596d52749897f92f366774a2, type: 3}
@@ -167,5 +171,6 @@ SpriteAtlas:
   - Sword Idle 03
   - 3
   - 4
+  m_RenderDataMap: {}
   m_Tag: Items
   m_IsVariant: 0

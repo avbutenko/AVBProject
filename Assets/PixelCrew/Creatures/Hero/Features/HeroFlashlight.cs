@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Assets.PixelCrew.Model;
-using UnityEngine.Experimental.Rendering.Universal;
+
 
 namespace Assets.PixelCrew.Components.Creatures.Hero.Features
 {
     public class HeroFlashlight : MonoBehaviour
     {
         [SerializeField] private float _consumePerSecond;
-        [SerializeField] private Light2D _light;
+        [SerializeField] private UnityEngine.Rendering.Universal.Light2D _light;
         private GameSession _session;
         private float _defaultIntensity;
         private void Start()

@@ -40,10 +40,14 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 18a56d255d194694ab7ea88105128a72, type: 3}
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: 1112371054c78de4ca209c19f09454a6, type: 3}
@@ -67,5 +71,6 @@ SpriteAtlas:
   - 02
   - 04
   - 03
+  m_RenderDataMap: {}
   m_Tag: Candles
   m_IsVariant: 0

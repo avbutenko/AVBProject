@@ -40,10 +40,14 @@ SpriteAtlas:
       allowAlphaSplitting: 0
       enableRotation: 1
       enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
     variantMultiplier: 1
     packables:
     - {fileID: 102900000, guid: 9e3a8d8f337a64d4eb8fa6338ff9314d, type: 3}
     bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
   m_MasterAtlas: {fileID: 0}
   m_PackedSprites:
   - {fileID: 21300000, guid: b5747c809450a6f4babb8c87d91c1c88, type: 3}
@@ -157,5 +161,6 @@ SpriteAtlas:
   - slider-vertical-handle
   - green-box-tall
   - green
+  m_RenderDataMap: {}
   m_Tag: UI
   m_IsVariant: 0
