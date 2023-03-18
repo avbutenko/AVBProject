@@ -9,6 +9,7 @@ using System.Collections.Generic;
 using Assets.PixelCrew.Components.LevelManagement;
 using System.Linq;
 using Assets.PixelCrew.Model.Definitions.Player;
+using System.Diagnostics;
 
 namespace Assets.PixelCrew.Model
 {
@@ -50,7 +51,7 @@ namespace Assets.PixelCrew.Model
         private void StartSession(string defaultCheckPoint)
         {
             SetChecked(defaultCheckPoint);
-            LoadHud();
+            LoadUIs();
             SpawnHero();
         }
 
@@ -87,9 +88,16 @@ namespace Assets.PixelCrew.Model
             _trash.Retain(ShopModel);
         }
 
-        private void LoadHud()
+        private void LoadUIs()
         {
             SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
+            LoadScreenControls();
+        }
+
+        [Conditional("USE_ON_SCREEN_CONTROLS")]
+        private void LoadScreenControls()
+        {
+            SceneManager.LoadScene("Controls", LoadSceneMode.Additive);
         }
 
         private GameSession GetExistingSession()
