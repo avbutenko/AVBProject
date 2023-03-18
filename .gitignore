@@ -16,7 +16,6 @@
 *.iml
 *.DotSettings.user
 /Assets/Plugins/Editor/JetBrains*
-*.snap
 /MemoryCaptures/
 /Builds/
 
