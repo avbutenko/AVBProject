@@ -156,5 +156,6 @@ namespace Assets.PixelCrew.Model
             if (!_removedItems.Contains(Id))
                 _removedItems.Add(Id);
         }
+
     }
 }

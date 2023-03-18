@@ -236,7 +236,7 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
                     ""id"": ""696f04cd-c03c-49d5-b8c4-7de2213b77a1"",
                     ""path"": ""<Gamepad>/leftStick"",
                     ""interactions"": """",
-                    ""processors"": ""StickDeadzone(min=0.4)"",
+                    ""processors"": ""StickDeadzone(min=0.4),NormalizeVector2"",
                     ""groups"": """",
                     ""action"": ""Movement"",
                     ""isComposite"": false,
