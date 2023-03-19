@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace AVBProject.Components
 {
@@ -9,6 +10,7 @@ namespace AVBProject.Components
         [SerializeField] public List<Transform> waypoints;
         [SerializeField] public float moveSpeed;
         [SerializeField] public int target;
+        [SerializeField] private UnityEvent _action;
 
         void Update()
         {
@@ -27,6 +29,8 @@ namespace AVBProject.Components
                 {
                     target += 1;
                 }
+
+                _action?.Invoke();
             }
         }
     }
