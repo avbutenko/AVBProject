@@ -121,4 +121,6 @@ MonoBehaviour:
   - Key: patric-sentence-2
     Value: "No!.....\r"
   - Key: patric-sentence-3
-    Value: Te dije...
+    Value: "Te dije...\r"
+  - Key: game-over
+    Value: juego terminado

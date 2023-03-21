@@ -13,6 +13,7 @@ TagManager:
   - CutSceneCamera
   - CutSceneAnimator
   - MainUICanvas
+  - InteractionIcon
   layers:
   - Default
   - TransparentFX

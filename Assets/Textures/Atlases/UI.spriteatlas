@@ -84,6 +84,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: e9e0fd965d8cfed4ca77d856a111fc95, type: 3}
   - {fileID: 21300000, guid: 9b7b6227e2b120b4f9a1f0453d1dd76d, type: 3}
   - {fileID: 21300000, guid: a2071977833679b459b320de676d09ec, type: 3}
+  - {fileID: 21300000, guid: 7230ec77efa0f1a41912a775f870d54b, type: 3}
   - {fileID: 21300000, guid: a23b7287938a8a043a26a517c3f72fd7, type: 3}
   - {fileID: 21300000, guid: 0dad6fe78134dfe4487ed3a98ad294bc, type: 3}
   - {fileID: 21300000, guid: 71864c98ae9f718499e07add8f123b02, type: 3}
@@ -91,6 +92,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 4b7ea2e8f34ffdd4eb90a5f3193703a7, type: 3}
   - {fileID: 21300000, guid: 7c80d5f8dc447744ba6ee6e2e9961292, type: 3}
   - {fileID: 21300000, guid: 20890109c10ac4353b9eb365654cd4ee, type: 3}
+  - {fileID: 21300000, guid: b15b5b790a99ff74a903c4956ea5c964, type: 3}
   - {fileID: 21300000, guid: 35b6aeb9992be8f42b52c44da6782a34, type: 3}
   - {fileID: 21300000, guid: c83752d90592fb64ba77e2caca0ea3d8, type: 3}
   - {fileID: 21300000, guid: 97578dd92f388014eaad7b1fc1c06b8e, type: 3}
@@ -148,6 +150,7 @@ SpriteAtlas:
   - yellow
   - Check_Mark
   - 1
+  - interactive
   - yellow-box-tall
   - common-button-pressed
   - Dash_perk_icon
@@ -155,6 +158,7 @@ SpriteAtlas:
   - S_Holy03
   - S_Magic08
   - close
+  - chat
   - 7
   - papper
   - slider-horizontal-handle
