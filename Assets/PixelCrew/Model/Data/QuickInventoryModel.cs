@@ -52,6 +52,11 @@ namespace Assets.PixelCrew.Model.Data
             SelectedIndex.Value = (int)Mathf.Repeat(SelectedIndex.Value + 1, Inventory.Length);
         }
 
+        public void SetIndex(int newIndex)
+        {
+            SelectedIndex.Value = newIndex;
+        }
+
         public void Dispose()
         {
             _data.Inventory.OnChanged -= OnChangedInventory;
