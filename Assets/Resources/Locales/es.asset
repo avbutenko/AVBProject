@@ -123,4 +123,6 @@ MonoBehaviour:
   - Key: patric-sentence-3
     Value: "Te dije...\r"
   - Key: game-over
-    Value: juego terminado
+    Value: "juego terminado\r"
+  - Key: invis_info
+    Value: "Esto te har\xE1 invisible! Por un momento.."

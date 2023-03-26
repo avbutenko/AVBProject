@@ -1,5 +1,6 @@
 ﻿using Assets.PixelCrew.Components.ColliderBased;
 using Assets.PixelCrew.Components.GoBased;
+using Assets.PixelCrew.Model;
 using Assets.PixelCrew.Utils;
 using System;
 using UnityEngine;
@@ -32,7 +33,7 @@ namespace Assets.PixelCrew.Components.Creatures.Mobs
 
         private void Update()
         {
-            if (_vision.IsTouchingLayer)
+            if (_vision.IsTouchingLayer && !GameSession.Instance.Perks.IsHeroInvisible)
             {
                 if (_meleeCanAttack != null && _meleeCanAttack.IsTouchingLayer)
                 {

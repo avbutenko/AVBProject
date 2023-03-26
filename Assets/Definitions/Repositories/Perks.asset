@@ -41,3 +41,10 @@ MonoBehaviour:
       _itemId: Coin
       _count: 20
     _coolDown: 5
+  - _id: invis
+    _icon: {fileID: 21300000, guid: 644adf636c42b974d9609a10019fcd1a, type: 3}
+    _info: invis_info
+    _price:
+      _itemId: Coin
+      _count: 20
+    _coolDown: 5

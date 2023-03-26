@@ -12,6 +12,7 @@ using Assets.PixelCrew.Model.Definitions.Repositories.Items;
 using Assets.PixelCrew.Model.Definitions.Player;
 using Assets.PixelCrew.Components.Creatures.Hero.Features;
 using Assets.PixelCrew.Effects.CameraRelated;
+using Assets.PixelCrew.Creatures.Hero.Features;
 
 namespace Assets.PixelCrew.Components.Creatures.Hero
 {
@@ -58,6 +59,10 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         [Space]
         [Header("Flashlight")]
         [SerializeField] private HeroFlashlight _flashlight;
+
+        [Space]
+        [Header("Invisibility")]
+        [SerializeField] private HeroInvisibility _invis;
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
@@ -380,6 +385,11 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             else if (_session.Perks.IsDashSupported)
             {
                 StartCoroutine(Dash());
+                _session.Perks.CoolDown.Reset();
+            }
+            else if (_session.Perks.IsInvisSupported)
+            {
+                _invis.Use();
                 _session.Perks.CoolDown.Reset();
             }
         }

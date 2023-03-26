@@ -14,13 +14,14 @@ namespace Assets.PixelCrew.UI.Hud
     public class HudController : MonoBehaviour
     {
         [SerializeField] private ProgressBarWidjet _healthBar;
-        [SerializeField] private CurrentPerkWidget _currentPerk;
+        private CurrentPerkWidget _currentPerk;
 
         private GameSession _session;
         private readonly CompositeDisposable _trash = new CompositeDisposable();
 
         private void Start()
         {
+            _currentPerk = FindObjectOfType<CurrentPerkWidget>();
             _session = GameSession.Instance;
             _trash.Retain(_session.Data.Hp.SubscribeAndInvoke(OnHealthChanged));
             _trash.Retain(_session.Perks.Subscribe(OnPerkChanged));

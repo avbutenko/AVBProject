@@ -74,6 +74,7 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 577c0613ec05c8b43b00a3fa43386a8a, type: 3}
   - {fileID: 21300000, guid: 7c2efd13ecfd8354ba1f389d743d7e71, type: 3}
   - {fileID: 21300000, guid: 70dfdd6331f77da478b98402e9151275, type: 3}
+  - {fileID: 21300000, guid: 644adf636c42b974d9609a10019fcd1a, type: 3}
   - {fileID: 21300000, guid: b11e8173e1814744e944686d57e59b78, type: 3}
   - {fileID: 21300000, guid: 4cd19a34a8f2e7242a30c367c4de850a, type: 3}
   - {fileID: 21300000, guid: 3a60a2548828f4c78b82c10389a7fec5, type: 3}
@@ -132,6 +133,7 @@ SpriteAtlas:
   - blue
   - common-button-disabled
   - item-selection
+  - invis
   - item-selection-common
   - I_Clock
   - pirate-face

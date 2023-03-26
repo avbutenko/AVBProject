@@ -25,6 +25,9 @@ namespace Assets.PixelCrew.Model.Data
         public bool IsSuperThrowSupported => _data.Perks.Used.Value == "super-throw" && CoolDown.IsReady;
         public bool IsShieldSupported => _data.Perks.Used.Value == "shield" && CoolDown.IsReady;
         public bool IsDashSupported => _data.Perks.Used.Value == "dash" && CoolDown.IsReady;
+        public bool IsInvisUsed => _data.Perks.Used.Value == "invis";
+        public bool IsInvisSupported => IsInvisUsed && CoolDown.IsReady;
+        public bool IsHeroInvisible => IsInvisUsed && !IsInvisSupported;
         public PerksModel(PlayerData data)
         {
             _data = data;

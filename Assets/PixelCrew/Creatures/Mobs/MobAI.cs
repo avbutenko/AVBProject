@@ -7,6 +7,7 @@ using Assets.PixelCrew.Components.ColliderBased;
 using Assets.PixelCrew.Components.GoBased;
 using Assets.PixelCrew.Components.Creatures.Mobs.Patrolling;
 using Assets.PixelCrew.Utils;
+using Assets.PixelCrew.Model;
 
 namespace Assets.PixelCrew.Components.Creatures
 {
@@ -39,7 +40,6 @@ namespace Assets.PixelCrew.Components.Creatures
         private Patrol _patrol;
 
         private bool _isDead;
-
         private void Awake()
         {
             _particles = GetComponent<SpawnListComponent>();
@@ -55,6 +55,7 @@ namespace Assets.PixelCrew.Components.Creatures
         public void OnTargetInVision(GameObject go)
         {
             if (_isDead) return;
+            if (GameSession.Instance.Perks.IsHeroInvisible) return;
 
             _target = go;
             StartState(AgrToTarget());
@@ -81,7 +82,7 @@ namespace Assets.PixelCrew.Components.Creatures
 
         private IEnumerator GoToTarget()
         {
-            while (_vision.IsTouchingLayer)
+            while (_vision.IsTouchingLayer && !GameSession.Instance.Perks.IsHeroInvisible)
             {
                 if (_canAttack.IsTouchingLayer)
                 {
@@ -109,7 +110,7 @@ namespace Assets.PixelCrew.Components.Creatures
 
         private IEnumerator Attack()
         {
-            while (_canAttack.IsTouchingLayer)
+            while (_canAttack.IsTouchingLayer && !GameSession.Instance.Perks.IsHeroInvisible)
             {
                 _creature.Attack();
                 yield return new WaitForSeconds(_attackCoolDown);
