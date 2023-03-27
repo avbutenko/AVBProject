@@ -10787,7 +10787,7 @@ MonoBehaviour:
     Hp:
       _value: 10
     Fuel:
-      _value: 0
+      _value: 100
     Perks:
       _used:
         _value: 
@@ -23463,6 +23463,9 @@ MonoBehaviour:
   - {fileID: 858442490}
   moveSpeed: 1.5
   target: 0
+  _action:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!212 &1982478936
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -24575,6 +24578,9 @@ MonoBehaviour:
   - {fileID: 2122388242160763120}
   moveSpeed: 1.5
   target: 0
+  _action:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2122388243756836580
 GameObject:
   m_ObjectHideFlags: 0
