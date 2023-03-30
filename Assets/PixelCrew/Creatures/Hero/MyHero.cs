@@ -2,7 +2,6 @@
 using UnityEngine;
 using Assets.PixelCrew.Utils;
 using Assets.PixelCrew.Model;
-using Assets.PixelCrew.Components;
 using Assets.PixelCrew.Components.ColliderBased;
 using Assets.PixelCrew.Components.Health;
 using Assets.PixelCrew.Model.Data;
@@ -21,10 +20,18 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
     {
 
         [SerializeField] private CheckCircleOverlap _interActionCheck;
-        [SerializeField] private LayerCheck _wallCheck;
-
         [SerializeField] private float _slamDownVelocity;
 
+        [Space]
+        [Header("Wall Slide & Jump Settings")]
+        [SerializeField] private LayerCheck _wallCheck;
+        [SerializeField] private float wallSlidingSpeed = 2f;
+        [SerializeField] private float wallJumpingTime = 0.2f;
+        [SerializeField] private float wallJumpingDuration = 0.4f;
+        [SerializeField] private Vector2 wallJumpingPower = new Vector2(4f, 15f);
+        private bool isWallJumping;
+        private float wallJumpingDirection;
+        private float wallJumpingCounter;
 
         [Space]
         [Header("Animator Settings")]
@@ -83,6 +90,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private int SwordCount => _session.Data.Inventory.Count(SwordId);
 
         private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+
         private bool CanThrow
         {
             get
@@ -154,25 +162,74 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
             base.Update();
 
-            var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;
-            if (_wallCheck.IsTouchingLayer && moveToSameDirection)
-            {
-                _isOnWall = true;
-                Rigidbody.gravityScale = 0;
-            }
-            else
-            {
-                _isOnWall = false;
-                Rigidbody.gravityScale = _defaultGravityScale;
-            }
+            /*            var moveToSameDirection = Direction.x * transform.lossyScale.x > 0;
+                        if (_wallCheck.IsTouchingLayer && moveToSameDirection)
+                        {
+                            _isOnWall = true;
+                            Rigidbody.gravityScale = 0;
+                        }
+                        else
+                        {
+                            _isOnWall = false;
+                            Rigidbody.gravityScale = _defaultGravityScale;
+                        }*/
+
+            WallSlide();
+            WallJump();
 
             Animator.SetBool(IsOnWall, _isOnWall);
         }
 
+        private void WallSlide()
+        {
+            if (_wallCheck.IsTouchingLayer && !IsGrounded && Direction.x != 0f)
+            {
+                _isOnWall = true;
+                Rigidbody.velocity = new Vector2(Rigidbody.velocity.x, Mathf.Clamp(Rigidbody.velocity.y, -wallSlidingSpeed, float.MaxValue));
+            }
+            else
+            {
+                _isOnWall = false;
+            }
+        }
+
+        private void WallJump()
+        {
+            if (_isOnWall)
+            {
+                isWallJumping = false;
+                wallJumpingCounter = wallJumpingTime;
+
+                CancelInvoke(nameof(StopWallJumping));
+            }
+            else
+            {
+                wallJumpingCounter -= Time.deltaTime;
+            }
+
+            if (Direction.y > 0 && wallJumpingCounter > 0f && Direction.x * transform.lossyScale.x < 0)
+            {
+                isWallJumping = true;
+                Rigidbody.velocity = new Vector2(Direction.x * wallJumpingPower.x, wallJumpingPower.y);
+                wallJumpingCounter = 0f;
+                UpdateSpriteDirection(Direction);
+                Invoke(nameof(StopWallJumping), wallJumpingDuration);
+            }
+        }
+
+        private void StopWallJumping()
+        {
+            isWallJumping = false;
+        }
+
+
         protected override void FixedUpdate()
         {
             if (_isDashing) return;
-            base.FixedUpdate();
+            if (!isWallJumping)
+            {
+                base.FixedUpdate();
+            }
         }
 
         protected override float CalculateYVelocity()

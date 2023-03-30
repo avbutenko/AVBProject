@@ -2187,7 +2187,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.035
+  m_Intensity: 1
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 000000003527be67eb0d307ba7c44b0fa51f50e7b17311dcbb9e9c7643f430f05796dce50bec723e
@@ -146662,6 +146662,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 508028796}
     m_Modifications:
+    - target: {fileID: 1491058594197388428, guid: dbef5a3f56282de489c3a922c5862e13,
+        type: 3}
+      propertyPath: _path
+      value: UI/ManagePerksWindow
+      objectReference: {fileID: 0}
     - target: {fileID: 3349927553933699896, guid: dbef5a3f56282de489c3a922c5862e13,
         type: 3}
       propertyPath: _bound._sentences.Array.size
