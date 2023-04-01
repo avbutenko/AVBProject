@@ -1171,8 +1171,12 @@ MonoBehaviour:
   _attackRange: {fileID: 1227277446}
   _particles: {fileID: 4175079402371514828}
   _interActionCheck: {fileID: 1120133931}
-  _wallCheck: {fileID: 17756002}
   _slamDownVelocity: 15
+  _wallCheck: {fileID: 17756002}
+  wallSlidingSpeed: 2
+  wallJumpingTime: 0.2
+  wallJumpingDuration: 0.4
+  wallJumpingPower: {x: 8, y: 16}
   _armed: {fileID: 9100000, guid: 466cc22b5e10d54409aafe1c58622af3, type: 2}
   _unarmed: {fileID: 9100000, guid: 9acbd35f25f2dd144935879cd1117b9e, type: 2}
   _hitParticles: {fileID: 4464192120935636948}
