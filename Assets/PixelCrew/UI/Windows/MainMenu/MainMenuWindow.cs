@@ -16,12 +16,15 @@ namespace Assets.PixelCrew.UI
 
         public void OnStartGame()
         {
-            _closeAction = () =>
-            {
-                var loader = FindObjectOfType<LevelLoader>();
-                loader.LoadLevel("Level2");
-            };
-            Close();
+            WindowUtils.CreateWindow("UI/PlayWindow");
+
+            /*            _closeAction = () =>
+                        {
+                            var loader = FindObjectOfType<LevelLoader>();
+                            loader.LoadLevel("Level2");
+
+                        };
+                        Close();*/
         }
 
         public void OnLanguages()

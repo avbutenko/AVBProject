@@ -125,4 +125,10 @@ MonoBehaviour:
   - Key: game-over
     Value: "game over\r"
   - Key: invis_info
-    Value: This will make you invisible! For a while..
+    Value: "This will make you invisible! For a while..\r"
+  - Key: play_title
+    Value: "Play\r"
+  - Key: new_game
+    Value: "New Game\r"
+  - Key: load_game
+    Value: Load Game

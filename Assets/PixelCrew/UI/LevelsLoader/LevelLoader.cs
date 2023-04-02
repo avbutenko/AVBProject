@@ -9,6 +9,7 @@ namespace Assets.PixelCrew.UI.LevelsLoader
         [SerializeField] private Animator _animator;
         [SerializeField] private float _transitionTime;
         private static readonly int Enabled = Animator.StringToHash("Enabled");
+        public static LevelLoader Instance { get; private set; }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         static void OnAfterSceneLoad()
@@ -18,6 +19,7 @@ namespace Assets.PixelCrew.UI.LevelsLoader
         private void Awake()
         {
             DontDestroyOnLoad(gameObject);
+            Instance = this;
         }
 
         private static void InitLoader()

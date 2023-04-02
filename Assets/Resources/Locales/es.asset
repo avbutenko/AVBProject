@@ -125,4 +125,10 @@ MonoBehaviour:
   - Key: game-over
     Value: "juego terminado\r"
   - Key: invis_info
-    Value: "Esto te har\xE1 invisible! Por un momento.."
+    Value: "Esto te har\xE1 invisible! Por un momento..\r"
+  - Key: play_title
+    Value: "Jugar\r"
+  - Key: new_game
+    Value: "Nuevo juego\r"
+  - Key: load_game
+    Value: Cargar juego
