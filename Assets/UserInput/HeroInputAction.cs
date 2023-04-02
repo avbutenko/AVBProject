@@ -107,6 +107,15 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Aim"",
+                    ""type"": ""Button"",
+                    ""id"": ""3e2ef9fb-5a1b-4f50-999e-9618fae8b22f"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -362,6 +371,17 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
                     ""action"": ""Use"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3eb03c74-85bd-488a-b665-5a960e810060"",
+                    ""path"": ""<Joystick>/stick/right"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -379,6 +399,7 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
         m_Hero_Pause = m_Hero.FindAction("Pause", throwIfNotFound: true);
         m_Hero_UsePerk = m_Hero.FindAction("UsePerk", throwIfNotFound: true);
         m_Hero_ToogleFlashlight = m_Hero.FindAction("ToogleFlashlight", throwIfNotFound: true);
+        m_Hero_Aim = m_Hero.FindAction("Aim", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -449,6 +470,7 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_Hero_Pause;
     private readonly InputAction m_Hero_UsePerk;
     private readonly InputAction m_Hero_ToogleFlashlight;
+    private readonly InputAction m_Hero_Aim;
     public struct HeroActions
     {
         private @HeroInputAction m_Wrapper;
@@ -462,6 +484,7 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
         public InputAction @Pause => m_Wrapper.m_Hero_Pause;
         public InputAction @UsePerk => m_Wrapper.m_Hero_UsePerk;
         public InputAction @ToogleFlashlight => m_Wrapper.m_Hero_ToogleFlashlight;
+        public InputAction @Aim => m_Wrapper.m_Hero_Aim;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -498,6 +521,9 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
             @ToogleFlashlight.started += instance.OnToogleFlashlight;
             @ToogleFlashlight.performed += instance.OnToogleFlashlight;
             @ToogleFlashlight.canceled += instance.OnToogleFlashlight;
+            @Aim.started += instance.OnAim;
+            @Aim.performed += instance.OnAim;
+            @Aim.canceled += instance.OnAim;
         }
 
         private void UnregisterCallbacks(IHeroActions instance)
@@ -529,6 +555,9 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
             @ToogleFlashlight.started -= instance.OnToogleFlashlight;
             @ToogleFlashlight.performed -= instance.OnToogleFlashlight;
             @ToogleFlashlight.canceled -= instance.OnToogleFlashlight;
+            @Aim.started -= instance.OnAim;
+            @Aim.performed -= instance.OnAim;
+            @Aim.canceled -= instance.OnAim;
         }
 
         public void RemoveCallbacks(IHeroActions instance)
@@ -557,5 +586,6 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
         void OnPause(InputAction.CallbackContext context);
         void OnUsePerk(InputAction.CallbackContext context);
         void OnToogleFlashlight(InputAction.CallbackContext context);
+        void OnAim(InputAction.CallbackContext context);
     }
 }
