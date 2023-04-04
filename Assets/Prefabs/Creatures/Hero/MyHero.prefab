@@ -951,7 +951,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 609598029625515819}
-  - component: {fileID: 2527271712123981076}
   m_Layer: 0
   m_Name: BulletSpawnPosition
   m_TagString: Untagged
@@ -974,21 +973,6 @@ Transform:
   m_Father: {fileID: 4127948030115733726}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2527271712123981076
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3947788523518219220}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 930bd58b31e73a14baf13b0e65845424, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 609598029625515819}
-  _prefab: {fileID: 644755170588439970, guid: 66c6c233c8123e94f8422903cfff19f4, type: 3}
-  _usePool: 0
 --- !u!1 &4127948029484767685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1089,7 +1073,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4127948030115733726
 Transform:
   m_ObjectHideFlags: 0
@@ -1120,22 +1104,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ownerTransform: {fileID: 4464192119751422747}
-  _onShoot:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2527271712123981076}
-        m_TargetAssemblyTypeName: Assets.PixelCrew.Components.GoBased.SpawnComponent,
-          Assembly-CSharp
-        m_MethodName: Spawn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+  _bulletPrefab: {fileID: 6601167498011759870, guid: b0ef248f35ec9434e94203bef288a3bc,
+    type: 3}
+  _bulletSpawnPosition: {fileID: 609598029625515819}
+  _pointPrefab: {fileID: 6258561012812032350, guid: 60269dabf67a686498518c210bb72fb8,
+    type: 3}
+  _pointNum: 50
+  spaceBetweenPoints: 0.025
 --- !u!1 &4277256647704457673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1363,7 @@ MonoBehaviour:
   _shield: {fileID: 7906026874505588644}
   _flashlight: {fileID: 7023945514447301431}
   _invis: {fileID: 1810167370839676805}
+  _pistol: {fileID: 4127948030115733725}
 --- !u!50 &4464192119751422751
 Rigidbody2D:
   serializedVersion: 4

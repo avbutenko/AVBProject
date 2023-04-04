@@ -131,4 +131,8 @@ MonoBehaviour:
   - Key: new_game
     Value: "New Game\r"
   - Key: load_game
-    Value: Load Game
+    Value: "Load Game\r"
+  - Key: pistol_info
+    Value: Use it to fire pearls !
+  - Key: pistol
+    Value: Pistol

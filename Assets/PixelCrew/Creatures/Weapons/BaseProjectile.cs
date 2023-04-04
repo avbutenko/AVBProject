@@ -8,6 +8,8 @@ namespace Assets.PixelCrew.Creatures.Weapons
         [SerializeField] protected float _speed;
         [SerializeField] private bool _invertX;
 
+        public float Speed => _speed;
+
         protected Rigidbody2D Rigidbody;
         protected int Direction;
 

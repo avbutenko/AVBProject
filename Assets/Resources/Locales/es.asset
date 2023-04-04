@@ -131,4 +131,8 @@ MonoBehaviour:
   - Key: new_game
     Value: "Nuevo juego\r"
   - Key: load_game
-    Value: Cargar juego
+    Value: "Cargar juego\r"
+  - Key: pistol_info
+    Value: "\xDAsalo para disparar perlas!\r"
+  - Key: pistol
+    Value: Pistola

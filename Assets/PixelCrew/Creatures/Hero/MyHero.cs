@@ -71,6 +71,10 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         [Header("Invisibility")]
         [SerializeField] private HeroInvisibility _invis;
 
+        [Space]
+        [Header("Pistol")]
+        [SerializeField] private GameObject _pistol;
+
         private bool _allowDoubleJump;
         private bool _isOnWall;
         private bool _isDashing;
@@ -86,6 +90,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
 
         private const string SwordId = "Sword";
+        private const string PistolId = "pistol";
         private int CoinCount => _session.Data.Inventory.Count("Coin");
         private int SwordCount => _session.Data.Inventory.Count(SwordId);
 
@@ -145,6 +150,9 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         {
             if (id == SwordId)
                 UpdateHeroWeapon();
+
+            if (id == PistolId)
+                UpdatePistol();
         }
 
         private void InventoryLogHandler(string id, int value)
@@ -320,6 +328,12 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private void UpdateHeroWeapon()
         {
             Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _unarmed;
+        }
+
+        private void UpdatePistol()
+        {
+            Animator.runtimeAnimatorController = _unarmed;
+            _pistol.SetActive(true);
         }
 
         public void NextItem()
