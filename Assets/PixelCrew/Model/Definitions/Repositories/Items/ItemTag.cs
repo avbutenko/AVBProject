@@ -9,6 +9,7 @@ namespace Assets.PixelCrew.Model.Definitions.Repositories.Items
         Usable,
         Throwable,
         Potion,
-        Sellable
+        Sellable,
+        Pistol
     }
 }

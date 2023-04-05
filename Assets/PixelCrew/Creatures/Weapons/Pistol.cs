@@ -4,6 +4,8 @@ using UnityEngine.Events;
 using Assets.PixelCrew.Utils;
 using AVBProject.Creatures.Weapons;
 using System;
+using Assets.PixelCrew.Model;
+using Assets.PixelCrew.UI.Hud;
 
 namespace Assets.PixelCrew.Creatures.Weapons
 {
@@ -12,6 +14,7 @@ namespace Assets.PixelCrew.Creatures.Weapons
         [Space]
         [Header("Settings")]
         [SerializeField] private Transform _ownerTransform;
+        [SerializeField] private CoolDown _fireCoolDown;
 
         [Space]
         [Header("Bullet Settings")]
@@ -22,33 +25,60 @@ namespace Assets.PixelCrew.Creatures.Weapons
         [Header("Projection Settings")]
         [SerializeField] private GameObject _pointPrefab;
         [SerializeField] private int _pointNum;
-        [SerializeField] private float spaceBetweenPoints;
+        [SerializeField] private float _spaceBetweenPoints;
 
-        private Vector3 _mousePosition;
+        private const string BulletId = "PearlProjectile";
+        private int BulletCount => _session.Data.Inventory.Count(BulletId);
+
+
         private Vector3 _pistolDirection;
         private GameObject[] _points;
+        private GameSession _session;
+        private GameObject _crossHairObject;
 
         private void Start()
         {
-            _points = new GameObject[_pointNum];
-            for (int i = 0; i < _pointNum; i++)
-            {
-                _points[i] = Instantiate(_pointPrefab, _bulletSpawnPosition.position, Quaternion.identity);
-            }
+            _session = GameSession.Instance;
+            _crossHairObject = FindObjectOfType<HudController>()._crossHairObject;
+        }
+
+        private void OnEnable()
+        {
+            CreateDefaultNumOfProjectionPoints();
         }
 
         void Update()
         {
             HandleAiming();
             DrawProjection();
-            HandleShooting();
         }
 
         private void DrawProjection()
         {
+            float maxDistance = Vector3.Distance(_bulletSpawnPosition.position, GetAimPosition());
+
+            for (int i = 0; i < _points.Length; i++)
+            {
+                _points[i].transform.position = GetPointPosition(i * _spaceBetweenPoints);
+                float distance = Vector3.Distance(_bulletSpawnPosition.position, _points[i].transform.position);
+                if (distance < maxDistance)
+                {
+
+                    _points[i].SetActive(true);
+                }
+                else
+                {
+                    _points[i].SetActive(false);
+                }
+            }
+        }
+
+        private void CreateDefaultNumOfProjectionPoints()
+        {
+            _points = new GameObject[_pointNum];
             for (int i = 0; i < _pointNum; i++)
             {
-                _points[i].transform.position = GetPointPosition(i * spaceBetweenPoints);
+                _points[i] = Instantiate(_pointPrefab, _bulletSpawnPosition.position, Quaternion.identity);
             }
         }
 
@@ -85,23 +115,29 @@ namespace Assets.PixelCrew.Creatures.Weapons
 
         private Vector3 GetAimPosition()
         {
-            return GetMousePosition();
+            var aimPosition = Camera.main.ScreenToWorldPoint(_crossHairObject.transform.position);
+            aimPosition.z = 0f;
+            return aimPosition;
         }
 
-        private Vector3 GetMousePosition()
+        public void Shoot()
         {
-            _mousePosition = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
-            _mousePosition.z = 0f;
-            return _mousePosition;
-        }
-
-        private void HandleShooting()
-        {
-            if (Mouse.current.leftButton.wasPressedThisFrame)
+            if (_fireCoolDown.IsReady && BulletCount > 0)
             {
                 var instance = SpawnUtils.Spawn(_bulletPrefab.gameObject, _bulletSpawnPosition.position);
                 var projectile = instance.GetComponent<DirectionalProjectile>();
                 projectile.Launch(_pistolDirection);
+                _fireCoolDown.Reset();
+                _session.Data.Inventory.Remove(BulletId, 1);
+            }
+        }
+
+        private void OnDisable()
+        {
+
+            for (int i = 0; i < _points.Length; i++)
+            {
+                Destroy(_points[i]);
             }
         }
     }

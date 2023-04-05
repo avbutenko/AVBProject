@@ -12,6 +12,7 @@ using Assets.PixelCrew.Model.Definitions.Player;
 using Assets.PixelCrew.Components.Creatures.Hero.Features;
 using Assets.PixelCrew.Effects.CameraRelated;
 using Assets.PixelCrew.Creatures.Hero.Features;
+using Assets.PixelCrew.Creatures.Weapons;
 
 namespace Assets.PixelCrew.Components.Creatures.Hero
 {
@@ -73,7 +74,8 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         [Space]
         [Header("Pistol")]
-        [SerializeField] private GameObject _pistol;
+        [SerializeField] private GameObject _pistolObject;
+        [SerializeField] private Pistol _pistol;
 
         private bool _allowDoubleJump;
         private bool _isOnWall;
@@ -148,11 +150,11 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         private void OnInventoryChanged(string id, int value)
         {
-            if (id == SwordId)
-                UpdateHeroWeapon();
+            //if (id == SwordId)
+            UpdateHeroWeapon();
 
-            if (id == PistolId)
-                UpdatePistol();
+            /*            if (id == PistolId)
+                            UpdatePistol();*/
         }
 
         private void InventoryLogHandler(string id, int value)
@@ -325,15 +327,31 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             base.Attack();
         }
 
-        private void UpdateHeroWeapon()
+        public void UpdateHeroWeapon()
         {
-            Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _unarmed;
+            //Animator.runtimeAnimatorController = SwordCount > 0 ? _armed : _unarmed;
+
+            switch (SelectedItemId)
+            {
+                case SwordId:
+                    Animator.runtimeAnimatorController = _armed;
+                    _pistolObject.SetActive(false);
+                    break;
+                case PistolId:
+                    Animator.runtimeAnimatorController = _unarmed;
+                    _pistolObject.SetActive(true);
+                    break;
+                default:
+                    Animator.runtimeAnimatorController = _unarmed;
+                    _pistolObject.SetActive(false);
+                    break;
+            }
         }
 
         private void UpdatePistol()
         {
             Animator.runtimeAnimatorController = _unarmed;
-            _pistol.SetActive(true);
+            _pistolObject.SetActive(true);
         }
 
         public void NextItem()
@@ -415,6 +433,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         }
         public void UseInventory()
         {
+
             if (IsSelectedItem(ItemTag.Throwable))
             {
                 PerformThrowing();
@@ -423,6 +442,16 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             {
                 UsePotion();
             }
+            else if (IsSelectedItem(ItemTag.Pistol))
+            {
+                UsePistol();
+            }
+
+        }
+
+        private void UsePistol()
+        {
+            _pistol.Shoot();
         }
 
         private void UsePotion()

@@ -65,7 +65,7 @@ MonoBehaviour:
       _count: 60
   - _id: pistol
     _icon: {fileID: 21300000, guid: f2abb96f59dd6fc47bbb128848ec48cd, type: 3}
-    _tags: 040000000100000001000000
+    _tags: 040000000100000005000000
     _info: pistol_info
     _price:
       _itemId: Coin

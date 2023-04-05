@@ -8,17 +8,19 @@ using System.Collections;
 using UnityEngine;
 using Assets.PixelCrew.Utils.Disposables;
 using Assets.PixelCrew.Model.Definitions.Player;
+using UnityEngine.InputSystem;
 
 namespace Assets.PixelCrew.UI.Hud
 {
     public class HudController : MonoBehaviour
     {
         [SerializeField] private ProgressBarWidjet _healthBar;
-        private CurrentPerkWidget _currentPerk;
+        [SerializeField] public GameObject _crossHairObject;
 
+        private CurrentPerkWidget _currentPerk;
         private GameSession _session;
         private readonly CompositeDisposable _trash = new CompositeDisposable();
-
+        private Vector3 _mousePosition;
         private void Start()
         {
             _currentPerk = FindObjectOfType<CurrentPerkWidget>();
@@ -27,6 +29,12 @@ namespace Assets.PixelCrew.UI.Hud
             _trash.Retain(_session.Perks.Subscribe(OnPerkChanged));
 
             OnPerkChanged();
+        }
+
+        private void Update()
+        {
+            _crossHairObject.transform.position = Mouse.current.position.ReadValue();
+            //_mousePosition.z = 0f;
         }
 
         private void OnPerkChanged()

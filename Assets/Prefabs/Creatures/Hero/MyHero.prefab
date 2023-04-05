@@ -1104,13 +1104,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _ownerTransform: {fileID: 4464192119751422747}
+  _fireCoolDown:
+    _value: 1
   _bulletPrefab: {fileID: 6601167498011759870, guid: b0ef248f35ec9434e94203bef288a3bc,
     type: 3}
   _bulletSpawnPosition: {fileID: 609598029625515819}
   _pointPrefab: {fileID: 6258561012812032350, guid: 60269dabf67a686498518c210bb72fb8,
     type: 3}
   _pointNum: 50
-  spaceBetweenPoints: 0.025
+  _spaceBetweenPoints: 0.05
 --- !u!1 &4277256647704457673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,7 +1365,8 @@ MonoBehaviour:
   _shield: {fileID: 7906026874505588644}
   _flashlight: {fileID: 7023945514447301431}
   _invis: {fileID: 1810167370839676805}
-  _pistol: {fileID: 4127948030115733725}
+  _pistolObject: {fileID: 4127948030115733725}
+  _pistol: {fileID: 2725854303318600398}
 --- !u!50 &4464192119751422751
 Rigidbody2D:
   serializedVersion: 4

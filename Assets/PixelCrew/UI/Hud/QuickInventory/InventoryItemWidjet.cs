@@ -33,6 +33,7 @@ namespace Assets.PixelCrew.UI.Hud.QuickInventory
         private void OnIndexChanged(int newValue, int oldValue)
         {
             _selection.SetActive(_index == newValue);
+            _hero?.UpdateHeroWeapon();
         }
 
         public void SetData(InventoryItemData item, int index)
@@ -48,7 +49,6 @@ namespace Assets.PixelCrew.UI.Hud.QuickInventory
         {
             if (_selection.activeSelf)
             {
-
                 _hero?.UseInventory();
             }
             else
