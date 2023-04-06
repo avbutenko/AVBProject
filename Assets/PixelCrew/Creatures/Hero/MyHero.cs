@@ -348,10 +348,9 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             }
         }
 
-        private void UpdatePistol()
+        public void UpdatePistolAimPosition(Vector2 position)
         {
-            Animator.runtimeAnimatorController = _unarmed;
-            _pistolObject.SetActive(true);
+            _pistol.SetAimPosition(position);
         }
 
         public void NextItem()
@@ -449,9 +448,10 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         }
 
-        private void UsePistol()
+        public void UsePistol()
         {
-            _pistol.Shoot();
+            if (IsSelectedItem(ItemTag.Pistol))
+                _pistol.Shoot();
         }
 
         private void UsePotion()

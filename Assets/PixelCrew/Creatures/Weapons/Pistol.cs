@@ -15,6 +15,7 @@ namespace Assets.PixelCrew.Creatures.Weapons
         [Header("Settings")]
         [SerializeField] private Transform _ownerTransform;
         [SerializeField] private CoolDown _fireCoolDown;
+        [SerializeField] private GameObject _crossHairObject;
 
         [Space]
         [Header("Bullet Settings")]
@@ -34,12 +35,11 @@ namespace Assets.PixelCrew.Creatures.Weapons
         private Vector3 _pistolDirection;
         private GameObject[] _points;
         private GameSession _session;
-        private GameObject _crossHairObject;
+        private Vector3 _aimPosition;
 
         private void Start()
         {
             _session = GameSession.Instance;
-            _crossHairObject = FindObjectOfType<HudController>()._crossHairObject;
         }
 
         private void OnEnable()
@@ -55,7 +55,7 @@ namespace Assets.PixelCrew.Creatures.Weapons
 
         private void DrawProjection()
         {
-            float maxDistance = Vector3.Distance(_bulletSpawnPosition.position, GetAimPosition());
+            float maxDistance = Vector3.Distance(_bulletSpawnPosition.position, _aimPosition);
 
             for (int i = 0; i < _points.Length; i++)
             {
@@ -91,7 +91,7 @@ namespace Assets.PixelCrew.Creatures.Weapons
 
         private void HandleAiming()
         {
-            _pistolDirection = (GetAimPosition() - transform.position).normalized;
+            _pistolDirection = (_aimPosition - transform.position).normalized;
             float angle = Mathf.Atan2(_pistolDirection.y, _pistolDirection.x) * Mathf.Rad2Deg;
             transform.eulerAngles = new Vector3(0, 0, angle);
 
@@ -113,11 +113,17 @@ namespace Assets.PixelCrew.Creatures.Weapons
             transform.localScale = pistolLocaleScale;
         }
 
-        private Vector3 GetAimPosition()
+        /*        private Vector3 GetAimPosition()
+                {
+                    var aimPosition = Camera.main.ScreenToWorldPoint(_crossHairObject.transform.position);
+                    aimPosition.z = 0f;
+                    return aimPosition;
+                }*/
+
+        public void SetAimPosition(Vector2 position)
         {
-            var aimPosition = Camera.main.ScreenToWorldPoint(_crossHairObject.transform.position);
-            aimPosition.z = 0f;
-            return aimPosition;
+            _aimPosition = Camera.main.ScreenToWorldPoint(new Vector3(position.x, position.y));
+            _aimPosition.z = 0f;
         }
 
         public void Shoot()

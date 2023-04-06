@@ -28,15 +28,6 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
             ""id"": ""021e22ee-f900-4894-a389-d223b394ad58"",
             ""actions"": [
                 {
-                    ""name"": ""SaySomething"",
-                    ""type"": ""Button"",
-                    ""id"": ""19fb2d73-4a96-4702-b5af-2c3c5e587908"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
                     ""name"": ""Movement"",
                     ""type"": ""Value"",
                     ""id"": ""6f03ec49-40f5-4a7b-9725-865965a7a8d6"",
@@ -110,8 +101,26 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
                 },
                 {
                     ""name"": ""Aim"",
-                    ""type"": ""Button"",
+                    ""type"": ""Value"",
                     ""id"": ""3e2ef9fb-5a1b-4f50-999e-9618fae8b22f"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""MoveCrossHair"",
+                    ""type"": ""Value"",
+                    ""id"": ""c26caf95-9794-48ba-a8dd-cd8bc17df214"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Shoot"",
+                    ""type"": ""Button"",
+                    ""id"": ""761f4d52-3847-4541-917e-f5ba16a12c07"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -119,17 +128,6 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
                 }
             ],
             ""bindings"": [
-                {
-                    ""name"": """",
-                    ""id"": ""d95e24bb-6af7-43eb-ad45-a8b0fbb017e8"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""SaySomething"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
                 {
                     ""name"": ""WASD"",
                     ""id"": ""67264c8d-6073-487f-a7b8-955f654da952"",
@@ -375,11 +373,33 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""3eb03c74-85bd-488a-b665-5a960e810060"",
-                    ""path"": ""<Joystick>/stick/right"",
+                    ""path"": ""<Mouse>/position"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Aim"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""acb2a4d1-da4a-4f4a-abd7-21cc04c7e3d0"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Shoot"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d3466b0c-1871-458b-80eb-8012f5d4a7a4"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": ""StickDeadzone"",
+                    ""groups"": """",
+                    ""action"": ""MoveCrossHair"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -390,7 +410,6 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
 }");
         // Hero
         m_Hero = asset.FindActionMap("Hero", throwIfNotFound: true);
-        m_Hero_SaySomething = m_Hero.FindAction("SaySomething", throwIfNotFound: true);
         m_Hero_Movement = m_Hero.FindAction("Movement", throwIfNotFound: true);
         m_Hero_InterAct = m_Hero.FindAction("InterAct", throwIfNotFound: true);
         m_Hero_Attack = m_Hero.FindAction("Attack", throwIfNotFound: true);
@@ -400,6 +419,8 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
         m_Hero_UsePerk = m_Hero.FindAction("UsePerk", throwIfNotFound: true);
         m_Hero_ToogleFlashlight = m_Hero.FindAction("ToogleFlashlight", throwIfNotFound: true);
         m_Hero_Aim = m_Hero.FindAction("Aim", throwIfNotFound: true);
+        m_Hero_MoveCrossHair = m_Hero.FindAction("MoveCrossHair", throwIfNotFound: true);
+        m_Hero_Shoot = m_Hero.FindAction("Shoot", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -461,7 +482,6 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
     // Hero
     private readonly InputActionMap m_Hero;
     private List<IHeroActions> m_HeroActionsCallbackInterfaces = new List<IHeroActions>();
-    private readonly InputAction m_Hero_SaySomething;
     private readonly InputAction m_Hero_Movement;
     private readonly InputAction m_Hero_InterAct;
     private readonly InputAction m_Hero_Attack;
@@ -471,11 +491,12 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
     private readonly InputAction m_Hero_UsePerk;
     private readonly InputAction m_Hero_ToogleFlashlight;
     private readonly InputAction m_Hero_Aim;
+    private readonly InputAction m_Hero_MoveCrossHair;
+    private readonly InputAction m_Hero_Shoot;
     public struct HeroActions
     {
         private @HeroInputAction m_Wrapper;
         public HeroActions(@HeroInputAction wrapper) { m_Wrapper = wrapper; }
-        public InputAction @SaySomething => m_Wrapper.m_Hero_SaySomething;
         public InputAction @Movement => m_Wrapper.m_Hero_Movement;
         public InputAction @InterAct => m_Wrapper.m_Hero_InterAct;
         public InputAction @Attack => m_Wrapper.m_Hero_Attack;
@@ -485,6 +506,8 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
         public InputAction @UsePerk => m_Wrapper.m_Hero_UsePerk;
         public InputAction @ToogleFlashlight => m_Wrapper.m_Hero_ToogleFlashlight;
         public InputAction @Aim => m_Wrapper.m_Hero_Aim;
+        public InputAction @MoveCrossHair => m_Wrapper.m_Hero_MoveCrossHair;
+        public InputAction @Shoot => m_Wrapper.m_Hero_Shoot;
         public InputActionMap Get() { return m_Wrapper.m_Hero; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -494,9 +517,6 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
         {
             if (instance == null || m_Wrapper.m_HeroActionsCallbackInterfaces.Contains(instance)) return;
             m_Wrapper.m_HeroActionsCallbackInterfaces.Add(instance);
-            @SaySomething.started += instance.OnSaySomething;
-            @SaySomething.performed += instance.OnSaySomething;
-            @SaySomething.canceled += instance.OnSaySomething;
             @Movement.started += instance.OnMovement;
             @Movement.performed += instance.OnMovement;
             @Movement.canceled += instance.OnMovement;
@@ -524,13 +544,16 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
             @Aim.started += instance.OnAim;
             @Aim.performed += instance.OnAim;
             @Aim.canceled += instance.OnAim;
+            @MoveCrossHair.started += instance.OnMoveCrossHair;
+            @MoveCrossHair.performed += instance.OnMoveCrossHair;
+            @MoveCrossHair.canceled += instance.OnMoveCrossHair;
+            @Shoot.started += instance.OnShoot;
+            @Shoot.performed += instance.OnShoot;
+            @Shoot.canceled += instance.OnShoot;
         }
 
         private void UnregisterCallbacks(IHeroActions instance)
         {
-            @SaySomething.started -= instance.OnSaySomething;
-            @SaySomething.performed -= instance.OnSaySomething;
-            @SaySomething.canceled -= instance.OnSaySomething;
             @Movement.started -= instance.OnMovement;
             @Movement.performed -= instance.OnMovement;
             @Movement.canceled -= instance.OnMovement;
@@ -558,6 +581,12 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
             @Aim.started -= instance.OnAim;
             @Aim.performed -= instance.OnAim;
             @Aim.canceled -= instance.OnAim;
+            @MoveCrossHair.started -= instance.OnMoveCrossHair;
+            @MoveCrossHair.performed -= instance.OnMoveCrossHair;
+            @MoveCrossHair.canceled -= instance.OnMoveCrossHair;
+            @Shoot.started -= instance.OnShoot;
+            @Shoot.performed -= instance.OnShoot;
+            @Shoot.canceled -= instance.OnShoot;
         }
 
         public void RemoveCallbacks(IHeroActions instance)
@@ -577,7 +606,6 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
     public HeroActions @Hero => new HeroActions(this);
     public interface IHeroActions
     {
-        void OnSaySomething(InputAction.CallbackContext context);
         void OnMovement(InputAction.CallbackContext context);
         void OnInterAct(InputAction.CallbackContext context);
         void OnAttack(InputAction.CallbackContext context);
@@ -587,5 +615,7 @@ public partial class @HeroInputAction: IInputActionCollection2, IDisposable
         void OnUsePerk(InputAction.CallbackContext context);
         void OnToogleFlashlight(InputAction.CallbackContext context);
         void OnAim(InputAction.CallbackContext context);
+        void OnMoveCrossHair(InputAction.CallbackContext context);
+        void OnShoot(InputAction.CallbackContext context);
     }
 }

@@ -12,11 +12,9 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         [SerializeField] private MyHero _hero;
 
         private HeroInputAction _InputAction;
-        private GameSession _session;
 
         private void Awake()
         {
-            _session = GameSession.Instance;
             _InputAction = new HeroInputAction();
             _InputAction.Hero.Movement.performed += OnMovement;
             _InputAction.Hero.Movement.canceled += OnMovement;
@@ -88,5 +86,17 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             if (context.performed)
                 _hero.ToogleFlashlight();
         }
+
+        public void OnAim(InputAction.CallbackContext context)
+        {
+            _hero.UpdatePistolAimPosition(context.ReadValue<Vector2>());
+        }
+
+        public void OnShoot(InputAction.CallbackContext context)
+        {
+            if (context.performed)
+                _hero.UsePistol();
+        }
+
     }
 }

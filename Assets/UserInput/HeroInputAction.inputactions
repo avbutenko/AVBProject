@@ -6,15 +6,6 @@
             "id": "021e22ee-f900-4894-a389-d223b394ad58",
             "actions": [
                 {
-                    "name": "SaySomething",
-                    "type": "Button",
-                    "id": "19fb2d73-4a96-4702-b5af-2c3c5e587908",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "Movement",
                     "type": "Value",
                     "id": "6f03ec49-40f5-4a7b-9725-865965a7a8d6",
@@ -88,8 +79,26 @@
                 },
                 {
                     "name": "Aim",
-                    "type": "Button",
+                    "type": "Value",
                     "id": "3e2ef9fb-5a1b-4f50-999e-9618fae8b22f",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MoveCrossHair",
+                    "type": "Value",
+                    "id": "c26caf95-9794-48ba-a8dd-cd8bc17df214",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "Shoot",
+                    "type": "Button",
+                    "id": "761f4d52-3847-4541-917e-f5ba16a12c07",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -97,17 +106,6 @@
                 }
             ],
             "bindings": [
-                {
-                    "name": "",
-                    "id": "d95e24bb-6af7-43eb-ad45-a8b0fbb017e8",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "SaySomething",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
                 {
                     "name": "WASD",
                     "id": "67264c8d-6073-487f-a7b8-955f654da952",
@@ -353,11 +351,33 @@
                 {
                     "name": "",
                     "id": "3eb03c74-85bd-488a-b665-5a960e810060",
-                    "path": "<Joystick>/stick/right",
+                    "path": "<Mouse>/position",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Aim",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "acb2a4d1-da4a-4f4a-abd7-21cc04c7e3d0",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d3466b0c-1871-458b-80eb-8012f5d4a7a4",
+                    "path": "<Gamepad>/rightStick",
+                    "interactions": "",
+                    "processors": "StickDeadzone",
+                    "groups": "",
+                    "action": "MoveCrossHair",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

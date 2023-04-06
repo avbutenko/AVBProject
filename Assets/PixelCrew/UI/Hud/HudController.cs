@@ -15,7 +15,6 @@ namespace Assets.PixelCrew.UI.Hud
     public class HudController : MonoBehaviour
     {
         [SerializeField] private ProgressBarWidjet _healthBar;
-        [SerializeField] public GameObject _crossHairObject;
 
         private CurrentPerkWidget _currentPerk;
         private GameSession _session;
@@ -29,12 +28,6 @@ namespace Assets.PixelCrew.UI.Hud
             _trash.Retain(_session.Perks.Subscribe(OnPerkChanged));
 
             OnPerkChanged();
-        }
-
-        private void Update()
-        {
-            _crossHairObject.transform.position = Mouse.current.position.ReadValue();
-            //_mousePosition.z = 0f;
         }
 
         private void OnPerkChanged()
