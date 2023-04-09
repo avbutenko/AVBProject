@@ -348,9 +348,14 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             }
         }
 
-        public void UpdatePistolAimPosition(Vector2 position)
+        public void SetMouseAim(Vector2 position)
         {
-            _pistol.SetAimPosition(position);
+            _pistol.AimByMouse(position);
+        }
+
+        public void SetStickAim(Vector2 position)
+        {
+            _pistol.AimByStick(position);
         }
 
         public void NextItem()

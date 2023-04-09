@@ -87,15 +87,20 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
                 _hero.ToogleFlashlight();
         }
 
-        public void OnAim(InputAction.CallbackContext context)
+        public void OnMouseAim(InputAction.CallbackContext context)
         {
-            _hero.UpdatePistolAimPosition(context.ReadValue<Vector2>());
+            //_hero.SetMouseAim(context.ReadValue<Vector2>());
         }
 
         public void OnShoot(InputAction.CallbackContext context)
         {
             if (context.performed)
                 _hero.UsePistol();
+        }
+
+        public void OnStickAim(InputAction.CallbackContext context)
+        {
+            _hero.SetStickAim(context.ReadValue<Vector2>());
         }
 
     }

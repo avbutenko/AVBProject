@@ -1,14 +1,10 @@
 ﻿using Assets.PixelCrew.Model;
-using Assets.PixelCrew.Model.Data;
 using Assets.PixelCrew.Model.Definitions;
 using Assets.PixelCrew.UI.Widjets;
 using Assets.PixelCrew.Utils;
-using System;
-using System.Collections;
 using UnityEngine;
 using Assets.PixelCrew.Utils.Disposables;
 using Assets.PixelCrew.Model.Definitions.Player;
-using UnityEngine.InputSystem;
 
 namespace Assets.PixelCrew.UI.Hud
 {
@@ -19,7 +15,7 @@ namespace Assets.PixelCrew.UI.Hud
         private CurrentPerkWidget _currentPerk;
         private GameSession _session;
         private readonly CompositeDisposable _trash = new CompositeDisposable();
-        private Vector3 _mousePosition;
+
         private void Start()
         {
             _currentPerk = FindObjectOfType<CurrentPerkWidget>();
