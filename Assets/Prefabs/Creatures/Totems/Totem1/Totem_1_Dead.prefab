@@ -292,6 +292,8 @@ GameObject:
   - component: {fileID: 7778322222836346771}
   - component: {fileID: 5395416196414664576}
   - component: {fileID: 201137741371262837}
+  - component: {fileID: 7460418130309980961}
+  - component: {fileID: 8016856134747561265}
   m_Layer: 0
   m_Name: Totem_1_Dead
   m_TagString: Untagged
@@ -427,6 +429,50 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mode: 1
+--- !u!114 &7460418130309980961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7464228255108381606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28ff3821c8124f8449f4cd3eabd90ced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _timer: 7
+  _executeOnAwake: 1
+  _action:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8016856134747561265}
+        m_TargetAssemblyTypeName: Assets.PixelCrew.Components.GoBased.DestroyObjectComponent,
+          Assembly-CSharp
+        m_MethodName: DestroyObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8016856134747561265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7464228255108381606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2fd4e307c4095c40b15c82b73a4f3b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _objectToDestroy: {fileID: 7464228255108381606}
+  _state: {fileID: 0}
 --- !u!1 &8806259765653624377
 GameObject:
   m_ObjectHideFlags: 0

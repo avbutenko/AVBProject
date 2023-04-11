@@ -271,6 +271,7 @@ MonoBehaviour:
     m_Bits: 33792
   _tags:
   - Enemy
+  - Boss
   _onOverlap:
     m_PersistentCalls:
       m_Calls:
