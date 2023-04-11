@@ -135,4 +135,24 @@ MonoBehaviour:
   - Key: pistol_info
     Value: "\xDAsalo para disparar perlas!\r"
   - Key: pistol
-    Value: Pistola
+    Value: "Pistola\r"
+  - Key: crabby-tough-sentence-0
+    Value: "Va a ser duro all\xE1 arriba...\r"
+  - Key: crabby-tough-sentence-1
+    Value: "Prep\xE1rate para una gran pelea!\r"
+  - Key: pistol-pick
+    Value: "Lindo! \xA1Ahora puedo disparar perlas con esta pistola!\r"
+  - Key: start-game-0
+    Value: "Los tesoros deben estar en alg\xFAn lugar de esa isla...\r"
+  - Key: start-game-1
+    Value: "Lo encontramos!\r"
+  - Key: pearls-pick
+    Value: "Eso es mucha munici\xF3n!\r"
+  - Key: enter-jungle
+    Value: "Cuidado con los \xE1rboles gigantes!..\r"
+  - Key: crabs-sentence-0
+    Value: "C\xF3mo te atreves a colarte en mi isla!\r"
+  - Key: crabs-sentence-1
+    Value: "solo busco tesoros..\r"
+  - Key: crabs-sentence-2
+    Value: "Ven y c\xF3gelo!"

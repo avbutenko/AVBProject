@@ -2,6 +2,7 @@
 using Assets.PixelCrew.Utils;
 using AVBProject.Creatures.Weapons;
 using Assets.PixelCrew.Model;
+using System.Collections;
 
 namespace Assets.PixelCrew.Creatures.Weapons
 {
@@ -13,6 +14,7 @@ namespace Assets.PixelCrew.Creatures.Weapons
         [SerializeField] private CoolDown _fireCoolDown;
         [SerializeField] private GameObject _crossHairObject;
         [SerializeField] private float _crossHairSpeed;
+        [SerializeField] private float _aimBackTime = 2.5f;
 
         [Space]
         [Header("Bullet Settings")]
@@ -78,9 +80,15 @@ namespace Assets.PixelCrew.Creatures.Weapons
             }
             else
             {
-                SetDefaults();
+                StartCoroutine(BacktoDefaults());
             }
 
+        }
+
+        private IEnumerator BacktoDefaults()
+        {
+            yield return new WaitForSeconds(_aimBackTime);
+            SetDefaults();
         }
 
         public void Shoot()
@@ -183,6 +191,7 @@ namespace Assets.PixelCrew.Creatures.Weapons
             _crossHairObject.SetActive(false);
             SetDefaults();
             DisableAllPoints();
+            StopAllCoroutines();
         }
     }
 }

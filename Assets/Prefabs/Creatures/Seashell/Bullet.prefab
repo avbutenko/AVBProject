@@ -210,7 +210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5fdcec879e68ff4ba3d6dd924f19403, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _deltaValue: -1
+  _deltaValue: -2
 --- !u!114 &6601167498011759870
 MonoBehaviour:
   m_ObjectHideFlags: 0

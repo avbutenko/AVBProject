@@ -133,6 +133,26 @@ MonoBehaviour:
   - Key: load_game
     Value: "Load Game\r"
   - Key: pistol_info
-    Value: Use it to fire pearls !
+    Value: "Use it to fire pearls !\r"
   - Key: pistol
-    Value: Pistol
+    Value: "Pistol\r"
+  - Key: crabby-tough-sentence-0
+    Value: "It's gonna be tough up there..\r"
+  - Key: crabby-tough-sentence-1
+    Value: "Make yourself ready to big fight!\r"
+  - Key: pistol-pick
+    Value: "Nice! Now I can shoot pearls from this pistol!\r"
+  - Key: start-game-0
+    Value: "Treasures must be somewhere on that island..\r"
+  - Key: start-game-1
+    Value: "Let's find it!\r"
+  - Key: pearls-pick
+    Value: "That's a lot of ammo!\r"
+  - Key: enter-jungle
+    Value: "Watch out for giant trees!..\r"
+  - Key: crabs-sentence-0
+    Value: "How dare you sneaking in my island!\r"
+  - Key: crabs-sentence-1
+    Value: "I'm just looking for treasures..\r"
+  - Key: crabs-sentence-2
+    Value: Then come and get it!

@@ -1105,9 +1105,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ownerTransform: {fileID: 4464192119751422747}
   _fireCoolDown:
-    _value: 1
+    _value: 0.2
   _crossHairObject: {fileID: 7065601765534565567}
   _crossHairSpeed: 3
+  _aimBackTime: 2.5
   _bulletPrefab: {fileID: 6601167498011759870, guid: b0ef248f35ec9434e94203bef288a3bc,
     type: 3}
   _bulletSpawnPosition: {fileID: 609598029625515819}

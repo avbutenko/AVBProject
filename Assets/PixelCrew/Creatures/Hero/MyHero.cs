@@ -96,7 +96,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private int CoinCount => _session.Data.Inventory.Count("Coin");
         private int SwordCount => _session.Data.Inventory.Count(SwordId);
 
-        private string SelectedItemId => _session.QuickInventory.SelectedItem.Id;
+        private string SelectedItemId => _session.QuickInventory.SelectedItem?.Id;
 
         private bool CanThrow
         {
@@ -150,11 +150,7 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
 
         private void OnInventoryChanged(string id, int value)
         {
-            //if (id == SwordId)
             UpdateHeroWeapon();
-
-            /*            if (id == PistolId)
-                            UpdatePistol();*/
         }
 
         private void InventoryLogHandler(string id, int value)
