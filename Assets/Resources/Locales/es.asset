@@ -159,4 +159,6 @@ MonoBehaviour:
   - Key: finish-game
     Value: "Impresionante!..\r"
   - Key: the-end
-    Value: El fin
+    Value: "El fin\r"
+  - Key: finish-game2
+    Value: "Ahora v\xE1monos de aqu\xED!.."

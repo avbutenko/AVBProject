@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a095421b0f26e234b96bd70e9611eda8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 4
+  _speed: 5
   _invertX: 0
 --- !u!114 &5395344712624873361
 MonoBehaviour:
@@ -362,6 +362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _timer: 0.5
+  _executeOnAwake: 0
   _action:
     m_PersistentCalls:
       m_Calls:

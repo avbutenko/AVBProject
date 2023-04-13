@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: shoot
+  m_Name: superShoot
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -44,7 +44,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 180}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -53,6 +53,15 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1
+        value: {x: 0, y: 0, z: 0}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 1.1
         value: {x: 0, y: 0, z: 180}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
@@ -274,7 +283,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1
+        time: 1.1
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -298,6 +307,20 @@ AnimationClip:
     attribute: m_Sprite
     path: 
     classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: b6f41f71d8cfd404f90c202bb4eaca51, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: LaserFirePoint/Line
+    classID: 120
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 2100000, guid: b6f41f71d8cfd404f90c202bb4eaca51, type: 2}
+    attribute: m_Materials.Array.data[0]
+    path: LaserFirePoint (1)/Line
+    classID: 120
     script: {fileID: 0}
   m_SampleRate: 10
   m_WrapMode: 0
@@ -363,6 +386,20 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     - serializedVersion: 2
+      path: 3522223081
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 120
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 635007016
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 120
+      customType: 21
+      isPPtrCurve: 1
+    - serializedVersion: 2
       path: 0
       attribute: 304273561
       script: {fileID: 0}
@@ -372,6 +409,8 @@ AnimationClip:
     pptrCurveMapping:
     - {fileID: 21300000, guid: ff03c4fc05c589e4083e36891ab90b07, type: 3}
     - {fileID: 21300000, guid: ff03c4fc05c589e4083e36891ab90b07, type: 3}
+    - {fileID: 2100000, guid: b6f41f71d8cfd404f90c202bb4eaca51, type: 2}
+    - {fileID: 2100000, guid: b6f41f71d8cfd404f90c202bb4eaca51, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
@@ -684,7 +723,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 1
+        time: 1.1
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -712,7 +751,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
+        time: 1.1
         value: 0
         inSlope: 0
         outSlope: 0
@@ -740,7 +779,7 @@ AnimationClip:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 1
+        time: 1.1
         value: 0
         inSlope: 0
         outSlope: 0
@@ -760,7 +799,7 @@ AnimationClip:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 0
+        value: 180
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -769,6 +808,15 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 136
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1.1
         value: 180
         inSlope: 0
         outSlope: 0
