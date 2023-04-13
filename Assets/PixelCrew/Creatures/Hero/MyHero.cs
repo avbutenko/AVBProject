@@ -92,8 +92,9 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
         private static readonly int IsOnWall = Animator.StringToHash("is-on-wall");
 
         private const string SwordId = "Sword";
+        private const string CoinId = "Coin";
         private const string PistolId = "pistol";
-        private int CoinCount => _session.Data.Inventory.Count("Coin");
+        private int CoinCount => _session.Data.Inventory.Count(CoinId);
         private int SwordCount => _session.Data.Inventory.Count(SwordId);
 
         private string SelectedItemId => _session.QuickInventory.SelectedItem?.Id;
@@ -446,6 +447,9 @@ namespace Assets.PixelCrew.Components.Creatures.Hero
             {
                 UsePistol();
             }
+
+            if (SelectedItemId == CoinId)
+                SpawnCoins();
 
         }
 

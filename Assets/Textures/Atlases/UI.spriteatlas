@@ -98,7 +98,6 @@ SpriteAtlas:
   - {fileID: 21300000, guid: 4b7ea2e8f34ffdd4eb90a5f3193703a7, type: 3}
   - {fileID: 21300000, guid: 7c80d5f8dc447744ba6ee6e2e9961292, type: 3}
   - {fileID: 21300000, guid: 20890109c10ac4353b9eb365654cd4ee, type: 3}
-  - {fileID: 21300000, guid: b15b5b790a99ff74a903c4956ea5c964, type: 3}
   - {fileID: 21300000, guid: 35b6aeb9992be8f42b52c44da6782a34, type: 3}
   - {fileID: 21300000, guid: c83752d90592fb64ba77e2caca0ea3d8, type: 3}
   - {fileID: 21300000, guid: 97578dd92f388014eaad7b1fc1c06b8e, type: 3}
@@ -157,7 +156,6 @@ SpriteAtlas:
   - S_Holy03
   - S_Magic08
   - close
-  - chat
   - 7
   - papper
   - slider-horizontal-handle

@@ -1,5 +1,6 @@
 ﻿using Assets.PixelCrew.Components.Health;
 using Assets.PixelCrew.Effects;
+using Assets.PixelCrew.Utils.Disposables;
 using System;
 using System.Collections;
 using UnityEngine;
@@ -8,24 +9,44 @@ namespace Assets.PixelCrew.Creatures.Mobs.Boss.Crabs
 {
     public class CrabsBossHandler : MonoBehaviour
     {
-        [SerializeField] private GameObject[] _waves;
-        [SerializeField] private GameObject _shield;
+        [SerializeField] private Animator _animator;
+        [SerializeField] private EnemyWave[] _waves;
         [SerializeField] private SetPostEffectProfile _defEffect;
         [SerializeField] private SetPostEffectProfile _targetEffect;
         [SerializeField] private HealthComponent _hp;
 
-        private int _waveCounter;
+        private readonly CompositeDisposable _trash = new CompositeDisposable();
+        private static readonly int SpawnKey = Animator.StringToHash("spawn");
 
-        private void Update()
+
+        private void Awake()
         {
-            var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-            if (enemies.Length == 0)
+            _trash.Retain(_hp._onChange.Subscribe(OnHealthChanged));
+            OnHealthChanged(_hp.Health);
+        }
+
+        private void OnHealthChanged(int health)
+        {
+            if (health > 21 && health < 26)
             {
-                _shield.SetActive(false);
+                SetWave(0);
             }
-            else
+            else if (health > 11 && health < 20)
             {
-                _shield.SetActive(true);
+                SetWave(1);
+            }
+            else if (health > 0 && health < 10)
+            {
+                SetWave(2);
+            }
+        }
+
+        private void SetWave(int counter)
+        {
+            if (_waves[counter].IsSpawned == false)
+            {
+                _animator.SetTrigger(SpawnKey);
+                _waves[counter].Spawn();
             }
         }
 
@@ -42,11 +63,9 @@ namespace Assets.PixelCrew.Creatures.Mobs.Boss.Crabs
             }
         }
 
-        public void SpawnWave()
+        private void OnDestroy()
         {
-            if (_waveCounter > _waves.Length) return;
-            _waves[_waveCounter].SetActive(true);
-            _waveCounter++;
+            _trash.Dispose();
         }
     }
 }

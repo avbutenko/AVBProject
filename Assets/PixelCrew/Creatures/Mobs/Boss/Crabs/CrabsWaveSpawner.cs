@@ -11,7 +11,6 @@ namespace Assets.PixelCrew.Creatures.Mobs.Boss.Crabs
         override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
         {
             _handler = animator.GetComponent<CrabsBossHandler>();
-            _handler.SpawnWave();
             _handler.SetPostEffect(true);
         }
 

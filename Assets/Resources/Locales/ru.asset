@@ -177,4 +177,8 @@ MonoBehaviour:
   - Key: crabs-sentence-1
     Value: "\u042F \u043F\u0440\u043E\u0441\u0442\u043E \u0438\u0449\u0443 \u0441\u043E\u043A\u0440\u043E\u0432\u0438\u0449\u0430..\r"
   - Key: crabs-sentence-2
-    Value: "\u041F\u0440\u0438\u0434\u0438 \u0438 \u0432\u043E\u0437\u044C\u043C\u0438!"
+    Value: "\u041F\u0440\u0438\u0434\u0438 \u0438 \u0432\u043E\u0437\u044C\u043C\u0438!\r"
+  - Key: finish-game
+    Value: "\u041A\u0440\u0443\u0442\u043E!..\r"
+  - Key: the-end
+    Value: "\u041A\u043E\u043D\u0435\u0446"

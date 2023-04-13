@@ -11,5 +11,10 @@ namespace Assets.PixelCrew.UI.Windows.GameOver
         {
             WindowUtils.CreateWindow("UI/GameOverWindow");
         }
+
+        public void ShowFinishWindow()
+        {
+            WindowUtils.CreateWindow("UI/GameFinishedWindow");
+        }
     }
 }

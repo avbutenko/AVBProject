@@ -155,4 +155,8 @@ MonoBehaviour:
   - Key: crabs-sentence-1
     Value: "I'm just looking for treasures..\r"
   - Key: crabs-sentence-2
-    Value: Then come and get it!
+    Value: "Then come and get it!\r"
+  - Key: finish-game
+    Value: "Awesome!..\r"
+  - Key: the-end
+    Value: The End

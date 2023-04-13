@@ -155,4 +155,8 @@ MonoBehaviour:
   - Key: crabs-sentence-1
     Value: "solo busco tesoros..\r"
   - Key: crabs-sentence-2
-    Value: "Ven y c\xF3gelo!"
+    Value: "Ven y c\xF3gelo!\r"
+  - Key: finish-game
+    Value: "Impresionante!..\r"
+  - Key: the-end
+    Value: El fin
