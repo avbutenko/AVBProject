@@ -23,6 +23,7 @@ Explore an Island by courage Pirate and find some Treasures!
 - Q - switch items from QuickInvenory
 - LeftShift - use item from QuickInvenory
 - Space - Sword Attack
+- Left Mouse Click - fire from pistol
 
 ## Android
 Use on screen buttons
