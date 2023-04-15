@@ -22,6 +22,7 @@ Explore an Island by courage Pirate and find some Treasures!
 - R - Use currently active Perk 
 - Q - switch items from QuickInvenory
 - LeftShift - use item from QuickInvenory
+- Space - Sword Attack
 
 ## Android
 Use on screen buttons
