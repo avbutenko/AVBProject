@@ -5,7 +5,9 @@ Explore an Island by courage Pirate and find some Treasures!
 # How to install
 ## PC
 - Download all files from AVBProject/Builds/StandAloneBuild/
-- Execute 
+- Make sure all of them are located at the same folder on your PC
+- Execute AVBProject.exe
+- Enjoy!
 
 ## Android
 - Download AVBProject/Builds/AndroidBuild/android-build.apk file
