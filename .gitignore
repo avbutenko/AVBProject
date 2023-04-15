@@ -1,8 +1,8 @@
 /.vs
-*.exe
+
 *.log
 *.bin
-*.apk
+
 /Library/
 /Temp/
 /Assets/VSCode*
