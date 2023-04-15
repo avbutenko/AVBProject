@@ -2,6 +2,12 @@
 
 Explore an Island by courage Pirate and find some Treasures!
 
+# How to install
+## PC
+- Download all files from 
+## Android
+Follow standard instructions from your mobile to install .apk files
+
 # Controls
 ## PC
 - WASD - Movement
